@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeLinks - Sobre Nós</title>
+  <link rel="stylesheet" href="style.css"> <!-- Reutilizando o mesmo CSS da homepage -->
+  <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Estilos específicos para a página Sobre */
+    .about-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--card-bg-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .about-title {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .about-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+    
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .mission-vision {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .mission, .vision {
+      flex: 1;
+      min-width: 300px;
+      padding: 25px;
+      background-color: var(--bg-color);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section-icon {
+      font-size: 1.8rem;
+    }
+    
+    .academic-info {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .team-member {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      padding: 15px;
+      background-color: var(--bg-color);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .back-button:hover {
+      background-color: var(--accent-color);
+    }
+    
+    @media (max-width: 768px) {
+      .mission-vision {
+        flex-direction: column;
+      }
+      
+      .about-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR (igual à homepage) -->
+  <nav class="homePageNavbar" id="homePageNavbarID">
+    <div class="navbar-container">
+      <div class="navbar-logo">SafeLinks</div>
+      <ul class="navbar-links" id="homePageNavBarLinksID">
+        <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="dicas.html"><i class="fas fa-home"></i> Dicas FREE</a></li>
+        <li><a href="#"><i class="fas fa-star"></i> Favoritos</a></li>
+        <li><a href="#"><i class="fas fa-history"></i> Histórico</a></li>
+        <li><a href="sobre.html" class="active"><i class="fas fa-info-circle"></i> Sobre </a></li>
+      </ul>
+      <div class="navbar-toggle" id="navbarToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <div class="action-icons">
+    <div class="action-icon">
+      <a href="pjt-final-login/login.html"><i class="fas fa-user"></i></a>
+    </div>
+  </div>
+
+  <div class="about-container">
+    <div class="about-header">
+      <h1 class="about-title">Sobre o SafeLinks</h1>
+      <p class="about-subtitle">Conheça mais sobre nossa plataforma e proposta acadêmica</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="mission-vision">
+        <div class="mission">
+          <h2 class="section-title">
+            <i class="fas fa-bullseye section-icon"></i> Nossa Missão
+          </h2>
+          <p>Proporcionar aos consumidores brasileiros um acesso seguro e confiável a produtos eletrônicos de qualidade, conectando-os apenas com marketplaces e lojas virtuais verificadas, com total transparência e proteção de dados.</p>
+        </div>
+        
+        <div class="vision">
+          <h2 class="section-title">
+            <i class="fas fa-eye section-icon"></i> Nossa Visão
+          </h2>
+          <p>Ser a plataforma de referência em segurança digital para compras online, reconhecida como o canal mais confiável entre consumidores e lojas virtuais especializadas em eletrônicos.</p>
+        </div>
+      </div>
+      
+      <div>
+        <h2 class="section-title">
+          <i class="fas fa-graduation-cap section-icon"></i> Contexto Acadêmico
+        </h2>
+        <p>O SafeLinks foi desenvolvido como projeto acadêmico para a disciplina "projeto final" do curso tecnico de informática da Faeterj-CPTI.</p>
+        <p>Nosso objetivo com este projeto é aplicar na prática os conhecimentos adquiridos em sala de aula, desenvolvendo uma solução tecnológica que atenda a uma necessidade real do mercado, priorizando a segurança e a experiência do usuário em compras online.</p>
+      </div>
+      
+      <div class="academic-info">
+        <h2 class="section-title">
+          <i class="fas fa-users section-icon"></i> Equipe de Desenvolvimento
+        </h2>
+        <div class="team-members">
+          <div class="team-member">
+            <i class="fas fa-user-circle" style="font-size: 3rem; margin-bottom: 10px;"></i>
+            <h3>Emanoel </h3>
+            <p>Back-End</p>
+          </div>
+          <div class="team-member">
+            <i class="fas fa-user-circle" style="font-size: 3rem; margin-bottom: 10px;"></i>
+            <h3>Mateus</h3>
+            <p>Front-End</p>
+          </div>
+          <div class="team-member">
+            <i class="fas fa-user-circle" style="font-size: 3rem; margin-bottom: 10px;"></i>
+            <h3>Henry </h3>
+            <p>Documentação</p>
+          </div>
+          <div class="team-member">
+            <i class="fas fa-user-circle" style="font-size: 3rem; margin-bottom: 10px;"></i>
+            <h3>?</h3>
+            <p>Função/RM</p>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h2 class="section-title">
+          <i class="fas fa-code section-icon"></i> Tecnologias Utilizadas
+        </h2>
+        <p>Para o desenvolvimento do SafeLinks, utilizamos as seguintes tecnologias:</p>
+        <ul>
+          <li>HTML5 para estruturação do conteúdo</li>
+          <li>CSS3 para estilização e design responsivo</li>
+          <li>JavaScript para interatividade e funcionalidades</li>
+          <li>PHP para o tratamento e conexão de dados</li>
+          <li>MySQL banco de dados </li>
+          <li>Google Fonts para tipografia</li>
+          <li>Font Awesome para ícones</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="text-align: center;">
+      <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Voltar para a Página Inicial
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Script para o modo escuro/claro (reutilizado da homepage)
+    document.addEventListener('DOMContentLoaded', function() {
+      const darkModeToggle = document.getElementById('homePageModoEscuroClaroID');
+      const body = document.body;
+      
+      // Verificar preferência salva
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      }
+      
+      // Alternar modo escuro/claro
+      darkModeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+          localStorage.setItem('darkMode', 'enabled');
+          darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+          localStorage.setItem('darkMode', null);
+          darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+      });
+      
+      // Menu responsivo (caso necessário)
+      const navbarToggle = document.getElementById('navbarToggle');
+      const navbarLinks = document.getElementById('homePageNavBarLinksID');
+      
+      if (navbarToggle) {
+        navbarToggle.addEventListener('click', function() {
+          navbarLinks.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

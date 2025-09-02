@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeLinks - Educação em Cibersegurança</title>
+  <link rel="stylesheet" href="style.css"> <!-- HOMEPAGE ESTILOS: ARQUIVO CSS -->
+  <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png"> <!-- SITE: LOGO -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
+  <style>
+    /* Estilos específicos para a página educativa */
+    .cybersecurity-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .content-header {
+        margin-top: 50px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .content-title {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    .content-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+    
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    
+    .topic-card {
+      background-color: var(--card-bg-color);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .topic-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .topic-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    .topic-title {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    .topic-description {
+      color: var(--text-color);
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .tips-list {
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .tips-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    
+    .warning-box {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .resources-section {
+      background-color: var(--card-bg-color);
+      border-radius: 10px;
+      padding: 30px;
+      margin-top: 40px;
+    }
+    
+    .resources-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 25px;
+    }
+    
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .resource-item {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--bg-color);
+      border-radius: 8px;
+    }
+    
+    .resource-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    
+    @media (max-width: 768px) {
+      .content-title {
+        font-size: 2rem;
+      }
+      
+      .topics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+  
+<body>
+  <!-- NAVBAR -->
+  <nav class="homePageNavbar" id="homePageNavbarID">
+    <div class="navbar-container">
+      <div class="navbar-logo">SafeLinks</div>
+      <ul class="navbar-links" id="homePageNavBarLinksID">
+        <li><a href="index.html" ><i class="fas fa-home"></i> Início</a></li>
+        <li><a href="dicas.html" ><i class="fas fa-home"></i> Dicas FREE</a></li>
+        <li><a href="#"><i class="fas fa-star"></i> Favoritos</a></li>
+        <li><a href="#"><i class="fas fa-history"></i> Histórico</a></li>
+        <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+      </ul>
+      <div class="navbar-toggle" id="navbarToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <div class="action-icons">
+    <div class="action-icon">
+      <a href="pjt-final-login/login.html"><i class="fas fa-user"></i></a>
+    </div>
+  </div>
+
+  <div class="cybersecurity-content">
+    <div class="content-header">
+      <h1 class="content-title">Educação em Cibersegurança</h1>
+      <p class="content-subtitle">Aprenda a se proteger no mundo digital com nossas dicas e orientações</p>
+    </div>
+
+    <div class="topics-grid">
+      <!-- Cartão 1: Senhas Seguras -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          <i class="fas fa-key"></i>
+        </div>
+        <h2 class="topic-title">Como Criar Senhas Seguras</h2>
+        <p class="topic-description">Suas senhas são a primeira linha de defesa contra invasores. Veja como fortalecê-las:</p>
+        <ul class="tips-list">
+          <li>Use pelo menos 12 caracteres</li>
+          <li>Combine letras maiúsculas, minúsculas, números e símbolos</li>
+          <li>Não use informações pessoais (nomes, datas de nascimento)</li>
+          <li>Utilize frases longas em vez de palavras complexas</li>
+          <li>Use um gerenciador de senhas para armazená-las com segurança</li>
+          <li>Ative a autenticação de dois fatores sempre que possível</li>
+        </ul>
+        <div class="warning-box">
+          <strong>Importante:</strong> Nunca reuse senhas entre serviços diferentes. Um vazamento em um site pode comprometer todas as suas contas.
+        </div>
+      </div>
+
+      <!-- Cartão 2: Phishing -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          <i class="fas fa-fish"></i>
+        </div>
+        <h2 class="topic-title">Como Evitar Ataques de Phishing</h2>
+        <p class="topic-description">Phishing é uma tentativa fraudulenta de obter informações sensíveis. Fique atento:</p>
+        <ul class="tips-list">
+          <li>Desconfie de e-mails não solicitados que pedem informações pessoais</li>
+          <li>Verifique o endereço de e-mail do remetente</li>
+          <li>Passe o mouse sobre links para ver o URL real antes de clicar</li>
+          <li>Observe erros gramaticais e ortográficos - são sinais comuns</li>
+          <li>Não baixe anexos de remetentes desconhecidos</li>
+          <li>Empresas legítimas nunca pedem senhas por e-mail</li>
+        </ul>
+        <div class="warning-box">
+          <strong>Dica:</strong> Se receber um e-mail suspeito de uma empresa, entre em contato diretamente com ela através do site oficial para verificar.
+        </div>
+      </div>
+
+      <!-- Cartão 3: Wi-Fi Público -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <h2 class="topic-title">Riscos do Wi-Fi Público</h2>
+        <p class="topic-description">Redes Wi-Fi públicas são convenientes, mas apresentam riscos significativos:</p>
+        <ul class="tips-list">
+          <li>Evite acessar contas bancárias ou fazer compras em redes públicas</li>
+          <li>Use uma VPN (Rede Privada Virtual) para criptografar sua conexão</li>
+          <li>Desative a conexão automática a redes Wi-Fi no seu dispositivo</li>
+          <li>Verifique se o site usa HTTPS (cadeado na barra de endereços)</li>
+          <li>Desative o compartilhamento de arquivos quando conectar a redes públicas</li>
+          <li>Prefira usar seus dados móveis quando possível</li>
+        </ul>
+        <div class="warning-box">
+          <strong>Atenção:</strong> Criminosos podem criar redes Wi-Fi com nomes parecidos com estabelecimentos legítimos para capturar seus dados.
+        </div>
+      </div>
+
+      <!-- Cartão 4: Atualizações -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <h2 class="topic-title">Importância das Atualizações</h2>
+        <p class="topic-description">Manter software atualizado é crucial para sua segurança:</p>
+        <ul class="tips-list">
+          <li>Ative atualizações automáticas sempre que possível</li>
+          <li>Mantense atualizado não apenas o sistema operacional, mas também navegadores e aplicativos</li>
+          <li>As atualizações frequentemente corrigem vulnerabilidades de segurança críticas</li>
+          <li>Desinstale software que você não usa mais</li>
+          <li>Use apenas software de fontes confiáveis</li>
+        </ul>
+        <div class="warning-box">
+          <strong>Lembrete:</strong> Cibercriminosos exploram vulnerabilidades conhecidas que já foram corrigidas em versões atualizadas.
+        </div>
+      </div>
+
+      <!-- Cartão 5: Backup -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          <i class="fas fa-hdd"></i>
+        </div>
+        <h2 class="topic-title">Backup de Dados</h2>
+        <p class="topic-description">Proteja seus dados contra perda acidental ou ataques de ransomware:</p>
+        <ul class="tips-list">
+          <li>Siga a regra 3-2-1: 3 cópias, 2 mídias diferentes, 1 fora do local</li>
+          <li>Agende backups regulares automáticos</li>
+          <li>Use serviços em nuvem confiáveis para backup</li>
+          <li>Teste periodicamente a restauração dos backups</li>
+          <li>Proteja seus backups com senhas fortes</li>
+        </ul>
+        <div class="warning-box">
+          <strong>Importante:</strong> Ransomware pode criptografar não apenas seus arquivos originais, mas também backups conectados ao sistema.
+        </div>
+      </div>
+
+      <!-- Cartão 6: Redes Sociais -->
+      <div class="topic-card">
+        <div class="topic-icon">
+          <i class="fas fa-share-alt"></i>
+        </div>
+        <h2 class="topic-title">Segurança em Redes Sociais</h2>
+        <p class="topic-description">Proteja sua privacidade e informações nas redes sociais:</p>
+        <ul class="tips-list">
+          <li>Revise e ajuste regularmente suas configurações de privacidade</li>
+          <li>Pense duas vezes antes de compartilhar informações pessoais</li>
+          <li>Cuidado com o que você publica - informações podem ser usadas para phishing ou roubo de identidade</li>
+          <li>Desconfie de mensagens diretas suspeitas, mesmo de conhecidos</li>
+          <li>Use senhas diferentes para cada rede social</li>
+          <li>Ative a autenticação de dois fatores</li>
+        </ul>
+        <div class="warning-box">
+          <strong>Cuidado:</strong> Muitos golpes começam com informações obtidas através de redes sociais.
+        </div>
+      </div>
+    </div>
+
+    <div class="resources-section">
+      <h2 class="resources-title">Recursos Adicionais</h2>
+      <div class="resources-grid">
+        <div class="resource-item">
+          <div class="resource-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Guias Práticos</h3>
+          <p>Manuais detalhados para configurar privacidade em diferentes plataformas</p>
+        </div>
+        
+        <div class="resource-item">
+          <div class="resource-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3>Vídeos Educativos</h3>
+          <p>Tutoriais em vídeo para aprender visualmente sobre cibersegurança</p>
+        </div>
+        
+        <div class="resource-item">
+          <div class="resource-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Ferramentas Úteis</h3>
+          <p>Recomendações de software e aplicativos para melhorar sua segurança</p>
+        </div>
+        
+        <div class="resource-item">
+          <div class="resource-icon">
+            <i class="fas fa-newspaper"></i>
+          </div>
+          <h3>Notícias e Alertas</h3>
+          <p>Mantenha-se informado sobre as últimas ameaças e vulnerabilidades</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Script para o modo escuro/claro
+    document.addEventListener('DOMContentLoaded', function() {
+      const darkModeToggle = document.getElementById('homePageModoEscuroClaroID');
+      const body = document.body;
+      
+      // Verificar preferência salva
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      }
+      
+      // Alternar modo escuro/claro
+      darkModeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+          localStorage.setItem('darkMode', 'enabled');
+          darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+          localStorage.setItem('darkMode', null);
+          darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+      });
+      
+      // Menu responsivo
+      const navbarToggle = document.getElementById('navbarToggle');
+      const navbarLinks = document.getElementById('homePageNavBarLinksID');
+      
+      if (navbarToggle) {
+        navbarToggle.addEventListener('click', function() {
+          navbarLinks.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
