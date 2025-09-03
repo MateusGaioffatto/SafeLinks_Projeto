@@ -36,7 +36,7 @@ body.dark-mode {
 
 .homePageNavbar {
   position: fixed;
-  top: 0px; /* hidden by default */
+  top: -55px; /* hidden by default */
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
@@ -47,7 +47,14 @@ body.dark-mode {
   body.dark-mode .homePageNavbar {
   background: rgba(45, 55, 72, 0.95);
   }
-  .homePageNavbar:hover {
+
+#homePageNavBarMouseOver {
+  position: relative;
+  bottom: 170px;
+  width: 100%;
+  height: 50px;
+}
+  #homePageNavBarMouseOver:hover .homePageNavbar {
     top: 0px; /* show when hover near top */
   }
 
@@ -174,6 +181,8 @@ header {
   font-weight: bold;
   color: var(--primary);
   margin-bottom: 10px;
+  opacity: 0;
+  animation: homePageConteudoCentralOpacity 2s ease forwards;
 }
 
 body.dark-mode .homePageTitulo {
@@ -183,7 +192,10 @@ body.dark-mode .homePageTitulo {
 .homePageSubTitulo {
   color: var(--gray);
   margin-bottom: 20px;
+  opacity: 0;
+  animation: homePageConteudoCentralOpacity 2s ease forwards;
 }
+  
 
 body.dark-mode .homePageSubTitulo {
   color: #b0b0b0;
@@ -292,7 +304,14 @@ body.dark-mode .homePageSearchButton:hover #homePageSearchIconID {
   gap: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: var(--transition);
+  opacity: 0;
+  animation: homePageConteudoCentralOpacity 2s ease forwards;
 }
+  @keyframes homePageConteudoCentralOpacity {
+    to {
+      opacity: 1;
+    }
+  }
 
 body.dark-mode .barraDePesquisaOpcoesButtons {
   background: #2d3748;
