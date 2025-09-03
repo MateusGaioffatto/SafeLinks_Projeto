@@ -3,7 +3,6 @@ let gerarPordutosClickCount = 0;
 homePageSearchInput.addEventListener("keyup", function() {
   searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
-      console.log(gerarPordutosClickCount);
       homePageProdutosDiv.style.display = "flex";
       if (gerarPordutosClickCount === 0) { modificarAnunciosDeProdutos(true) /* <= COMENTAR! */ }
       mostrarImagensDosProdutos(searchInputText);

@@ -15,9 +15,11 @@ function modificarAnunciosDeProdutos(valor) {
     homePageProdutosUl.innerHTML = '';
   }
 }
-
 // COMENTAR =>
-function mostrarImagensDosProdutos() {}
+function mostrarImagensDosProdutos(searchInputText) {
+  const url = `http://localhost:3000/api/shopping?q=${encodeURIComponent(searchInputText)}`;
+  console.log(url);
+}
 
 // Exporta as funções se precisar em outros módulos
 window.mostrarImagensDosProdutos = mostrarImagensDosProdutos;
