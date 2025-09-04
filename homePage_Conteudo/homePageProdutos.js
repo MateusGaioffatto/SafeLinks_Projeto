@@ -19,6 +19,8 @@ function modificarAnunciosDeProdutos(valor) {
 function mostrarImagensDosProdutos(searchInputText) {
   const url = `http://localhost:3000/api/shopping?q=${encodeURIComponent(searchInputText)}`;
   console.log(url);
+  fetch(url)
+  .then(data => console.log(data.json()))
 }
 
 // Exporta as funções se precisar em outros módulos
