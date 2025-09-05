@@ -360,6 +360,7 @@ body.dark-mode .homePageProdutosDiv {
     background: #fff;
     background-size: cover;
     background-position: center;
+    background-image: none;
 
     flex: 0 0 180px;
     flex-direction: column;
