@@ -1,12 +1,13 @@
+let produtosLi = []; // <= COMENTAR
+let produtosTexto = []; // <= COMENTAR
 // COMENTAR =>
-function modificarAnunciosDeProdutos(valor) {
+  function modificarAnunciosDeProdutos(valor) {
   if (valor) {
-    for (let i = 0; i < 20; i++) {
-      const produtosLi = document.createElement('li');
+    for (let i = 0; i < 40; i++) {
+      produtosLi = document.createElement('li');
         produtosLi.className = "homePageProdutosLi";
-      const produtosTexto = document.createElement('p');
+      produtosTexto = document.createElement('p');
         produtosTexto.className = "liProdutosTitulos";
-        produtosTexto.textContent = "CONTEÚDO!"
         produtosLi.appendChild(produtosTexto);      
       homePageProdutosUl.appendChild(produtosLi);
     }
@@ -18,13 +19,16 @@ function modificarAnunciosDeProdutos(valor) {
 // COMENTAR =>
 function mostrarImagensDosProdutos(searchInputText) {
   const homePageProdutosUlLi = document.querySelectorAll(".homePageProdutosUl li");
+  const homePageProdutosUlLiTextos = document.querySelectorAll(".homePageProdutosUl p");
   const url = `http://localhost:3000/api/shopping?q=${encodeURIComponent(searchInputText)}`;
+
   console.log(url);
   fetch(url)
     .then(response => response.json())
     .then(data => {
         for (let i = 0; i < homePageProdutosUlLi.length; i++) {
           homePageProdutosUlLi[i].style.backgroundImage = `url('${data.shopping_results[i].thumbnail}')`;
+          homePageProdutosUlLiTextos[i].textContent = data.shopping_results[i].title;
         }
     })
     .catch(error => console.error('Erro ao buscar produtos:', error));
