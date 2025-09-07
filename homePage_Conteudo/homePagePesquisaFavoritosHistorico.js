@@ -1,25 +1,15 @@
-let gerarPordutosClickCount = 0;
-// Mostrar/ocultar lista de produtos ao digitar
-homePageSearchInput.addEventListener("keyup", function() {
+// COMERTAR =>
+homePageSearchInput.addEventListener("keydown", function() {
   searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
-      homePageProdutosDiv.style.display = "flex";
-      if (gerarPordutosClickCount === 0) { modificarAnunciosDeProdutos(true) /* <= COMENTAR! */ }
-      mostrarImagensDosProdutos(searchInputText);
-      gerarPordutosClickCount++;
+      // mostrarImagensDosProdutos(searchInputText);
+      window.location.href = "http://127.0.0.1:5500/homePage_Conteudo/resultadosProdutos.html";
     }  
-    else if (searchInputText == "") {
-      homePageProdutosDiv.style.display = "none";
-      gerarPordutosClickCount = 0;
-      modificarAnunciosDeProdutos(false);
-    }
   });
 homePageSearchButton.addEventListener('click', function() {
   if (searchInputText !== "") {
-    homePageProdutosDiv.style.display = "flex";
-    if (gerarPordutosClickCount === 0) { modificarAnunciosDeProdutos(true) /* <= COMENTAR! */ }
-    mostrarImagensDosProdutos(searchInputText);
-    gerarPordutosClickCount++;
+    // mostrarImagensDosProdutos(searchInputText);
+    window.location.href = "http://127.0.0.1:5500/homePage_Conteudo/resultadosProdutos.html";
   }
 })
     // Limpar pesquisa
@@ -43,75 +33,75 @@ homePageSearchButton.addEventListener('click', function() {
 
 
 // Inicializar favoritos
-function initializeFavorites() {
-  const favoriteBtns = document.querySelectorAll('.favorite-btn');
-  favoriteBtns.forEach(btn => {
-    const store = btn.dataset.store;
-    // Restaurar estado dos favoritos
-    btn.innerHTML = favoriteStores[store] ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
-    btn.classList.toggle('active', favoriteStores[store]);
+// function initializeFavorites() {
+//   const favoriteBtns = document.querySelectorAll('.favorite-btn');
+//   favoriteBtns.forEach(btn => {
+//     const store = btn.dataset.store;
+//     // Restaurar estado dos favoritos
+//     btn.innerHTML = favoriteStores[store] ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
+//     btn.classList.toggle('active', favoriteStores[store]);
     
-    // Remover event listeners antigos
-    btn.replaceWith(btn.cloneNode(true));
-  });
+//     // Remover event listeners antigos
+//     btn.replaceWith(btn.cloneNode(true));
+//   });
   
   // Adicionar novos event listeners
-  const newFavoriteBtns = document.querySelectorAll('.favorite-btn');
-  newFavoriteBtns.forEach(btn => {
-    const store = btn.dataset.store;
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      favoriteStores[store] = !favoriteStores[store];
-      btn.innerHTML = favoriteStores[store] ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
-      btn.classList.toggle('active', favoriteStores[store]);
-      localStorage.setItem('favoriteStores', JSON.stringify(favoriteStores));
-    });
-  });
-}
+//   const newFavoriteBtns = document.querySelectorAll('.favorite-btn');
+//   newFavoriteBtns.forEach(btn => {
+//     const store = btn.dataset.store;
+//     btn.addEventListener('click', function(e) {
+//       e.stopPropagation();
+//       favoriteStores[store] = !favoriteStores[store];
+//       btn.innerHTML = favoriteStores[store] ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
+//       btn.classList.toggle('active', favoriteStores[store]);
+//       localStorage.setItem('favoriteStores', JSON.stringify(favoriteStores));
+//     });
+//   });
+// }
 
 
 
 
 
 // Adicionar ao histórico de pesquisas
-function addToSearchHistory(term) {
-  // Não adicionar se já existir ou estiver vazio
-  if (!term.trim() || searchHistory.includes(term)) return;
+// function addToSearchHistory(term) {
+//   // Não adicionar se já existir ou estiver vazio
+//   if (!term.trim() || searchHistory.includes(term)) return;
   
-  // Adicionar no início da lista
-  searchHistory.unshift(term);
+//   // Adicionar no início da lista
+//   searchHistory.unshift(term);
   
-  // Manter apenas os 5 últimos
-  if (searchHistory.length > 5) {
-    searchHistory.pop();
-  }
+//   // Manter apenas os 5 últimos
+//   if (searchHistory.length > 5) {
+//     searchHistory.pop();
+//   }
   
-  // Salvar e atualizar
-  localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-  loadSearchHistory();
-}
-// Carregar histórico de pesquisas
-function loadSearchHistory() {
-  listaPesquisasRecentes.innerHTML = '';
+//   // Salvar e atualizar
+//   localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+//   loadSearchHistory();
+// }
+// // Carregar histórico de pesquisas
+// function loadSearchHistory() {
+//   listaPesquisasRecentes.innerHTML = '';
   
-  if (searchHistory.length === 0) {
-    pesquisasRecentes.style.display = 'none';
-    return;
-  }
+//   if (searchHistory.length === 0) {
+//     pesquisasRecentes.style.display = 'none';
+//     return;
+//   }
   
-  searchHistory.forEach(term => {
-    const item = document.createElement('div');
-    item.classList.add('recent-item');
-    item.textContent = term;
+//   searchHistory.forEach(term => {
+//     const item = document.createElement('div');
+//     item.classList.add('recent-item');
+//     item.textContent = term;
     
-    item.addEventListener('click', () => {
-      homePageSearchInput.value = term;
-      searchInputText = term;
-      homePageProdutosDiv.style.display = 'flex';
-      homePageProdutosDiv.classList.add('fade-in');
-      pesquisasRecentes.style.display = 'none';
-    });
+//     item.addEventListener('click', () => {
+//       homePageSearchInput.value = term;
+//       searchInputText = term;
+//       homePageProdutosDiv.style.display = 'flex';
+//       homePageProdutosDiv.classList.add('fade-in');
+//       pesquisasRecentes.style.display = 'none';
+//     });
     
-    listaPesquisasRecentes.appendChild(item);
-  });
-}
+//     listaPesquisasRecentes.appendChild(item);
+//   });
+// }

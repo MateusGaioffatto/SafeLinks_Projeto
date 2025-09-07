@@ -162,6 +162,9 @@ body.dark-mode {
 }
 
 
+
+
+
 .homePageConteudoCentral {
   width: 100%;
   max-width: 1000px;
@@ -328,75 +331,15 @@ body.dark-mode .option-btn:hover {
   background: #4c6fff;
 }
 
-.homePageProdutosDiv {
-  position: relative;
-  width: 100%;
-  margin: 20px auto;
-  display: none;
-  border-radius: var(--border-radius);
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 10px 0;
-}
 
-body.dark-mode .homePageProdutosDiv {
-  background: rgba(45, 55, 72, 0.9);
-}
 
-.homePageProdutosUl {
-  display: flex;
-  width: inherit;
-  gap: 15px;
-  list-style: none;
-  padding: 20px;
-  margin: 0;
-  flex-wrap: wrap;
-}
-  .homePageProdutosLi {
-    position: relative;
-    display: flex;
-    cursor: pointer;
 
-    background: #fff;
-    background-size: cover;
-    background-position: center;
-    background-image: none;
 
-    flex: 0 0 180px;
-    flex-direction: column;
 
-    margin-bottom: 5px;
 
-    width: 180px;
-    height: 130px;
 
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
 
-    justify-content: center;
-    align-items: center;
 
-    transition: var(--transition);
-  }
-    .homePageProdutosLi:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
-    body.dark-mode .homePageProdutosLi:hover {
-      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-    }
-    .homePageProdutosLi:active {
-      transform: translateY(0);
-    }
-      .liProdutosTitulos {
-        position: relative;
-        top: 57%;
-
-        width: inherit;
-
-        text-align: center;
-        font-size: small;
-      }
 
 .favorite-btn {
   position: absolute;
@@ -417,6 +360,10 @@ body.dark-mode .homePageProdutosDiv {
 body.dark-mode .favorite-btn.active {
   color: #ff79a9;
 }
+
+
+
+
 
 .homePageModoEscuroClaro {
   position: relative;
@@ -442,6 +389,10 @@ body.dark-mode .homePageModoEscuroClaro {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+
+
+
+
 .instructions {
   text-align: center;
   margin-top: 30px;
@@ -453,6 +404,10 @@ body.dark-mode .homePageModoEscuroClaro {
 body.dark-mode .instructions {
   color: #a0aec0;
 }
+
+
+
+
 
 .homePagePesquisasRecentes {
   background: white;

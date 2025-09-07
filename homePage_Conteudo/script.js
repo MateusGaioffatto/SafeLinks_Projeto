@@ -2,10 +2,6 @@
 const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageSearchButton = document.getElementById("homePageSearchButtonID");
 
-// CAMPO DE ANÚNCIOS E PRODUTOS: VARIÁVEIS CONSTANTES
-const homePageProdutosDiv = document.getElementById("homePageProdutosDivID"); // VARIÁVEL CONSTANTE, DIV BOXES
-const homePageProdutosUl = document.getElementById("homePageProdutosUlID"); // VARIÁVEL CONSTANTE, UL LIST
-
 // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
 const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
 const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
@@ -28,18 +24,26 @@ let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; /
 // HISTÓRICO DE PESQUISA DO USUÁRIO: VARIÁVEL
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; // <= RESOLVER ISSO NO BACKEND
 
+
+
+
+
 // DADOS SALVOS LOCALMENTE AO CARREGAR A PÁGINA: FUNCTION
 document.addEventListener('DOMContentLoaded', function() {
-  initializeFavorites();
-  loadSearchHistory();
+  // initializeFavorites();
+  // loadSearchHistory();
   
-  // MODO ESCURO OU CLARO SALVO LOCALMENTE: IF & ELSE -> FUNCIION
+  // MODO ESCURO OU CLARO SALVO LOCALMENTE: IF & ELSE -> FUNCTION
   if (localStorage.getItem('darkMode') === 'enabled') {
     enableDarkMode();
   } else {
     disableDarkMode();
   }
 });
+
+
+
+
 
 // MODIFICAR MODO ESCURO OU CLÁRO: BUTTON -> FUNCTION
 modoEscuroClaroButton.addEventListener('click', function() {
