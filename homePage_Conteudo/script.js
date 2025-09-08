@@ -94,4 +94,4 @@ function verificarLarguraHomePage(mql) {
   // Initial check
   verificarLarguraHomePage(homePageWindowLargura);
   // Listen for changes
-  homePageWindowLargura.addEventListener("change", verificarLarguraHomePage);
+  homePageWindowLargura.addEventListener("change", verificarLarguraHomePage());

@@ -5,44 +5,71 @@ const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID"); 
 let produtosLi = []; // <= COMENTAR
 let produtosFoto = [] // <= COMENTAR
 let produtosTexto = []; // <= COMENTAR
+let produtosPreco = []; // <= COMENTAR
+let produtosIcone = []; // <= COMENTAR
+let produtosLojasNomes = []; // <= COMENTAR
+
 // COMENTAR =>
   for (let i = 0; i < 40; i++) {
-    produtosLi = document.createElement('li');
-      produtosLi.className = "resultadosProdutosLi";
+    produtosLi[i] = document.createElement('li');
+      produtosLi[i].className = "resultadosProdutosLi";
 
-    produtosFoto = document.createElement('img');
-      produtosFoto.className = "resultadosProdutosLiImg";
-      produtosFoto.src = 'SafeLinks_Favicon_Logo.png';
+    produtosFoto[i] = document.createElement('img');
+      produtosFoto[i].className = "resultadosProdutosLiImg";
 
-    produtosTexto = document.createElement('p');
-      produtosTexto.className = "liProdutosTitulos";
+    produtosTexto[i] = document.createElement('h1');
+      produtosTexto[i].className = "liProdutosTitulos";
 
-    produtosLi.appendChild(produtosFoto);
-    produtosLi.appendChild(produtosTexto);      
+    produtosPreco[i] = document.createElement('h2');
+      produtosPreco[i].className = "liProdutosPrecos";
 
-    resultadosProdutosUl.appendChild(produtosLi);
+    produtosIcone[i] = document.createElement('img');
+      produtosIcone[i].className = "liProdutosIconesImagens";
+  
+    produtosLojasNomes[i] = document.createElement('p');
+      produtosLojasNomes[i].className = "liProdutosLojasNomes";
+
+    produtosLi[i].appendChild(produtosFoto[i]);
+    produtosLi[i].appendChild(produtosTexto[i]); 
+    produtosLi[i].appendChild(produtosPreco[i]);
+    produtosLi[i].appendChild(produtosIcone[i]);
+    produtosLi[i].appendChild(produtosLojasNomes[i]);     
+
+    resultadosProdutosUl.appendChild(produtosLi[i]);
   }
-// }
-// COMENTAR =>
-function mostrarImagensDosProdutos(searchInputText) {
-  const resultadosProdutosUlLi = document.querySelectorAll(".homePageProdutosUl li");
-  const resultadosProdutosUlLiTextos = document.querySelectorAll(".homePageProdutosUl p");
-  const url = `http://localhost:3000/api/shopping?q=${encodeURIComponent(searchInputText)}`;
 
-  console.log(url);
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        for (let i = 0; i < resultadosProdutosUlLi.length; i++) {
-          resultadosProdutosUlLi[i].style.backgroundImage = `url('${data.shopping_results[i].thumbnail}')`;
-          resultadosProdutosUlLiTextos[i].textContent = data.shopping_results[i].title;
+
+// COMENTAR E ESTUDAR =>
+const params = new URLSearchParams(window.location.search);
+const searchQuery = params.get("query");
+
+async function fetchProducts() {
+    if (!searchQuery) return;
+
+    try {
+        const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(searchQuery)}`);
+        const data = await response.json();
+        console.log(data); // Log the entire response for debugging
+
+        // Process and display the products
+        if (data.shopping_results) {
+            data.shopping_results.forEach((product, index) => {
+                if (produtosFoto[index] && produtosTexto[index]) {
+                    produtosFoto[index].src = product.thumbnail;
+                    produtosTexto[index].textContent = product.title;
+                    produtosPreco[index].textContent = product.price ? `${product.price}` : 'Preço não disponível!';
+                    produtosIcone[index].src = product.source_icon;
+                    produtosLojasNomes[index].textContent = product.source;
+
+                    produtosLi[index].style.display = 'block';
+                }
+            });
         }
-    })
-    .catch(error => console.error('Erro ao buscar produtos:', error));
+    } catch (err) {
+        console.error("Error fetching products:", err);
+    }
 }
-
-// Exporta as funções se precisar em outros módulos
-window.mostrarImagensDosProdutos = mostrarImagensDosProdutos;
-// window.modificarAnunciosDeProdutos = modificarAnunciosDeProdutos;
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', fetchProducts);
 
 

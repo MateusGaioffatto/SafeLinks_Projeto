@@ -49,8 +49,7 @@ body.dark-mode .resultadosProdutosDiv {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 
     transition: var(--transition);
   }
@@ -66,15 +65,45 @@ body.dark-mode .resultadosProdutosDiv {
     }
 
       .resultadosProdutosLiImg {
-        width: 80%;
-        border: 1mm solid black;
+        position: relative;
+        top: 10%;
+
+        width: 70%;
+        height: 50%;
+
+        /* border: 1mm solid black; */
       }
       .liProdutosTitulos {
         position: relative;
-        top: 57%;
+        top: 15%;
 
         width: inherit;
+       
+        font-weight: 500;
+        font-size: medium;
 
-        text-align: center;
-        font-size: small;
+        overflow: hidden;
       }
+      .liProdutosPrecos {
+        position: relative;
+        top: 17%;
+
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .liProdutosIconesImagens {
+        display: flex;
+
+        position: relative;
+        top: 22%;
+        left: 8%;
+
+        width: 25px;
+      }
+       .liProdutosLojasNomes {
+        display: flex;
+
+        position: relative;
+        top: 15.5%;
+        left: 20%;
+       }

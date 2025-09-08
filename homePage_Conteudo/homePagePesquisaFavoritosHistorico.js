@@ -2,14 +2,16 @@
 homePageSearchInput.addEventListener("keydown", function() {
   searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
-      // mostrarImagensDosProdutos(searchInputText);
-      window.location.href = "http://127.0.0.1:5500/homePage_Conteudo/resultadosProdutos.html";
+      if (searchInputText.trim() !== "") { 
+        window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
+      }
     }  
   });
 homePageSearchButton.addEventListener('click', function() {
-  if (searchInputText !== "") {
-    // mostrarImagensDosProdutos(searchInputText);
-    window.location.href = "http://127.0.0.1:5500/homePage_Conteudo/resultadosProdutos.html";
+  searchInputText = homePageSearchInput.value;
+  if (searchInputText.trim() !== "") {
+    // COMERTAR =>
+    window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
   }
 })
     // Limpar pesquisa
