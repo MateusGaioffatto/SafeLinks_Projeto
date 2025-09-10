@@ -40,6 +40,7 @@ let produtosLink = [] // <= COMENTAR
     produtosLi[i].appendChild(produtosLojasNomes[i]);
 
     produtosLink[i].appendChild(produtosLi[i]);
+
     resultadosProdutosUl.appendChild(produtosLink[i]);
   }
 
@@ -60,17 +61,17 @@ async function fetchProducts() {
         // Process and display the products
         if (data.shopping_results) {
             data.shopping_results.forEach((product, index) => {
-                if (produtosFoto[index] && produtosTexto[index]) {
-                  produtosFoto[index].src = product.thumbnail;
-                  produtosTexto[index].textContent = product.title;
-                  produtosPreco[index].textContent = product.price ? `${product.price}` : 'Preço não disponível!';
-                  produtosIcone[index].src = product.source_icon;
-                  produtosLojasNomes[index].textContent = product.source;
+              if (produtosFoto[index] && produtosTexto[index]) {
+                produtosFoto[index].src = product.thumbnail;
+                produtosTexto[index].textContent = product.title;
+                produtosPreco[index].textContent = product.price ? `${product.price}` : 'Preço não disponível!';
+                produtosIcone[index].src = product.source_icon;
+                produtosLojasNomes[index].textContent = product.source;
                   produtosLink[index].href = product.product_link;
                     produtosLink[index].target = "_blank";
-                    console.log(produtosLink[index]);
-                  produtosLi[index].style.display = 'block';
-                }
+                  
+                produtosLi[index].style.display = 'block';
+              }
             });
         }
     } catch (err) {

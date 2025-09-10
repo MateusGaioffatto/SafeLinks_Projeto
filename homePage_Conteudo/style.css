@@ -151,11 +151,6 @@ body.dark-mode {
     body.dark-mode .navbar-links {
       background: rgba(45, 55, 72, 0.95);
     }
-    /* .navbar-links.active {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    } */
     .navbar-toggle {
       display: block;
     }
@@ -203,6 +198,16 @@ body.dark-mode .homePageTitulo {
 body.dark-mode .homePageSubTitulo {
   color: #b0b0b0;
 }
+
+
+
+
+
+
+
+
+
+
 .homePageSearchDiv {
   width: 100%;
   display: inline;
@@ -340,7 +345,6 @@ body.dark-mode .option-btn:hover {
 
 
 
-
 .favorite-btn {
   position: absolute;
   top: 8px;
@@ -360,6 +364,11 @@ body.dark-mode .option-btn:hover {
 body.dark-mode .favorite-btn.active {
   color: #ff79a9;
 }
+
+
+
+
+
 
 
 
@@ -393,6 +402,11 @@ body.dark-mode .homePageModoEscuroClaro {
 
 
 
+
+
+
+
+
 .instructions {
   text-align: center;
   margin-top: 30px;
@@ -404,6 +418,11 @@ body.dark-mode .homePageModoEscuroClaro {
 body.dark-mode .instructions {
   color: #a0aec0;
 }
+
+
+
+
+
 
 
 
