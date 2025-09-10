@@ -8,6 +8,7 @@ let produtosTexto = []; // <= COMENTAR
 let produtosPreco = []; // <= COMENTAR
 let produtosIcone = []; // <= COMENTAR
 let produtosLojasNomes = []; // <= COMENTAR
+let produtosLink = [] // <= COMENTAR
 
 // COMENTAR =>
   for (let i = 0; i < 40; i++) {
@@ -29,13 +30,17 @@ let produtosLojasNomes = []; // <= COMENTAR
     produtosLojasNomes[i] = document.createElement('p');
       produtosLojasNomes[i].className = "liProdutosLojasNomes";
 
+    produtosLink[i] = document.createElement('a');
+      produtosLink[i].className = "resultadosProdutosA";
+
     produtosLi[i].appendChild(produtosFoto[i]);
     produtosLi[i].appendChild(produtosTexto[i]); 
     produtosLi[i].appendChild(produtosPreco[i]);
     produtosLi[i].appendChild(produtosIcone[i]);
-    produtosLi[i].appendChild(produtosLojasNomes[i]);     
+    produtosLi[i].appendChild(produtosLojasNomes[i]);
 
-    resultadosProdutosUl.appendChild(produtosLi[i]);
+    produtosLink[i].appendChild(produtosLi[i]);
+    resultadosProdutosUl.appendChild(produtosLink[i]);
   }
 
 
@@ -47,6 +52,7 @@ async function fetchProducts() {
     if (!searchQuery) return;
 
     try {
+        document.title += ' ' + searchQuery;
         const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(searchQuery)}`);
         const data = await response.json();
         console.log(data); // Log the entire response for debugging
@@ -55,13 +61,15 @@ async function fetchProducts() {
         if (data.shopping_results) {
             data.shopping_results.forEach((product, index) => {
                 if (produtosFoto[index] && produtosTexto[index]) {
-                    produtosFoto[index].src = product.thumbnail;
-                    produtosTexto[index].textContent = product.title;
-                    produtosPreco[index].textContent = product.price ? `${product.price}` : 'Preço não disponível!';
-                    produtosIcone[index].src = product.source_icon;
-                    produtosLojasNomes[index].textContent = product.source;
-
-                    produtosLi[index].style.display = 'block';
+                  produtosFoto[index].src = product.thumbnail;
+                  produtosTexto[index].textContent = product.title;
+                  produtosPreco[index].textContent = product.price ? `${product.price}` : 'Preço não disponível!';
+                  produtosIcone[index].src = product.source_icon;
+                  produtosLojasNomes[index].textContent = product.source;
+                  produtosLink[index].href = product.product_link;
+                    produtosLink[index].target = "_blank";
+                    console.log(produtosLink[index]);
+                  produtosLi[index].style.display = 'block';
                 }
             });
         }
