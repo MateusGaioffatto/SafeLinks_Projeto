@@ -166,7 +166,7 @@ require_once 'config.php';
             <p id="homePageModoEscuroClaroTexto"> Modo </p>
           </li>
         </ul>
-        <div class="navbar-toggle" id="navbarToggle">
+        <div class="hamburguerMenu" id="hamburguerMenuID">
           <i class="fas fa-bars"></i>
         </div>
       </div>

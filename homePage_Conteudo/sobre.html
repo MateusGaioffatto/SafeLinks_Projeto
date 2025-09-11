@@ -131,7 +131,7 @@
         <li><a href="#"><i class="fas fa-history"></i> Histórico</a></li>
         <li><a href="sobre.html" class="active"><i class="fas fa-info-circle"></i> Sobre </a></li>
       </ul>
-      <div class="navbar-toggle" id="navbarToggle">
+      <div class="hamburguerMenu" id="hamburguerMenuID">
         <i class="fas fa-bars"></i>
       </div>
     </div>
@@ -248,11 +248,11 @@
       });
       
       // Menu responsivo (caso necessário)
-      const navbarToggle = document.getElementById('navbarToggle');
+      const hamburguerMenu = document.getElementById('hamburguerMenuID');
       const navbarLinks = document.getElementById('homePageNavBarLinksID');
       
-      if (navbarToggle) {
-        navbarToggle.addEventListener('click', function() {
+      if (hamburguerMenu) {
+        hamburguerMenu.addEventListener('click', function() {
           navbarLinks.classList.toggle('active');
         });
       }

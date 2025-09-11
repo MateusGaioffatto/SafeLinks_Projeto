@@ -73,12 +73,12 @@ function enableDarkMode() {
 
 
 // Navbar hamburger toggle
-const navbarToggle = document.getElementById("navbarToggle");
+const hamburguerMenu = document.getElementById("hamburguerMenuID");
 // const navbarLinks = document.querySelectorAll(".navbar-links li");
 const navBarLinks = document.getElementById("homePageNavBarLinksID");
 let navBarClickContagem = 0;
 
-navbarToggle.addEventListener("click", () => { 
+hamburguerMenu.addEventListener("click", () => { 
   navBarClickContagem++;
   if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
   else {navBarLinks.style.opacity = 0; navBarClickContagem = 0;}

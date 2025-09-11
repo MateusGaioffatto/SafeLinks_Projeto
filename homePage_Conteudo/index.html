@@ -8,31 +8,35 @@
   <title> SafeLinks - Pesquisa Segura de Produtos </title>
 
   <link rel="stylesheet" href="style.css"> <!-- HOMEPAGE ESTILOS: ARQUIVO CSS -->
+  <link rel="stylesheet" href="homePageNavBarStyle.css"> <!-- HOMEPAGE NAVBAR ESTILOS: ARQUIVO CSS -->
+  <link rel="stylesheet" href="homePageSearchBarStyle.css"> <!-- HOMEPAGE SEARCHBAR ESTILOS: ARQUIVO CSS -->
+
   <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png"> <!-- SITE: LOGO -->
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
 </head>
   
   <body>
-  <!-- NAVBAR -->
-    <div id="homePageNavBarMouseOver">
-      <nav class="homePageNavbar" id="homePageNavbarID">
 
-        <div class="navbar-container">
-        <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div>
-            <ul class="navbar-links" id="homePageNavBarLinksID">
-              <li><a href="#"><i class="fas fa-home"></i> Início </a></li>
-              <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li>
-              <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
-              <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
-              <li id="modoEscuroClaroLi">
-                <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">   <!-- HOMEPAGE: BOTÃO MODO ESCURO E CLARO -->
+    <div id="homePageNavBarMouseOver"> <!-- HOMEPAGE: NAVBAR, MOUSE OVER => ANIMAÇÃO -->
+      <nav class="homePageNavbar" id="homePageNavbarID"> <!-- HOMEPAGE: NAVBAR -->
+
+        <div class="navbar-container"> 
+        <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
+            <ul class="navbar-links" id="homePageNavBarLinksID"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
+              <li><a href="#"><i class="fas fa-home"></i> Início </a></li> <!-- HOMEPAGE: NAVBAR, LINK => INÍCIO -->
+              <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
+              <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+              <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
+              <li id="modoEscuroClaroLi"> <!-- HOMEPAGE: NAVBAR, BUTTON/LI => MODO ESCURO E CLARO -->
+                <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">   <!-- HOMEPAGE: NAVBAR, BUTTON => MODO ESCURO E CLARO --> 
                   <i class="fas fa-moon"></i> <!-- MODO ESCURO: ÍCONE -->
                 </button>
-                <p id="homePageModoEscuroClaroTexto"> Modo </p>
+                <p id="homePageModoEscuroClaroTexto"> Modo </p> <!-- MODO ESCURO E CLÁRO: TEXTO -->
               </li>
             </ul>
-            <div class="navbar-toggle" id="navbarToggle">
+            <div class="hamburguerMenu" id="hamburguerMenuID"> <!-- HOMEPAGE: NAVBAR, ÍCONE MENU HAMBURGUER -->
               <i class="fas fa-bars"></i>
             </div>
         </div>
