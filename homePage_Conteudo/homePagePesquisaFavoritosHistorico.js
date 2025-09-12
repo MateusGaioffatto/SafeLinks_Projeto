@@ -1,8 +1,12 @@
+  const urlRegex = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/[a-zA-Z0-9]+\.[^\s]{2,}|[a-zA-Z0-9]+\.[^\s]{2,})$/i;
 // COMERTAR =>
 homePageSearchInput.addEventListener("keydown", function() {
   searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
-      if (searchInputText.trim() !== "") { 
+      if (urlRegex.test(searchInputText.trim())) {
+        mostrarDadosDoSite(searchInputText.trim()); // <= DEFINIR FUNÇÃO EM NOVO DOCUMENTO JAVASCRIPT, COM NOME: dadosDoSite.js
+      }
+      else if (searchInputText.trim() !== "") { 
         window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
       }
     }  

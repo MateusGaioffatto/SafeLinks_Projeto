@@ -26,6 +26,22 @@ let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; // 
 
 
 
+// MODIFICAR TEXTO DE PLACEHOLDER: VARIÁVEIS
+const searchInputPlaceholders = ["Pesquise algum produto", "Entre com a URL de um site"];
+let placeholderIndex = 0;
+
+// MODIFICAR TEXTO DE PLACEHOLDER A CADA 5 SEGUNDOS: FUNCTION
+function modificarTextoPlaceholder() {
+  setTimeout(() => {
+    homePageSearchInput.placeholder = searchInputPlaceholders[placeholderIndex];
+    placeholderIndex = (placeholderIndex + 1) % searchInputPlaceholders.length;
+  }, 5000);
+}
+
+modificarTextoPlaceholder();
+setInterval(modificarTextoPlaceholder, 5000);
+
+
 
 
 // DADOS SALVOS LOCALMENTE AO CARREGAR A PÁGINA: FUNCTION

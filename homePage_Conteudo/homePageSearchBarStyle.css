@@ -47,9 +47,6 @@
   body.dark-mode .homePageSearchInput {
     color: var(--light);
   }
-  .homePageSearchInput::placeholder {
-    color: var(--gray);
-  }
   body.dark-mode .homePageSearchInput::placeholder {
     color: #a0aec0;
   }
