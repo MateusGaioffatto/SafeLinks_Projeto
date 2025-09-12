@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Resultados: </title>
     <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homePageNavBarStyle.css">
     <link rel="stylesheet" href="resultadosProdutos.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
 
@@ -14,10 +17,10 @@
 <body>
 
     <!-- NAVBAR: HOMEPAGE -->
-    <div id="homePageNavBarMouseOver">
+    <div id="homePageNavBarMouseOver" style="position: relative; bottom: -14px">
       <nav class="homePageNavbar" id="homePageNavbarID">
         <div class="navbar-container">
-        <div class="navbar-logo" id="homePageNavBarLogo"><a href="index.html"> SafeLinks </a></div>
+          <div class="navbar-logo" id="homePageNavBarLogo"><a href="index.html"> SafeLinks </a></div>
             <ul class="navbar-links" id="homePageNavBarLinksID">
               <li><a href="index.html"><i class="fas fa-home"></i> Início </a></li>
               <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li>
@@ -36,8 +39,6 @@
         </div>
       </nav>
     </div>
-
-    <!--------------------------------------------------------------------------------------------------->
 
     <div class="resultadosProdutosSearchDiv" id="resultadosProdutosSearchDivID"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA E BOTÕES-->
         <div class="resultadosProdutosBarraDePesquisa" id="resultadosProdutosBarraDePesquisaID"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA CONTEÚDOS -->
@@ -58,13 +59,6 @@
           </button>
         </div>
     </div>
-
-    <div class="homePagePesquisasRecentes" id="homePagePesquisasRecentesID"> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, CONTEÚDOS -->
-        <div class="pesquisasRecentesTitulo">Pesquisas recentes</div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, TÍTULO -->
-        <div class="pesquisasRecentesItems" id="pesquisasRecentesItemsID"></div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, ITENS PESQUISADOS -->
-    </div>  
-
-    <!--------------------------------------------------------------------------------------------------->
     
     <div class="resultadosProdutosDiv" id="resultadosProdutosDivID"> <!-- RESULTADOS PRODUTOS: CATÁLOGO DE PRODUTOS -->
         <a href="" class="resultadosProdutosA" id="resultadosProdutosAID"> <!-- RESULTADOS PRODUTOS: PRODUTOS, LINKS -->
@@ -80,6 +74,7 @@
         </ul>
     </div>
 
+    <script src="resultadosProdutosPesquisaFavoritosHistorico.js"></script>
     <script src="resultadosProdutos.js" type="module"></script>
 </body>
 </html>

@@ -8,15 +8,21 @@ homePageSearchInput.addEventListener("keydown", function() {
     }  
   });
 homePageSearchButton.addEventListener('click', function() {
-  searchInputText = homePageSearchInput.value;
+  searchInputText = homePageSearchInput.value || resultadosProdutosSearchInput.value;
   if (searchInputText.trim() !== "") {
     // COMERTAR =>
     window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
   }
 })
+
+
+
+
+
     // Limpar pesquisa
     barraDePesquisaLimparTexto.addEventListener('click', function() {
       homePageSearchInput.value = '';
+      resultadosProdutosSearchInput.value = '';
       searchInputText = '';
       homePageProdutosDiv.style.display = 'none';
       pesquisasRecentes.style.display = 'none';
