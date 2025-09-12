@@ -32,9 +32,19 @@ let placeholderIndex = 0;
 
 // MODIFICAR TEXTO DE PLACEHOLDER A CADA 5 SEGUNDOS: FUNCTION
 function modificarTextoPlaceholder() {
+    homePageSearchInput.classList.add("fade-out");
+
   setTimeout(() => {
     homePageSearchInput.placeholder = searchInputPlaceholders[placeholderIndex];
     placeholderIndex = (placeholderIndex + 1) % searchInputPlaceholders.length;
+
+    homePageSearchInput.classList.remove("fade-out");
+    homePageSearchInput.classList.add("fade-in");
+
+    setTimeout(() => {
+      homePageSearchInput.classList.remove("fade-in");
+    }, 500);
+
   }, 5000);
 }
 

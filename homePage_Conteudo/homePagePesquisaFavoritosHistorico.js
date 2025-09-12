@@ -4,6 +4,7 @@ homePageSearchInput.addEventListener("keydown", function() {
   searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
       if (urlRegex.test(searchInputText.trim())) {
+        console.log("URL Válida: ", searchInputText.trim() + "!");
         mostrarDadosDoSite(searchInputText.trim()); // <= DEFINIR FUNÇÃO EM NOVO DOCUMENTO JAVASCRIPT, COM NOME: dadosDoSite.js
       }
       else if (searchInputText.trim() !== "") { 
