@@ -133,3 +133,22 @@ body.dark-mode .homePageSubTitulo {
 .fade-in {
   animation: fadeIn 0.5s ease forwards;
 }
+
+
+
+
+
+.dadosSiteDiv {
+  background-color: white;
+
+  width: 70%;
+  height: auto;
+
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  padding: 12px;
+
+  text-align: center;
+  word-break: break-all;
+}

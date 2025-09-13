@@ -4,7 +4,7 @@
   display: inline;
   text-align: center;
 }
-.homePageBarraDePesquisa {
+.homePageBarraDePesquisa {  
   background: white;
   display: inline-flex;
   align-items: center;
@@ -44,14 +44,6 @@
   width: 300px;
   transition: var(--transition);
 }
-  /* .homePageSearchInput.fade-out::placeholder {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  .homePageSearchInput.fade-in::placeholder {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-  } */
   body.dark-mode .homePageSearchInput {
     color: var(--light);
   }

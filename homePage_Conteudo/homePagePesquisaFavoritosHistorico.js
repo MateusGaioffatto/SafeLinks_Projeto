@@ -4,7 +4,6 @@ homePageSearchInput.addEventListener("keydown", function() {
   searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
       if (urlRegex.test(searchInputText.trim())) {
-        console.log("URL Válida: ", searchInputText.trim() + "!");
         mostrarDadosDoSite(searchInputText.trim()); // <= DEFINIR FUNÇÃO EM NOVO DOCUMENTO JAVASCRIPT, COM NOME: dadosDoSite.js
       }
       else if (searchInputText.trim() !== "") { 
@@ -14,12 +13,14 @@ homePageSearchInput.addEventListener("keydown", function() {
   });
 homePageSearchButton.addEventListener('click', function() {
   searchInputText = homePageSearchInput.value || resultadosProdutosSearchInput.value;
-  if (searchInputText.trim() !== "") {
-    // COMERTAR =>
-    window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
-  }
+    if (urlRegex.test(searchInputText.trim())) {
+      mostrarDadosDoSite(searchInputText.trim()); // <= DEFINIR FUNÇÃO EM NOVO DOCUMENTO JAVASCRIPT, COM NOME: dadosDoSite.js
+    }
+    else if (searchInputText.trim() !== "") { 
+      window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
+    }
 })
-
+window.mostrarDadosDoSite;
 
 
 

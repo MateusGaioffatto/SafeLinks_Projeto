@@ -45,7 +45,7 @@ function modificarTextoPlaceholder() {
       homePageSearchInput.classList.remove("fade-in");
     }, 500);
 
-  }, 5000);
+  }, 3000);
 }
 
 modificarTextoPlaceholder();
