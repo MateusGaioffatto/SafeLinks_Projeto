@@ -2,9 +2,9 @@
 const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageSearchButton = document.getElementById("homePageSearchButtonID");
 
-// MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
-const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
-const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
+// // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
+// const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
+// const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
 
 // LIMPAR TEXTO INSERIDO: VARIÁVEL CONSTANTE, BUTTON
 const barraDePesquisaLimparTexto = document.getElementById("barraDePesquisaLimparTexto");
@@ -50,49 +50,6 @@ function modificarTextoPlaceholder() {
 
 modificarTextoPlaceholder();
 setInterval(modificarTextoPlaceholder, 5000);
-
-
-
-
-// DADOS SALVOS LOCALMENTE AO CARREGAR A PÁGINA: FUNCTION
-document.addEventListener('DOMContentLoaded', function() {
-  // initializeFavorites();
-  // loadSearchHistory();
-  
-  // MODO ESCURO OU CLARO SALVO LOCALMENTE: IF & ELSE -> FUNCTION
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    enableDarkMode();
-  } else {
-    disableDarkMode();
-  }
-});
-
-
-
-
-
-// MODIFICAR MODO ESCURO OU CLÁRO: BUTTON -> FUNCTION
-modoEscuroClaroButton.addEventListener('click', function() {
-  if (document.body.classList.contains('dark-mode')) {
-    disableDarkMode(); // SELECIONAR MODO CLÁRO: FUNCTION
-  } else {
-    enableDarkMode(); // SELECIONAR MODO ESCURO: FUNCTION
-  }
-});
-
-function disableDarkMode() {
-  document.body.classList.remove('dark-mode');
-  localStorage.setItem('darkMode', null);
-  modoEscuroClaroButton.innerHTML = '<i class="fas fa-moon"></i>';
-  modoEscuroClaroButton.title = "Modo escuro"
-}
-
-function enableDarkMode() {
-  document.body.classList.add('dark-mode');
-  localStorage.setItem('darkMode', 'enabled');
-  modoEscuroClaroButton.innerHTML = '<i class="fas fa-sun"></i>';
-  modoEscuroClaroButton.title = "Modo cláro"
-}
 
 
 

@@ -1,5 +1,35 @@
   const urlRegex = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/[a-zA-Z0-9]+\.[^\s]{2,}|[a-zA-Z0-9]+\.[^\s]{2,})$/i;
 // COMERTAR =>
+
+// Limpar pesquisa
+barraDePesquisaLimparTexto.addEventListener('click', function() {
+  homePageSearchInput.value = '';
+  searchInputText = '';
+  mostrarDadosDoSite(false);
+  pesquisasRecentes.style.display = 'none';
+});
+// Mostrar histórico de pesquisas
+barraDePesquisaHistorico.addEventListener('click', function() {
+  if (searchHistory.length > 0) {
+    pesquisasRecentes.style.display = pesquisasRecentes.style.display === 'block' ? 'none' : 'block';
+  } else {
+    alert('Nenhum histórico de pesquisa disponível!');
+  }
+});
+
+
+
+
+
+homePageSearchInput.addEventListener("input", function() {
+  const inputValue = this.value.trim();
+  if (inputValue === '') {mostrarDadosDoSite(false);}
+})
+
+
+
+
+
 homePageSearchInput.addEventListener("keydown", function() {
   searchInputText = homePageSearchInput.value;
     if (event.key === 'Enter') {
@@ -9,7 +39,7 @@ homePageSearchInput.addEventListener("keydown", function() {
       else if (searchInputText.trim() !== "") { 
         window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
       }
-    }  
+    }
   });
 homePageSearchButton.addEventListener('click', function() {
   searchInputText = homePageSearchInput.value || resultadosProdutosSearchInput.value;
@@ -24,26 +54,12 @@ window.mostrarDadosDoSite;
 
 
 
-
-    // Limpar pesquisa
-    barraDePesquisaLimparTexto.addEventListener('click', function() {
-      homePageSearchInput.value = '';
-      resultadosProdutosSearchInput.value = '';
-      searchInputText = '';
-      homePageProdutosDiv.style.display = 'none';
-      pesquisasRecentes.style.display = 'none';
-    });
-    // Mostrar histórico de pesquisas
-    barraDePesquisaHistorico.addEventListener('click', function() {
-      if (searchHistory.length > 0) {
-        pesquisasRecentes.style.display = pesquisasRecentes.style.display === 'block' ? 'none' : 'block';
-      } else {
-        alert('Nenhum histórico de pesquisa disponível!');
-      }
-    });
-
-
     
+
+
+
+
+
 
 
 // Inicializar favoritos
