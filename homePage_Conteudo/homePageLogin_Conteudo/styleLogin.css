@@ -226,10 +226,6 @@ body {
         }
 
 .loginGerarPassword {
-    position: relative;
-    bottom: 10px;
-    right: 10px;
-
     width: auto;
     height: auto;
 
@@ -240,12 +236,26 @@ body {
     color: #4361ee;
     font-weight: 600;
 
-    display: block;
-    padding: 12px;
+    display: inline;
 
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
+
+#loginShowPasswordIcone {
+    color: #b9b9b9;
+
+    visibility: visible;
+
+    right: 0;
+    top: 80px;    
+
+    cursor: pointer;
+}
+    #loginShowPasswordIcone u {
+        font-size: small;
+        font-family: Arial, Helvetica, sans-serif;
+    }
         
         .link {
             text-align: center;
