@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title> SafeLinks - Pesquisa Segura de Produtos </title>
+
+  <link rel="stylesheet" href="style.css"> <!-- HOMEPAGE ESTILOS: ARQUIVO CSS -->
+  <link rel="stylesheet" href="homePageNavBarStyle.css"> <!-- HOMEPAGE NAVBAR ESTILOS: ARQUIVO CSS -->
+  <link rel="stylesheet" href="homePageSearchBarStyle.css"> <!-- HOMEPAGE SEARCHBAR ESTILOS: ARQUIVO CSS -->
+
+  <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png"> <!-- SITE: LOGO -->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
+</head>
+  
+  <body>
+
+    <div id="homePageNavBarMouseOver"> <!-- HOMEPAGE: NAVBAR, MOUSE OVER => ANIMAÇÃO -->
+      <nav class="homePageNavbar" id="homePageNavbarID"> <!-- HOMEPAGE: NAVBAR -->
+
+        <div class="navbar-container"> 
+        <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
+            <ul class="navbar-links" id="homePageNavBarLinksID"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
+              <li><a href="#"><i class="fas fa-home"></i> Início </a></li> <!-- HOMEPAGE: NAVBAR, LINK => INÍCIO -->
+              <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
+              <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+              <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
+              <li id="modoEscuroClaroLi"> <!-- HOMEPAGE: NAVBAR, BUTTON/LI => MODO ESCURO E CLARO -->
+                <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">   <!-- HOMEPAGE: NAVBAR, BUTTON => MODO ESCURO E CLARO --> 
+                  <i class="fas fa-moon"></i> <!-- MODO ESCURO: ÍCONE -->
+                </button>
+                <p id="homePageModoEscuroClaroTexto"> Modo </p> <!-- MODO ESCURO E CLÁRO: TEXTO -->
+              </li>
+            </ul>
+            <div class="hamburguerMenu" id="hamburguerMenuID"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
+              <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
+            </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="homePageConteudoCentral"> <!-- HOMEPAGE: CONTEÚDO DO CENTRO -->
+      <header> <!-- HOMEPAGE: TÍTULO E SUBTÍTULO -->
+        <div class="homePageTitulo">SafeLinks</div> <!-- HOMEPAGE: TÍTULO -->
+        <div class="homePageSubTitulo">Pesquisa segura em lojas confiáveis</div> <!-- HOMEPAGE: SUBTÍTULO -->
+      </header>
+
+
+      <div class="homePageSearchDiv" id="homePageSearchDivID"> <!-- HOMEPAGE: BARRA DE PESQUISA E BOTÕES-->
+        <div class="homePageBarraDePesquisa" id="homePageBarraDePesquisaID"> <!-- HOMEPAGE: BARRA DE PESQUISA CONTEÚDOS -->
+          <input type="text" class="homePageSearchInput" id="homePageSearchInputID" autocomplete="off"> <!-- HOMEPAGE: BARRA DE PESQUISA -->
+            <button class="homePageSearchButton" id="homePageSearchButtonID" aria-label="Search"> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO -->
+              <i class="material-icons" id="homePageSearchIconID">search</i> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO, ÍCONE -->
+            </button>
+        </div>
+
+        <br>
+        
+        <div class="barraDePesquisaOpcoes"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES -->
+          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaLimparTexto"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, LIMPAR TEXTO -->
+            <i class="fas fa-eraser"></i> Limpar
+          </button>
+          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaHistorico"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, HISTÓRICO -->
+            <i class="fas fa-history"></i> Histórico
+          </button>
+        </div>
+      </div>
+
+      <div class="homePagePesquisasRecentes" id="homePagePesquisasRecentesID"> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, CONTEÚDOS -->
+        <div class="pesquisasRecentesTitulo">Pesquisas recentes</div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, TÍTULO -->
+        <div class="pesquisasRecentesItems" id="pesquisasRecentesItemsID"></div> <!-- HOMEPAGE: BARRA DE PESQUISA RECENTES, ITENS PESQUISADOS -->
+      </div>
+    </div>
+
+    <script src="script.js"></script> 
+    <script src="homePagePesquisaFavoritosHistorico.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Login e Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleLogin.css">   
+</head>
+<body>
+
+    <div id="loginNavBarMouseOver">
+        <nav class="loginNavbar" id="loginNavbarID">
+        <div class="navbar-container">
+            <div class="navbar-logo"><a href="homePage_Conteudo../index.html">SafeLinks</a></div>
+            <ul class="navbar-links" id="loginNavBarLinksID">
+                <li><a href="homePage_Conteudo../index.html"><i class="fas fa-home"></i> Início </a></li>
+                <li><a href="#"><i class="fa fa-bell"></i> Notificações </a></li>
+            </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h2 id="form-title">Login</h2>
+        </div>
+        
+        <div class="form-container">
+            <div class="message" id="message"></div>
+            
+            <form id="login-form" class="visible" action="login.php" method="POST">
+                <div class="form-control">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" name="email" placeholder="Seu e-mail" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="form-control">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" name="password" placeholder="Sua senha" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="forgot-password">
+                    <a href="#" id="show-recover">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="submit">Entrar</button>
+                
+                <div class="link">
+                    <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+                </div>
+            </form>
+            
+            <form id="register-form" class="hidden" action="register.php" method="POST">
+                <div class="form-control">
+                    <label for="register-name">Nome completo</label>
+                    <input type="text" id="register-name" name="name" placeholder="Seu nome completo" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="form-control">
+                    <label for="register-email">E-mail</label>
+                    <input type="email" id="register-email" name="email" placeholder="Seu e-mail" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="form-control">
+                    <label for="register-password">Senha</label>
+                    <input type="password" id="register-password" name="password" placeholder="Sua senha" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="form-control">
+                    <label for="register-password-confirm">Confirme sua senha</label>
+                    <input type="password" id="register-password-confirm" name="password_confirm" placeholder="Confirme sua senha" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <button type="submit">Cadastrar</button>
+                
+                <div class="link">
+                    <p>Já tem uma conta? <a href="#" id="show-login">Faça login</a></p>
+                </div>
+            </form>
+            
+            <form id="recover-form" class="hidden" action="recover.php" method="POST">
+                <div class="form-control">
+                    <label for="recover-email">E-mail</label>
+                    <input type="email" id="recover-email" name="email" placeholder="Seu e-mail" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <button type="submit">Recuperar Senha</button>
+                
+                <div class="link">
+                    <p>Lembrou sua senha? <a href="#" id="show-login-from-recover">Faça login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Elementos do DOM
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const recoverForm = document.getElementById('recover-form');
+        const showRegister = document.getElementById('show-register');
+        const showLogin = document.getElementById('show-login');
+        const showRecover = document.getElementById('show-recover');
+        const showLoginFromRecover = document.getElementById('show-login-from-recover');
+        const formTitle = document.getElementById('form-title');
+        const messageDiv = document.getElementById('message');
+
+        // Alternar entre formulários
+        showRegister.addEventListener('click', (e) => {
+            e.preventDefault();
+            hideAllForms();
+            registerForm.classList.add('visible');
+            formTitle.textContent = 'Cadastro';
+        });
+
+        showLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            hideAllForms();
+            loginForm.classList.add('visible');
+            formTitle.textContent = 'Login';
+        });
+
+        showRecover.addEventListener('click', (e) => {
+            e.preventDefault();
+            hideAllForms();
+            recoverForm.classList.add('visible');
+            formTitle.textContent = 'Recuperar Senha';
+        });
+
+        showLoginFromRecover.addEventListener('click', (e) => {
+            e.preventDefault();
+            hideAllForms();
+            loginForm.classList.add('visible');
+            formTitle.textContent = 'Login';
+        });
+
+        function hideAllForms() {
+            loginForm.classList.remove('visible');
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('visible');
+            registerForm.classList.add('hidden');
+            recoverForm.classList.remove('visible');
+            recoverForm.classList.add('hidden');
+        }
+
+        // Validação de formulários
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                // Validação básica do frontend
+                if (form.id === 'register-form') {
+                    const password = document.getElementById('register-password');
+                    const passwordConfirm = document.getElementById('register-password-confirm');
+                    
+                    if (password.value !== passwordConfirm.value) {
+                        e.preventDefault();
+                        showMessage('As senhas não coincidem!', 'error');
+                        return;
+                    }
+                }
+                
+                // Se a validação passar, o formulário será enviado para o PHP
+            });
+        });
+
+        // Validação em tempo real (exemplo para e-mail)
+        const emailInputs = document.querySelectorAll('input[type="email"]');
+        emailInputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.value && !isValidEmail(input.value)) {
+                    input.parentElement.classList.add('error');
+                    input.parentElement.querySelector('small').textContent = 'E-mail inválido';
+                } else if (input.value) {
+                    input.parentElement.classList.remove('error');
+                    input.parentElement.classList.add('success');
+                }
+            });
+        });
+
+        // Validação de confirmação de senha
+        const passwordConfirm = document.getElementById('register-password-confirm');
+        const password = document.getElementById('register-password');
+        
+        passwordConfirm.addEventListener('blur', () => {
+            if (passwordConfirm.value !== password.value) {
+                passwordConfirm.parentElement.classList.add('error');
+                passwordConfirm.parentElement.querySelector('small').textContent = 'As senhas não coincidem';
+            } else if (passwordConfirm.value) {
+                passwordConfirm.parentElement.classList.remove('error');
+                passwordConfirm.parentElement.classList.add('success');
+            }
+        });
+
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function showMessage(message, type) {
+            messageDiv.textContent = message;
+            messageDiv.className = 'message ' + (type === 'success' ? 'success' : 'error-msg');
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Verificar se há parâmetros de mensagem na URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        const messageType = urlParams.get('type');
+        
+        if (message) {
+            showMessage(decodeURIComponent(message), messageType || 'error');
+        }
+    </script>
+</body>
+</html>

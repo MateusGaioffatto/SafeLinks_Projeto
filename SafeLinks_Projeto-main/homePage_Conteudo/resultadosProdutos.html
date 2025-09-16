@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Resultados: </title>
+    <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homePageNavBarStyle.css">
+    <link rel="stylesheet" href="resultadosProdutos.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
+
+</head>
+<body>
+
+    <!-- NAVBAR: HOMEPAGE -->
+    <div id="homePageNavBarMouseOver" style="position: relative; bottom: -14px">
+      <nav class="homePageNavbar" id="homePageNavbarID">
+        <div class="navbar-container">
+          <div class="navbar-logo" id="homePageNavBarLogo"><a href="index.html"> SafeLinks </a></div>
+            <ul class="navbar-links" id="homePageNavBarLinksID">
+              <li><a href="index.html"><i class="fas fa-home"></i> Início </a></li>
+              <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li>
+              <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
+              <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
+              <li id="modoEscuroClaroLi">
+                <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">   <!-- HOMEPAGE: BOTÃO MODO ESCURO E CLARO -->
+                  <i class="fas fa-moon"></i> <!-- MODO ESCURO: ÍCONE -->
+                </button>
+                <p id="homePageModoEscuroClaroTexto"> Modo </p>
+              </li>
+            </ul>
+            <div class="hamburguerMenu" id="hamburguerMenu">
+              <i class="fas fa-bars"></i>
+            </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="resultadosProdutosSearchDiv" id="resultadosProdutosSearchDivID"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA E BOTÕES-->
+        <div class="resultadosProdutosBarraDePesquisa" id="resultadosProdutosBarraDePesquisaID"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA CONTEÚDOS -->
+          <input type="text" class="resultadosProdutosSearchInput" id="resultadosProdutosSearchInputID" autocomplete="off"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA -->
+            <button class="resultadosProdutosSearchButton" id="resultadosProdutosSearchButtonID" aria-label="Search"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA, BOTÃO -->
+              <i class="material-icons" id="resultadosProdutosSearchIconID">search</i> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA, BOTÃO, ÍCONE -->
+            </button>
+        </div>
+
+        <br>
+        
+        <div class="barraDePesquisaOpcoes"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES -->
+          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaLimparTexto"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, LIMPAR TEXTO -->
+            <i class="fas fa-eraser"></i> Limpar
+          </button>
+          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaHistorico"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, HISTÓRICO -->
+            <i class="fas fa-history"></i> Histórico
+          </button>
+        </div>
+    </div>
+    
+    <div class="resultadosProdutosDiv" id="resultadosProdutosDivID"> <!-- RESULTADOS PRODUTOS: CATÁLOGO DE PRODUTOS -->
+        <a href="" class="resultadosProdutosA" id="resultadosProdutosAID"> <!-- RESULTADOS PRODUTOS: PRODUTOS, LINKS -->
+            <li class="resultadosProdutosLi" id="genericoLi" style="display: none;"> <!-- RESULTADOS PRODUTOS: PRODUTOS -->
+                <img src="" alt="" class="resultadosProdutosLiImg" id="resultadosProdutosLiImgID"> <!-- RESULTADOS PRODUTOS: PRODUTOS, THUMBNAILS -->
+                <h1 class="liProdutosTitulos" id="genericoH1" style="display: none;"></h1> <!-- RESULTADOS PRODUTOS: PRODUTOS, TÍTULOS -->
+                <h2 class="liProdutosPrecos" id="genericoH2" style="display: none;"></h2> <!-- RESULTADOS PRODUTOS: PRODUTOS, PREÇOS -->
+                <img class="liProdutosIconesImagens" id="genericoIconeImagem" style="display: none;"></img> <!-- RESULTADOS PRODUTOS: PRODUTOS, ÍCONES -->
+                <p class="liProdutosLojasNomes" id="genericoP"></p> <!-- RESULTADOS PRODUTOS: PRODUTOS, NOME DAS LOJAS -->
+            </li>
+        </a>
+        <ul class="resultadosProdutosUl" id="resultadosProdutosUlID"> <!-- RESULTADOS PRODUTOS: BARRA DE LOJAS, LISTA DE PRODUTOS -->
+        </ul>
+    </div>
+
+    <script src="resultadosProdutosPesquisaFavoritosHistorico.js"></script>
+    <script src="resultadosProdutos.js" type="module"></script>
+</body>
+</html>

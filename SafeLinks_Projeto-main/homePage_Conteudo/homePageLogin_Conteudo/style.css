@@ -1,0 +1,135 @@
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}  
+
+:root {
+  --primary: #4361ee;
+  --secondary: #3a0ca3;
+  --accent: #f72585;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --success: #4cc9f0;
+  --border-radius: 12px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+
+
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+  transition: var(--transition);
+  margin: 0;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #1a237e, #311b92);
+  color: var(--light);
+}
+
+
+
+
+
+.homePageModoEscuroClaro {
+  position: relative;
+  left: 20px;
+
+  display: inline-flex;
+
+  border: none;
+  background: none;
+
+  font-size: large;
+
+  cursor: pointer;
+  transition: var(--transition);
+}
+  #homePageModoEscuroClaroID:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+body.dark-mode .homePageModoEscuroClaro {
+  background: var(--dark);
+  color: var(--light);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+.homePageConteudoCentral {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.homePageTitulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: homePageConteudoCentralOpacity 2s ease forwards;
+}
+
+body.dark-mode .homePageTitulo {
+  color: #6c8eff;
+}
+
+.homePageSubTitulo {
+  color: var(--gray);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: homePageConteudoCentralOpacity 2s ease forwards;
+}
+  
+
+body.dark-mode .homePageSubTitulo {
+  color: #b0b0b0;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .homePageSearchInput {
+    width: 200px;
+  }
+  
+  .homePageProdutosLi {
+    flex: 0 0 150px;
+    height: 110px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
