@@ -8,6 +8,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirecionar para a página de login
-header('Location: index.html?message=' . urlencode('Você saiu do sistema.') . '&type=success');
+header('Location: ../index.html');
 exit();
 ?>

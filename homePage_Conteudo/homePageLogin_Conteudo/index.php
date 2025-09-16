@@ -18,7 +18,7 @@ require_once 'config.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> SafeLinks - Pesquisa Segura de Produtos </title>
   <link rel="stylesheet" href="../style.css">
-  <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
+  <link rel="icon" href="../SafeLinks_Favicon_Logo.png" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -150,12 +150,12 @@ require_once 'config.php';
             <button class="user-menu-button">
               <i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['usuario_nome']); ?> <i class="fas fa-caret-down"></i>
             </button>
-            <div class="user-dropdown">
-              <a href="#" id="openProfileModal"><i class="fas fa-user-cog"></i> Meu Perfil</a>
-              <a href="#" id="viewFavorites"><i class="fas fa-heart"></i> Favoritos</a>
-              <a href="#" id="viewHistory"><i class="fas fa-history"></i> Histórico</a>
-              <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
-            </div>
+          <div class="user-dropdown">
+    <a href="#" id="openProfileModal"><i class="fas fa-user-cog"></i> Meu Perfil</a>
+    <a href="favoritos.html"><i class="fas fa-heart"></i> Favoritos</a> <!-- ← MUDADO -->
+    <a href="historico.html"><i class="fas fa-history"></i> Histórico</a> <!-- ← MUDADO -->
+    <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+</div>
           </li>
           <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
           <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
@@ -186,7 +186,11 @@ require_once 'config.php';
           <i class="material-icons" id="homePageSearchIconID">search</i>
         </button>
       </div>
+
       <br>
+
+
+
       <div class="barraDePesquisaOpcoes">
         <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaLimparTexto">
           <i class="fas fa-eraser"></i> Limpar
@@ -327,19 +331,7 @@ require_once 'config.php';
       }
     });
     
-    // Ver favoritos
-    document.getElementById("viewFavorites").addEventListener("click", function(e) {
-      e.preventDefault();
-      alert("Abrindo página de favoritos...");
-      // Aqui você pode implementar a exibição dos favoritos
-    });
-    
-    // Ver histórico
-    document.getElementById("viewHistory").addEventListener("click", function(e) {
-      e.preventDefault();
-      alert("Abrindo página de histórico...");
-      // Aqui você pode implementar a exibição do histórico
-    });
+   
   </script>
 </body>
 </html>

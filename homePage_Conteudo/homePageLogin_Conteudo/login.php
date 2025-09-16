@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['usuario_email'] = $usuario['email'];
                 $_SESSION['logado'] = true;
                 
-                header('Location: dashboard.php');
+                header('Location: index.php');
                 exit();
             } else {
                 header('Location: index.html?message=' . urlencode('Senha incorreta!') . '&type=error');
