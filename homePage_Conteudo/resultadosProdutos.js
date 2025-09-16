@@ -50,35 +50,43 @@ const params = new URLSearchParams(window.location.search);
 const searchQuery = params.get("query");
 
 async function fetchProducts() {
-    if (!searchQuery) return;
+  if (!searchQuery) return;
 
-    try {
-        document.title += ' ' + searchQuery;
-        const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(searchQuery)}`);
-        const data = await response.json();
-        console.log(data); // Log the entire response for debugging
-
-        // Process and display the products
-        if (data.shopping_results) {
-            data.shopping_results.forEach((product, index) => {
-              if (produtosFoto[index] && produtosTexto[index]) {
-                produtosFoto[index].src = product.thumbnail;
-                produtosTexto[index].textContent = product.title;
-                produtosPreco[index].textContent = product.price ? `${product.price}` : 'Preço não disponível!';
-                produtosIcone[index].src = product.source_icon;
-                produtosLojasNomes[index].textContent = product.source;
-                  produtosLink[index].href = product.product_link;
-                    produtosLink[index].target = "_blank";
-                  
-                produtosLi[index].style.display = 'block';
-              }
-            });
-        }
-    } catch (err) {
-        console.error("Error fetching products:", err);
+  try {
+    document.title += ' ' + searchQuery;
+    
+    // MODIFICAÇÃO AQUI: Usar api_search.php em vez de localhost:3000
+    const response = await fetch(`api_search.php?q=${encodeURIComponent(searchQuery)}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    
+    const data = await response.json();
+    console.log(data); // Log the entire response for debugging
+
+    // Process and display the products
+    if (data.shopping_results) {
+      data.shopping_results.forEach((product, index) => {
+        if (index < produtosFoto.length && produtosFoto[index] && produtosTexto[index]) {
+          produtosFoto[index].src = product.thumbnail;
+          produtosTexto[index].textContent = product.title;
+          produtosPreco[index].textContent = product.price ? `${product.price}` : 'Preço não disponível!';
+          produtosIcone[index].src = product.source_icon;
+          produtosLojasNomes[index].textContent = product.source;
+          produtosLink[index].href = product.product_link;
+          produtosLink[index].target = "_blank";
+          
+          produtosLi[index].style.display = 'block';
+        }
+      });
+    }
+  } catch (err) {
+    console.error("Error fetching products:", err);
+    // Adicionar mensagem de erro para o usuário
+    resultadosProdutosUl.innerHTML = '<p style="color: red; text-align: center;">Erro ao carregar produtos. Por favor, tente novamente.</p>';
+  }
 }
+
 // Call the function when the page loads
 document.addEventListener('DOMContentLoaded', fetchProducts);
-
-

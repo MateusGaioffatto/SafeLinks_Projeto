@@ -2,7 +2,7 @@
 const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageSearchButton = document.getElementById("homePageSearchButtonID");
 
-// // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
+// MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
 // const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
 // const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
 
@@ -23,6 +23,8 @@ let searchInputText = '';
 let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; // <= RESOLVER ISSO NO BACKEND
 // HISTÓRICO DE PESQUISA DO USUÁRIO: VARIÁVEL
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; // <= RESOLVER ISSO NO BACKEND
+
+
 
 
 

@@ -3,8 +3,8 @@ const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageSearchButton = document.getElementById("homePageSearchButtonID");
 
 // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
-const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
-const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
+// const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
+// const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
 
 // LIMPAR TEXTO INSERIDO: VARIÁVEL CONSTANTE, BUTTON
 const barraDePesquisaLimparTexto = document.getElementById("barraDePesquisaLimparTexto");
@@ -26,6 +26,32 @@ let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; // 
 
 
 
+
+
+// MODIFICAR TEXTO DE PLACEHOLDER: VARIÁVEIS
+const searchInputPlaceholders = ["Pesquise algum produto", "Entre com a URL de um site"];
+let placeholderIndex = 0;
+
+// MODIFICAR TEXTO DE PLACEHOLDER A CADA 5 SEGUNDOS: FUNCTION
+function modificarTextoPlaceholder() {
+    homePageSearchInput.classList.add("fade-out");
+
+  setTimeout(() => {
+    homePageSearchInput.placeholder = searchInputPlaceholders[placeholderIndex];
+    placeholderIndex = (placeholderIndex + 1) % searchInputPlaceholders.length;
+
+    homePageSearchInput.classList.remove("fade-out");
+    homePageSearchInput.classList.add("fade-in");
+
+    setTimeout(() => {
+      homePageSearchInput.classList.remove("fade-in");
+    }, 500);
+
+  }, 3000);
+}
+
+modificarTextoPlaceholder();
+setInterval(modificarTextoPlaceholder, 5000);
 
 
 // DADOS SALVOS LOCALMENTE AO CARREGAR A PÁGINA: FUNCTION
