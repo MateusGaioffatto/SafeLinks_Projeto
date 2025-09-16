@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="height: 100px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Login e Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styleLogin.css">   
+</head>
+<body>
+
+    <div id="loginNavBarMouseOver">
+        <nav class="loginNavbar" id="loginNavbarID">
+        <div class="navbar-container">
+            <div class="navbar-logo"><a href="../index.html">SafeLinks</a></div>
+            <ul class="navbar-links" id="loginNavBarLinksID">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Início </a></li>
+                <li><a href="#"><i class="fa fa-bell"></i> Notificações </a></li>
+            </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h2 id="form-title">Login</h2>
+        </div>
+        
+        <div class="form-container">
+            <div class="message" id="message"></div>
+            
+            <form id="login-form" class="visible" action="login.php" method="POST">
+                <div class="form-control">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" name="email" placeholder="Seu e-mail" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="form-control">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" name="password" placeholder="Sua senha" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="forgot-password">
+                    <a href="#" id="show-recover">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="submit" class="loginEntrarButton" id="loginEntraarButtonID">Entrar</button>
+                
+                <div class="link">
+                    <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+                </div>
+            </form>
+            
+            <form id="register-form" class="hidden" action="register.php" method="POST">
+                <div class="form-control">
+                    <label for="register-name">Nome completo</label>
+                    <input type="text" id="register-name" name="name" placeholder="Seu nome completo" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="form-control">
+                    <label for="register-email">E-mail</label>
+                    <input type="email" id="register-email" name="email" placeholder="Seu e-mail" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <div class="form-control">
+                    <label for="register-password">Senha</label>
+                    <input type="password" id="register-password" name="password" placeholder="Sua senha" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                        <button class="loginGerarPassword" id="loginGerarPasswordID">
+                            <u> Sugestão de Senha Forte </u>
+                        </button>                             
+                        <i class="fa-solid fa-eye" id="loginShowPasswordIcone"> <u>Mostrar Senha</u> </i> 
+                    </div>
+                
+                <div class="form-control">
+                    <label for="register-password-confirm">Confirme sua senha</label>
+                    <input type="password" id="register-password-confirm" name="password_confirm" placeholder="Confirme sua senha" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <button type="submit" class="loginCadastrarButton" id="loginCadastrarButtonID">Cadastrar</button>
+                
+                <div class="link">
+                    <p>Já tem uma conta? <a href="#" id="show-login">Faça login</a></p>
+                </div>
+            </form>
+            
+            <form id="recover-form" class="hidden" action="recover.php" method="POST">
+                <div class="form-control">
+                    <label for="recover-email">E-mail</label>
+                    <input type="email" id="recover-email" name="email" placeholder="Seu e-mail" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                </div>
+                
+                <button type="submit">Recuperar Senha</button>
+                
+                <div class="link">
+                    <p>Lembrou sua senha? <a href="#" id="show-login-from-recover">Faça login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../theme.js"></script>
+    <script src="loginScript.js"></script>
+</body>
+</html>
