@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Histórico - SafeLinks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+
+ /* Adicione estas regras ao estilo existente */
+    .btn-pesquisar {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .btn-pesquisar:hover {
+        opacity: 0.9;
+    }
+    
+    body.dark-mode .btn-pesquisar {
+        background: var(--primary-dark);
+    }
+
+
+        .historico-container {
+            max-width: 800px;
+            margin: 80px auto 20px;
+            padding: 20px;
+        }
+        
+        .historico-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .historico-list {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .historico-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .historico-item:last-child {
+            border-bottom: none;
+        }
+        
+        .historico-termo {
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .historico-data {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .btn-pesquisar {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .empty-state {
+            text-align: center;
+            color: #666;
+            padding: 40px;
+        }
+        
+        body.dark-mode .historico-list {
+            background: #2d3748;
+        }
+        
+        body.dark-mode .historico-item {
+            border-color: #4a5568;
+        }
+        
+        body.dark-mode .historico-termo {
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div id="homePageNavBarMouseOver">
+        <nav class="homePageNavbar" id="homePageNavbarID">
+            <div class="navbar-container">
+                <div class="navbar-logo"><a href="index.php">SafeLinks</a></div>
+                <ul class="navbar-links">
+                    <li><a href="index.php"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="index.php"><i class="fas fa-arrow-left"></i> Voltar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="historico-container">
+        <div class="historico-header">
+            <h1><i class="fas fa-history"></i> Meu Histórico de Pesquisas</h1>
+        </div>
+        
+        <div class="historico-list" id="historicoList">
+            <div class="empty-state">
+                <i class="fas fa-spinner fa-spin"></i> Carregando histórico...
+            </div>
+        </div>
+    </div>
+
+<!-- Modifique a parte do botão de pesquisa no histórico -->
+<script>
+    async function loadHistorico() {
+        try {
+            const response = await fetch('historico.php');
+            const historico = await response.json();
+            
+            const historicoList = document.getElementById('historicoList');
+            
+            if (historico.length === 0) {
+                historicoList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <h3>Nenhuma pesquisa realizada</h3>
+                        <p>Suas pesquisas aparecerão aqui</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            historicoList.innerHTML = historico.map(item => `
+                <div class="historico-item">
+                    <div style="display: flex; align-items: center;">
+                        ${item.imagem ? `
+                            <img src="${item.imagem}" alt="${item.produto_nome}" 
+                                 style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px; margin-right: 15px;">
+                        ` : ''}
+                        <div>
+                            <div class="historico-termo">${item.produto_nome || item.termo_pesquisa}</div>
+                            ${item.loja_nome ? `
+                                <div style="font-size: 14px; color: #666; margin: 5px 0;">
+                                    <strong>Loja:</strong> ${item.loja_nome} | 
+                                    <strong>Preço:</strong> ${item.preco || 'N/A'}
+                                </div>
+                            ` : ''}
+                            <div class="historico-data">Pesquisado em: ${new Date(item.data_pesquisa).toLocaleString('pt-BR')}</div>
+                            <div class="historico-data">Termo: "${item.termo_pesquisa}"</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn-pesquisar" onclick="pesquisarNovamente('${item.termo_pesquisa}')">
+                            <i class="fas fa-search"></i> Pesquisar
+                        </button>
+                        ${item.produto_url ? `
+                            <button class="btn-pesquisar" onclick="abrirProduto('${item.produto_url}')" 
+                                    style="background: var(--secondary);">
+                                <i class="fas fa-external-link-alt"></i> Abrir
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+            
+        } catch (error) {
+            console.error('Erro ao carregar histórico:', error);
+            document.getElementById('historicoList').innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Erro ao carregar histórico</h3>
+                    <p>Tente recarregar a página</p>
+                </div>
+            `;
+        }
+    }
+    
+    function pesquisarNovamente(termo) {
+        // Esta função apenas redireciona para a página de resultados
+        // Não deve salvar no histórico
+        window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(termo)}`;
+    }
+    
+    function abrirProduto(url) {
+        window.open(url, '_blank');
+    }
+    
+    // Carregar histórico ao abrir a página
+    document.addEventListener('DOMContentLoaded', loadHistorico);
+</script>
+</body>
+</html>
