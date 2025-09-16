@@ -117,6 +117,19 @@
             }
 
 
+    const loginShowPasswordIcone = document.getElementById('loginShowPasswordIcone');
+    const loginRegisterPassword = document.querySelectorAll('#loginFormPassword input');
+
+    let loginShowPasswordIconeClick = 0;
+    loginShowPasswordIcone.addEventListener('click', function() {
+        loginShowPasswordIconeClick++;
+
+        loginRegisterPassword.forEach(inputPassword => {
+            if (loginShowPasswordIconeClick === 1) {inputPassword.type = "text";}
+            else {inputPassword.type = "password"; loginShowPasswordIconeClick = 0;}
+        })
+    })
+    
     passwordConfirm.addEventListener('blur', () => {
         if (passwordConfirm.value !== password.value) {
             passwordConfirm.parentElement.classList.add('error');
