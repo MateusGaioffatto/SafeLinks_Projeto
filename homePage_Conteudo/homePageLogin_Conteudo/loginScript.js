@@ -7,6 +7,7 @@
     const showRecover = document.getElementById('show-recover');
     const showLoginFromRecover = document.getElementById('show-login-from-recover');
     const formTitle = document.getElementById('form-title');
+    const container = document.getElementById('loginContainerID')
     const messageDiv = document.getElementById('message');
 
     // Alternar entre formulários
@@ -14,6 +15,7 @@
         e.preventDefault();
         hideAllForms();
         registerForm.classList.add('visible');
+        container.style.top = '55px';
         formTitle.textContent = 'Cadastro';
     });
 
@@ -47,6 +49,10 @@
         recoverForm.classList.add('hidden');
     }
 
+
+    
+
+    
     // Validação de formulários
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {

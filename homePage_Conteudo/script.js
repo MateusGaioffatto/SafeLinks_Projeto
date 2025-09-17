@@ -83,11 +83,10 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
     searchInput.value = transcript;
     speechStatus.textContent = 'Texto reconhecido!';
   };
-
   recognition.onerror = () => {
     homePageVoiceSearchButton.classList.remove('active');
   };
-
+  
   recognition.onend = () => {
     recognizing = false;
     homePageVoiceSearchButton.classList.remove('active');
@@ -103,6 +102,9 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
   };
 } else {
   homePageVoiceSearchButton.disabled = true;
+  homePageVoiceIcon.textContent = 'mic_off';
+  homePageVoiceIcon.style.color = 'red';
+  homePageVoiceIcon.title = 'Navegador não reconhece pesquisa por voz';
 }
 
 
