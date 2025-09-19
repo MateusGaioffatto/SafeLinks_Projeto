@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login e Cadastro</title>
+    <title>Sistema de Login e Cadastro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styleLogin.css">  
-    <link rel="icon" href="../SafeLinks_Favicon_Logo.png" type="image/png"> 
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="styleLogin.css">   
 </head>
 <body>
-
-       <header> <!-- HOMEPAGE: TÍTULO E SUBTÍTULO -->
-        <div class="homePageTitulo"></div> <!-- HOMEPAGE: TÍTULO -->
-        
-      </header>
 
     <div id="loginNavBarMouseOver">
         <nav class="loginNavbar" id="loginNavbarID">
@@ -21,14 +16,15 @@
             <div class="navbar-logo"><a href="../index.html">SafeLinks</a></div>
             <ul class="navbar-links" id="loginNavBarLinksID">
                 <li><a href="../index.html"><i class="fas fa-home"></i> Início </a></li>
-                <li><a href="../dicas.html" class="active"><i class="fas fa-lightbulb"></i> Dicas </a></li>
                 <li><a href="#"><i class="fa fa-bell"></i> Notificações </a></li>
-                 <li><a href="../sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
+                <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
+                    <i class="fas fa-moon"></i>
+                </button>
             </ul>
             </div>
         </nav>
     </div>
-    <div class="container">
+    <div class="container" id="loginContainerID">
         <div class="header">
             <h2 id="form-title">Login</h2>
         </div>
@@ -99,6 +95,15 @@
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Mensagem de erro</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="registerFormNascimento"> Data de nascimento </label>
+                    <input type="date" id="registerFormNascimento" name="nascimento_register" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                    <u id="registerFormNascimentoReset"> Excluir campo </u>
                 </div>
                 
                 <button type="submit" class="loginCadastrarButton" id="loginCadastrarButtonID">Cadastrar</button>

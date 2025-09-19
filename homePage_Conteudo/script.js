@@ -1,6 +1,10 @@
 // CAMPO DE PESQUISA: VARIÁVEIS CONSTANTES
 const homePageSearchInput = document.getElementById("homePageSearchInputID");
 const homePageSearchButton = document.getElementById("homePageSearchButtonID");
+const homePageVoiceSearchButton = document.getElementById("homePageVoiceSearchButtonID");
+
+const homePageSearchIcon = document.getElementById("homePageSearchIconID");
+const homePageVoiceIcon = document.getElementById("homePageVoiceIconID");
 
 // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
 // const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
@@ -52,6 +56,56 @@ function modificarTextoPlaceholder() {
 
 modificarTextoPlaceholder();
 setInterval(modificarTextoPlaceholder, 5000);
+  
+
+
+
+
+let recognition;
+let recognizing = false;
+
+// Check browser support
+if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SpeechRecognition();
+  recognition.lang = 'pt-BR'; // Brazilian Portuguese
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  recognition.onstart = () => {
+    recognizing = true;
+    homePageVoiceSearchButton.classList.add('active');
+    homePageVoiceIcon.style.color = 'red';
+  };
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    searchInput.value = transcript;
+    speechStatus.textContent = 'Texto reconhecido!';
+  };
+  recognition.onerror = () => {
+    homePageVoiceSearchButton.classList.remove('active');
+  };
+  
+  recognition.onend = () => {
+    recognizing = false;
+    homePageVoiceSearchButton.classList.remove('active');
+  };
+
+  homePageVoiceSearchButton.onclick = () => {
+    if (recognizing) {
+      recognition.stop();
+      homePageVoiceIcon.style.color = '';
+    } else {
+      recognition.start();
+    }
+  };
+} else {
+  homePageVoiceSearchButton.disabled = true;
+  homePageVoiceIcon.textContent = 'mic_off';
+  homePageVoiceIcon.style.color = 'red';
+  homePageVoiceIcon.title = 'Navegador não reconhece pesquisa por voz';
+}
 
 
 

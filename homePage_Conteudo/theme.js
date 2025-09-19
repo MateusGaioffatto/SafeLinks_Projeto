@@ -1,6 +1,6 @@
 // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
-const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
 const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
+const modoEscuroClaroIcone = document.querySelector("#homePageModoEscuroClaroID i"); // VARIÁVEL CONSTANTE, ÍCONE
 
 // DADOS SALVOS LOCALMENTE AO CARREGAR A PÁGINA: FUNCTION
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,7 +32,7 @@ function disableDarkMode() {
   document.body.classList.remove('dark-mode');
   localStorage.setItem('darkMode', null);
   modoEscuroClaroButton.innerHTML = '<i class="fas fa-moon"></i>';
-  modoEscuroClaroButton.title = "Modo escuro"
+  modoEscuroClaroButton.title = "Modo escuro";
 }
 
 function enableDarkMode() {

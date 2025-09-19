@@ -422,27 +422,6 @@
   </div>
 <script src="theme.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const darkModeToggle = document.getElementById('homePageModoEscuroClaroID');
-      const body = document.body;
-      
-      if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      }
-      
-      darkModeToggle.addEventListener('click', function() {
-        body.classList.toggle('dark-mode');
-        
-        if (body.classList.contains('dark-mode')) {
-          localStorage.setItem('darkMode', 'enabled');
-          darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-          localStorage.setItem('darkMode', null);
-          darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-      });
-      
       const hamburguerMenu = document.getElementById('hamburguerMenuID');
       const navbarLinks = document.getElementById('homePageNavBarLinksID');
       
@@ -467,7 +446,6 @@
       }
       
       setTimeout(typeWriter, 500);
-    });
   </script>
 </body>
 </html>

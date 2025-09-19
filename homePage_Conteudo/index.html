@@ -7,37 +7,32 @@
 
   <title> SafeLinks - Pesquisa Segura de Produtos </title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="homePageNavBarStyle.css">
-  <link rel="stylesheet" href="homePageSearchBarStyle.css">
+  <link rel="stylesheet" href="style.css"> <!-- HOMEPAGE ESTILOS: ARQUIVO CSS -->
+  <link rel="stylesheet" href="homePageNavBarStyle.css"> <!-- HOMEPAGE NAVBAR ESTILOS: ARQUIVO CSS -->
+  <link rel="stylesheet" href="homePageSearchBarStyle.css"> <!-- HOMEPAGE SEARCHBAR ESTILOS: ARQUIVO CSS -->
 
-  <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
+  <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png"> <!-- SITE: LOGO -->
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
 </head>
   
   <body>
 
-    <div id="homePageNavBarMouseOver">
-      <nav class="homePageNavbar" id="homePageNavbarID">
-        <div class="navbar-container">
-          <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div>
-          <ul class="navbar-links" id="homePageNavBarLinksID">
-            <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li>
-            <li><a href="dicas.html"><i class="fas fa-lightbulb"></i> Dicas </a></li> <!-- NOVO BOTÃO DICAS -->
-            <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
-            <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
-            <li id="modoEscuroClaroLi">
-              <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
-                <i class="fas fa-moon"></i>
-              </button>
-              <p id="homePageModoEscuroClaroTexto"> Modo </p>
-            </li>
-          </ul>
-          <div class="hamburguerMenu" id="hamburguerMenuID">
-            <i class="fas fa-bars"></i>
-          </div>
+    <div id="homePageNavBarMouseOver"> <!-- HOMEPAGE: NAVBAR, MOUSE OVER => ANIMAÇÃO -->
+      <nav class="homePageNavbar" id="homePageNavbarID"> <!-- HOMEPAGE: NAVBAR -->
+
+        <div class="navbar-container"> 
+        <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
+            <ul class="navbar-links" id="homePageNavBarLinksID"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
+              <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
+              <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+              <!-- <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> HOMEPAGE: NAVBAR, LINK => SOBRE -->
+              <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i> Modo </li> <!-- <= CONCERTO NESCESSÁRIO! -->
+            </ul>
+            <div class="hamburguerMenu" id="hamburguerMenuID"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
+              <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
+            </div>
         </div>
       </nav>
     </div>
@@ -53,6 +48,9 @@
           <input type="text" class="homePageSearchInput" id="homePageSearchInputID" autocomplete="off" placeholder="Entre com a URL de um site"> <!-- HOMEPAGE: BARRA DE PESQUISA -->
             <button class="homePageSearchButton" id="homePageSearchButtonID" aria-label="Search"> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO -->
               <i class="material-icons" id="homePageSearchIconID">search</i> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO, ÍCONE -->
+            </button>
+            <button class="homePageVoiceSearchButton" id="homePageVoiceSearchButtonID" aria-label="VoiceSearch"> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO, PESQUISE POR VOZ -->
+              <i class="material-icons" id="homePageVoiceIconID">mic</i>
             </button>
         </div>
 

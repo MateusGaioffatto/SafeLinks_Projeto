@@ -84,6 +84,33 @@
       color: white;
     }
 
+/* BUTTON => BOTÃO DE PESQUISA POR VOZ: ESTILOS */
+  .homePageVoiceSearchButton {
+    background: none;
+    border: none;
+    padding-left: 15px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    transition: var(--transition);
+  }
+    #homePageVoiceIconID {
+      width: 24px;
+      height: 24px;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+      body.dark-mode #homePageVoiceIconID {
+        color: #6c8eff;
+      }
+      .homePageVoiceSearchButton:hover #homePageVoiceIconID {
+        color: black;
+        transform: scale(1.1);
+      }
+      body.dark-mode .homePageVoiceSearchButton:hover #homePageVoiceIconID {
+        color: white;
+      }
+
 
 
 

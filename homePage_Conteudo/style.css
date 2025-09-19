@@ -30,11 +30,6 @@ body {
   align-items: center;
   background: linear-gradient(135deg, #e0f7fa, #bbdefb);
 
-  /* background-image: url("ChatGPT Image Sep 14, 2025, 05_24_10 PM.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; */
-
   transition: var(--transition);
   margin: 0;
 }
@@ -58,7 +53,7 @@ body.dark-mode {
   background: none;
 
   font-size: large;
-
+  
   cursor: pointer;
   transition: var(--transition);
 }

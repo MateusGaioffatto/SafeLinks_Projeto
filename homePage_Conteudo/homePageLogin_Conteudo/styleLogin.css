@@ -20,7 +20,7 @@ body {
 
 
 #loginNavBarMouseOver {
-    position: fixed;
+    position: absolute;
     top: 0;
 
     margin: 0;
@@ -98,7 +98,7 @@ body {
             max-width: 100%;
             overflow: hidden;
             position: relative;
-            top: 50px;
+            top: 25px;
         }
             body.dark-mode .container {
                 background: rgba(45, 55, 72, 0.95);
@@ -253,12 +253,38 @@ body {
     font-size: smaller;
 
     cursor: pointer;
+
+    transition: all 0.3s ease;;
 }
     #loginShowPasswordIcone u {
         font-size: small;
         font-family: Arial, Helvetica, sans-serif;
     }   
-        
+    #loginShowPasswordIcone:hover {
+        color: black;
+    }
+    body.dark-mode #loginShowPasswordIcone:hover {
+        transform: scale(1.1);
+        color: #6c8eff;
+    }
+
+
+
+
+
+#registerFormNascimento::-webkit-calendar-picker-indicator {
+    display: none;
+}
+    #registerFormNascimentoReset {
+        color: #4361ee;
+
+        font-weight: 550;
+        font-size: 12.5px;
+
+        cursor: pointer;
+    }
+
+
         .link {
             text-align: center;
             margin-top: 20px;
