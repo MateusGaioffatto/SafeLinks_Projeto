@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Login e Cadastro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="styleLogin.css">   
 </head>
 <body>
@@ -16,6 +17,9 @@
             <ul class="navbar-links" id="loginNavBarLinksID">
                 <li><a href="../index.html"><i class="fas fa-home"></i> Início </a></li>
                 <li><a href="#"><i class="fa fa-bell"></i> Notificações </a></li>
+                <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
+                    <i class="fas fa-moon"></i>
+                </button>
             </ul>
             </div>
         </nav>
@@ -91,6 +95,15 @@
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Mensagem de erro</small>
+                </div>
+
+                <div class="form-control">
+                    <label for="registerFormNascimento"> Data de nascimento </label>
+                    <input type="date" id="registerFormNascimento" name="nascimento_register" required>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Mensagem de erro</small>
+                    <u id="registerFormNascimentoReset"> Excluir campo </u>
                 </div>
                 
                 <button type="submit" class="loginCadastrarButton" id="loginCadastrarButtonID">Cadastrar</button>

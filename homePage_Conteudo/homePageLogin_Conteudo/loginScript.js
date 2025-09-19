@@ -10,6 +10,7 @@
     const container = document.getElementById('loginContainerID')
     const messageDiv = document.getElementById('message');
 
+
     // Alternar entre formulários
     showRegister.addEventListener('click', (e) => {
         e.preventDefault();
@@ -135,7 +136,22 @@
             else {inputPassword.type = "password"; loginShowPasswordIconeClick = 0;}
         })
     })
+
+
     
+
+
+    const registerFormNascimento = document.getElementById('registerFormNascimento');
+    const registerFormNascimentoValor = registerFormNascimento.value;
+
+    const registerFormNascimentoReset = document.getElementById('registerFormNascimentoReset');
+    registerFormNascimentoReset.addEventListener('click', () => {
+        registerFormNascimento.value = "";
+        registerFormNascimento.parentElement.classList.remove('error');
+        registerFormNascimento.parentElement.classList.remove('success');
+    });
+
+
     passwordConfirm.addEventListener('blur', () => {
         if (passwordConfirm.value !== password.value) {
             passwordConfirm.parentElement.classList.add('error');

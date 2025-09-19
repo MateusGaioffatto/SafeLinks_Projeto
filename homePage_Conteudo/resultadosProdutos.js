@@ -1,6 +1,93 @@
 // CAMPO DE ANÚNCIOS E PRODUTOS: VARIÁVEIS CONSTANTES
+const resultadosProdutosHamburguerMenu = document.getElementById('hamburguerMenu');
+const resultadosProdutosNavbarLinks = document.querySelectorAll('.navbar-links');
+
+
 const resultadosProdutosDiv = document.getElementById("resultadosProdutosDivID"); // VARIÁVEL CONSTANTE, DIV BOXES
 const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID"); // VARIÁVEL CONSTANTE, UL LIST
+
+const resultadosProdutosVoiceSearchButton = document.getElementById("resultadosProdutosVoiceSearchButtonID");
+
+const resultadosProdutosSearchIcon = document.getElementById("resultadosProdutosSearchIconID");
+const resultadosProdutosVoiceIcon = document.getElementById("resultadosProdutosVoiceIconID");
+
+
+
+
+let hamburguerMenuClick = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    resultadosProdutosHamburguerMenu.addEventListener('click', () => {
+      hamburguerMenuClick++;
+      if (hamburguerMenuClick === 1) {
+        resultadosProdutosNavbarLinks.forEach(link => {
+          link.style.opacity = 1;
+          link.style.pointerEvents = 'auto';
+        })
+      }
+      else {
+        resultadosProdutosNavbarLinks.forEach(link => {
+          link.style.opacity = 0;
+          link.style.pointerEvents = 'none';
+          hamburguerMenuClick = 0;
+        })
+      }
+    });
+});
+
+
+
+
+
+let recognition;
+let recognizing = false;
+
+// Check browser support
+if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  recognition = new SpeechRecognition();
+  recognition.lang = 'pt-BR'; // Brazilian Portuguese
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  recognition.onstart = () => {
+    recognizing = true;
+    resultadosProdutosVoiceSearchButton.classList.add('active');
+    resultadosProdutosVoiceIcon.style.color = 'red';
+  };
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    searchInput.value = transcript;
+    speechStatus.textContent = 'Texto reconhecido!';
+  };
+  recognition.onerror = () => {
+    resultadosProdutosVoiceSearchButton.classList.remove('active');
+  };
+  
+  recognition.onend = () => {
+    recognizing = false;
+    resultadosProdutosVoiceSearchButton.classList.remove('active');
+  };
+
+  resultadosProdutosVoiceSearchButton.onclick = () => {
+    if (recognizing) {
+      recognition.stop();
+      resultadosProdutosVoiceIcon.style.color = '';
+    } else {
+      recognition.start();
+    }
+  };
+} 
+else {
+    resultadosProdutosVoiceSearchButton.disabled = true;
+    resultadosProdutosVoiceIcon.textContent = 'mic_off';
+    resultadosProdutosVoiceIcon.style.color = 'red';
+    resultadosProdutosVoiceIcon.title = 'Navegador não reconhece pesquisa por voz';
+}
+
+
+
+
 
 let produtosLi = []; // <= COMENTAR
 let produtosFoto = [] // <= COMENTAR

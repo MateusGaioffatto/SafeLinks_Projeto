@@ -7,7 +7,6 @@
     <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="homePageNavBarStyle.css">
     <link rel="stylesheet" href="resultadosProdutos.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
@@ -16,22 +15,17 @@
 </head>
 <body>
 
-    <!-- NAVBAR: HOMEPAGE -->
-    <div id="homePageNavBarMouseOver" style="position: relative; bottom: -14px">
-      <nav class="homePageNavbar" id="homePageNavbarID">
+    <!-- RESULTADOS PRODUTOS: HOMEPAGE -->
+    <div id="resultadosProdutosNavBarMouseOver">
+      <nav class="resultadosProdutosNavbar" id="resutadosProdutosNavbarID">
         <div class="navbar-container">
-          <div class="navbar-logo" id="homePageNavBarLogo"><a href="index.html"> SafeLinks </a></div>
-            <ul class="navbar-links" id="homePageNavBarLinksID">
+          <div class="navbar-logo" id="resutadosProdutosNavBarLogo"><a href="index.html"> SafeLinks </a></div>
+            <ul class="navbar-links" id="resutadosProdutosLinksID">
               <li><a href="index.html"><i class="fas fa-home"></i> Início </a></li>
               <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li>
               <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
-              <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
-              <li id="modoEscuroClaroLi">
-                <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">   <!-- HOMEPAGE: BOTÃO MODO ESCURO E CLARO -->
-                  <i class="fas fa-moon"></i> <!-- MODO ESCURO: ÍCONE -->
-                </button>
-                <p id="homePageModoEscuroClaroTexto"> Modo </p>
-              </li>
+              <!-- <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> -->
+              <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i></li>
             </ul>
             <div class="hamburguerMenu" id="hamburguerMenu">
               <i class="fas fa-bars"></i>
@@ -45,6 +39,9 @@
           <input type="text" class="resultadosProdutosSearchInput" id="resultadosProdutosSearchInputID" autocomplete="off"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA -->
             <button class="resultadosProdutosSearchButton" id="resultadosProdutosSearchButtonID" aria-label="Search"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA, BOTÃO -->
               <i class="material-icons" id="resultadosProdutosSearchIconID">search</i> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA, BOTÃO, ÍCONE -->
+            </button>
+            <button class="resultadosProdutosVoiceSearchButton" id="resultadosProdutosVoiceSearchButtonID" aria-label="VoiceSearch"> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO, PESQUISE POR VOZ -->
+              <i class="material-icons" id="resultadosProdutosVoiceIconID">mic</i>
             </button>
         </div>
 

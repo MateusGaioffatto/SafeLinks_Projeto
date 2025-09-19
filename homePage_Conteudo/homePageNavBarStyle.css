@@ -44,7 +44,7 @@
 
 .navbar-links {
   list-style: none;
-  display: flex;
+  display: inline-flex;
   gap: 20px;
 }
   #usuarioLoginLi {
@@ -92,7 +92,7 @@
 @media (max-width: 768px) {
   .navbar-links {
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
     flex-direction: column;
@@ -107,10 +107,8 @@
     transition: var(--transition);
   }
   #homePageModoEscuroClaroID {
-    position: inherit;
-  }
-  #homePageModoEscuroClaroTexto {
-    left: 2px;
+    position: relative;
+    left: 0px;
   }
     body.dark-mode .navbar-links {
       background: rgba(45, 55, 72, 0.95);
