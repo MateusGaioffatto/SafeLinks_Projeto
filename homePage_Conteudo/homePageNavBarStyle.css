@@ -1,0 +1,226 @@
+.homePageNavbar {
+  position: fixed;
+  top: -55px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+  transition: top 0.4s ease;
+  z-index: 99;
+}
+  body.dark-mode .homePageNavbar {
+    background: rgba(45, 55, 72, 0.95);
+  }
+
+#homePageNavBarMouseOver {
+  position: relative;
+  bottom: 170px;
+  width: 100%;
+  height: 50px;
+}
+  #homePageNavBarMouseOver:hover .homePageNavbar {
+    top: 0px;
+  }
+
+.navbar-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+  .navbar-logo a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  body.dark-mode .navbar-logo a {
+    color: #6c8eff;
+  }
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#usuarioLoginLi {
+  display: inline-flex;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.navbar-links li a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+body.dark-mode .navbar-links li a {
+  color: var(--light);
+}
+
+body.dark-mode .navbar-links li a:hover {
+  color: #6c8eff;
+  background-color: rgba(108, 142, 255, 0.1);
+}
+
+/* Estilos específicos para o menu do usuário */
+.user-menu {
+  position: relative;
+}
+
+.user-menu-button {
+  background: none;
+  border: none;
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.user-menu-button:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+body.dark-mode .user-menu-button {
+  color: var(--light);
+}
+
+body.dark-mode .user-menu-button:hover {
+  color: #6c8eff;
+  background-color: rgba(108, 142, 255, 0.1);
+}
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+body.dark-mode .user-dropdown {
+  background-color: #2d3748;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.user-dropdown a {
+  color: var(--dark);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+body.dark-mode .user-dropdown a {
+  color: var(--light);
+}
+
+.user-dropdown a:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  color: var(--primary);
+}
+
+body.dark-mode .user-dropdown a:hover {
+  background-color: rgba(108, 142, 255, 0.1);
+  color: #6c8eff;
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+
+.hamburguerMenu {
+  display: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--dark);
+}
+  body.dark-mode .hamburguerMenu {
+    color: var(--light);
+  }
+
+#homePageModoEscuroClaroTexto {
+  cursor: pointer;
+  position: relative;
+  left: 22px;
+  display: inline;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: visible;
+    transition: var(--transition);
+  }
+  
+  .user-menu {
+    width: 100%;
+  }
+  
+  .user-dropdown {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 10px;
+  }
+  
+  #homePageModoEscuroClaroID {
+    position: inherit;
+  }
+  
+  #homePageModoEscuroClaroTexto {
+    left: 2px;
+  }
+  
+  body.dark-mode .navbar-links {
+    background: rgba(45, 55, 72, 0.95);
+  }
+  
+  .hamburguerMenu {
+    display: block;
+  }
+}
