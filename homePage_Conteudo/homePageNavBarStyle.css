@@ -67,15 +67,22 @@
       color: #6c8eff;
     }
 
+    
 .hamburguerMenu {
   display: none;
   font-size: 1.4rem;
   cursor: pointer;
+  border: none;
+  background: none;
   color: var(--dark);
 }
   body.dark-mode .hamburguerMenu {
     color: var(--light);
   }
+
+
+
+
 
 #homePageModoEscuroClaroTexto {
   cursor: pointer;
@@ -83,6 +90,10 @@
   left: 22px;
   display: inline;
 }
+
+
+
+
 
 /* Responsive navbar */
 @media (max-width: 768px) {

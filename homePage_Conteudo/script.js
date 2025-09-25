@@ -6,9 +6,9 @@ const homePageVoiceSearchButton = document.getElementById("homePageVoiceSearchBu
 const homePageSearchIcon = document.getElementById("homePageSearchIconID");
 const homePageVoiceIcon = document.getElementById("homePageVoiceIconID");
 
-// MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
-// const modoEscuroClaroLi = document.getElementById("modoEscuroClaroLi"); // VARIÁVEL CONSTANTE, LI ITEM
-// const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
+
+
+
 
 // LIMPAR TEXTO INSERIDO: VARIÁVEL CONSTANTE, BUTTON
 const barraDePesquisaLimparTexto = document.getElementById("barraDePesquisaLimparTexto");
@@ -56,43 +56,45 @@ function modificarTextoPlaceholder() {
 
 modificarTextoPlaceholder();
 setInterval(modificarTextoPlaceholder, 5000);
-  
+ 
 
 
 
 
+// PESQUISA POR VOZ: VARIÁVEIS
 let recognition;
 let recognizing = false;
 
-// Check browser support
-if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+// PESQUISA POR VOZ: FUNÇÕES
+if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) { // VERIFICAR SE O NAVEGADOR É COMPATÍVEL
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   recognition = new SpeechRecognition();
-  recognition.lang = 'pt-BR'; // Brazilian Portuguese
+  recognition.lang = 'pt-BR';
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
 
-  recognition.onstart = () => {
+  recognition.onstart = () => { // PESQUISA POR VOZ: INÍCIO DO RECONHECIMENTO
     recognizing = true;
     homePageVoiceSearchButton.classList.add('active');
     homePageVoiceIcon.style.color = 'red';
   };
 
-  recognition.onresult = (event) => {
+  recognition.onresult = (event) => { // PESQUISA POR VOZ: VALOR EM TEXTO RESULTADO DO RECONHECIMENTO
     const transcript = event.results[0][0].transcript;
     searchInput.value = transcript;
     speechStatus.textContent = 'Texto reconhecido!';
+    console.log(transcript);
   };
-  recognition.onerror = () => {
+  recognition.onerror = () => { // PESQUISA POR VOZ: ERRO NO RECONHECIMENTO
     homePageVoiceSearchButton.classList.remove('active');
   };
   
-  recognition.onend = () => {
+  recognition.onend = () => { // PESQUISA POR VOZ: FIM DO RECONHECIMENTO
     recognizing = false;
     homePageVoiceSearchButton.classList.remove('active');
   };
 
-  homePageVoiceSearchButton.onclick = () => {
+  homePageVoiceSearchButton.onclick = () => { // PESQUISA POR VOZ: BOTÃO DE INÍCIO/FIM DO RECONHECIMENTO
     if (recognizing) {
       recognition.stop();
       homePageVoiceIcon.style.color = '';
@@ -111,26 +113,25 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
 
 
 
-// Navbar hamburger toggle
+// MENU HAMBURGUER: VARIÁVEIS
 const hamburguerMenu = document.getElementById("hamburguerMenuID");
-// const navbarLinks = document.querySelectorAll(".navbar-links li");
 const navBarLinks = document.getElementById("homePageNavBarLinksID");
+const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
 let navBarClickContagem = 0;
 
+// MENU HAMBURGUER: FUNÇÕES
 hamburguerMenu.addEventListener("click", () => { 
   navBarClickContagem++;
   if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
-  else {navBarLinks.style.opacity = 0; navBarClickContagem = 0;}
-  
-});
-
-const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
-function verificarLarguraHomePage(mql) {
-  if (!mql.matches) {
-    navBarLinks.style.opacity = 1; navBarClickContagem = 0;
+  else {
+    navBarLinks.style.opacity = 0; 
+    navBarClickContagem = 0;
   }
-}
-  // Initial check
-  verificarLarguraHomePage(homePageWindowLargura);
-  // Listen for changes
-  homePageWindowLargura.addEventListener("change", verificarLarguraHomePage());
+});
+homePageWindowLargura.addEventListener("change", () => {
+  if (!homePageWindowLargura.matches) {
+      navBarLinks.style.opacity = 1;
+      navBarClickContagem = 0;
+  }
+  else {navBarLinks.style.opacity = 0;}
+});
