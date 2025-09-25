@@ -29,39 +29,37 @@ require_once 'config.php';
   
 <body>
   <!-- NAVBAR -->
-  <div id="homePageNavBarMouseOver">
-    <nav class="homePageNavbar" id="homePageNavbarID">
-      <div class="navbar-container">
-        <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div>
-        <ul class="navbar-links" id="homePageNavBarLinksID">
-          <li><a href="#"><i class="fas fa-home"></i> Início </a></li>
-          <li><a href="../dicas.html"><i class="fas fa-lightbulb"></i> Dicas </a></li> <!-- NOVO BOTÃO DICAS -->
-          <li class="user-menu">
-            <button class="user-menu-button">
-              <i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['usuario_nome']); ?> <i class="fas fa-caret-down"></i>
-            </button>
-            <div class="user-dropdown">
-              <a href="#" id="openProfileModal"><i class="fas fa-user-cog"></i> Meu Perfil</a>
-              <a href="favoritos.html"><i class="fas fa-heart"></i> Favoritos</a>
-              <a href="historico.html"><i class="fas fa-history"></i> Histórico</a>
-              <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
-            </div>
-          </li>
-          <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
-          <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
-          <li id="modoEscuroClaroLi">
-            <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
-              <i class="fas fa-moon"></i>
-            </button>
-            <p id="homePageModoEscuroClaroTexto"> Modo </p>
-          </li>
-        </ul>
-        <div class="hamburguerMenu" id="hamburguerMenuID">
-          <i class="fas fa-bars"></i>
-        </div>
+  <nav class="homePageNavbar" id="homePageNavbarID">
+    <div class="navbar-container">
+      <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div>
+      <ul class="navbar-links" id="homePageNavBarLinksID">
+        <li><a href="#"><i class="fas fa-home"></i> Início </a></li>
+        <li><a href="../dicas.html"><i class="fas fa-lightbulb"></i> Dicas </a></li> <!-- NOVO BOTÃO DICAS -->
+        <li class="user-menu">
+          <button class="user-menu-button">
+            <i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['usuario_nome']); ?> <i class="fas fa-caret-down"></i>
+          </button>
+          <div class="user-dropdown">
+            <a href="#" id="openProfileModal"><i class="fas fa-user-cog"></i> Meu Perfil</a>
+            <a href="favoritos.html"><i class="fas fa-heart"></i> Favoritos</a>
+            <a href="historico.html"><i class="fas fa-history"></i> Histórico</a>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+          </div>
+        </li>
+        <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
+        <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
+        <li id="modoEscuroClaroLi">
+          <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
+            <i class="fas fa-moon"></i>
+          </button>
+          <p id="homePageModoEscuroClaroTexto"> Modo </p>
+        </li>
+      </ul>
+      <div class="hamburguerMenu" id="hamburguerMenuID">
+        <i class="fas fa-bars"></i>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 
   <!-- ... resto do conteúdo permanece igual ... -->
 

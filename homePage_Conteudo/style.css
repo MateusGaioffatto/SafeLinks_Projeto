@@ -73,6 +73,8 @@ body.dark-mode .homePageModoEscuroClaro {
 
 
 .homePageConteudoCentral {
+  position: relative;
+  top: 2rem;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
