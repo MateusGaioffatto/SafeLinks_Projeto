@@ -14,26 +14,47 @@ const resultadosProdutosVoiceIcon = document.getElementById("resultadosProdutosV
 
 
 
-let hamburguerMenuClick = 0;
-document.addEventListener('DOMContentLoaded', () => {
-    resultadosProdutosHamburguerMenu.addEventListener('click', () => {
-      hamburguerMenuClick++;
-      if (hamburguerMenuClick === 1) {
-        resultadosProdutosNavbarLinks.forEach(link => {
-          link.style.opacity = 1;
-          link.style.pointerEvents = 'auto';
-        })
-      }
-      else {
-        resultadosProdutosNavbarLinks.forEach(link => {
-          link.style.opacity = 0;
-          link.style.pointerEvents = 'none';
-          hamburguerMenuClick = 0;
-        })
-      }
-    });
-});
+// let hamburguerMenuClick = 0;
+// document.addEventListener('DOMContentLoaded', () => {
+//     resultadosProdutosHamburguerMenu.addEventListener('click', () => {
+//       hamburguerMenuClick++;
+//       if (hamburguerMenuClick === 1) {
+//         resultadosProdutosNavbarLinks.forEach(link => {
+//           link.style.opacity = 1;
+//           link.style.pointerEvents = 'auto';
+//         })
+//       }
+//       else {
+//         resultadosProdutosNavbarLinks.forEach(link => {
+//           link.style.opacity = 0;
+//           link.style.pointerEvents = 'none';
+//           hamburguerMenuClick = 0;
+//         })
+//       }
+//     });
+// });
+// MENU HAMBURGUER: VARIÁVEIS
+  const hamburguerMenu = document.getElementById("hamburguerMenu");
+  const navBarLinks = document.getElementById("resutadosProdutosLinksID");
+  const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
+  let navBarClickContagem = 0;
 
+  // MENU HAMBURGUER: FUNÇÕES
+  hamburguerMenu.addEventListener("click", () => { 
+  navBarClickContagem++;
+  if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
+  else {
+  navBarLinks.style.opacity = 0; 
+  navBarClickContagem = 0;
+  }
+  });
+  homePageWindowLargura.addEventListener("change", () => {
+  if (!homePageWindowLargura.matches) {
+    navBarLinks.style.opacity = 1;
+    navBarClickContagem = 0;
+  }
+  else {navBarLinks.style.opacity = 0;}
+  });
 
 
 
