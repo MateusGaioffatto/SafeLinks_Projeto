@@ -1,0 +1,82 @@
+.btn-pesquisar {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+    .btn-pesquisar:hover {
+        opacity: 0.9;
+    }
+        body.dark-mode .btn-pesquisar {
+            background: var(--primary-dark);
+        }
+
+
+
+
+
+.historico-container {
+    max-width: 800px;
+    margin: 80px auto 20px;
+    padding: 20px;
+}
+    .historico-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .historico-list {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .historico-item {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .historico-item:last-child {
+        border-bottom: none;
+    }
+    .historico-termo {
+        font-size: 16px;
+        color: #333;
+    }
+    .historico-data {
+        font-size: 12px;
+    }
+
+
+
+
+
+.btn-pesquisar {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.empty-state {
+    text-align: center;
+    padding: 40px;
+}
+    .empty-state i {
+        color: red;
+    }
+
+
+
+
+
+body.dark-mode .historico-list {background: #2d3748;}
+body.dark-mode .historico-item {border-color: #4a5568;}
+body.dark-mode .historico-termo {color: #e2e8f0;}

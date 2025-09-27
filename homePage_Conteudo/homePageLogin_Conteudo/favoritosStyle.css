@@ -1,0 +1,156 @@
+.favoritos-container {
+  max-width: 1200px;
+  margin: 80px auto 20px;
+  padding: 20px;
+}
+    .favoritos-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .favoritos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .favorito-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+        .favorito-item:hover {
+            transform: translateY(-5px);
+        }
+    .favorito-imagem {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        background: #f8f9fa;
+        padding: 20px;
+    }
+    .favorito-conteudo {
+        padding: 15px;
+    }
+    .favorito-titulo {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        height: 44px;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+    .favorito-preco {
+        font-size: 18px;
+        font-weight: 700;
+        color: #2c5530;
+        margin-bottom: 8px;
+    }
+    .favorito-loja {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .favorito-loja img {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+    }
+    .favorito-acoes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+
+
+.btn-visitar {
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+    .btn-visitar:hover {
+    background: #2980b9;
+    }
+
+
+
+.btn-remover {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+    .btn-remover:hover {
+    background: #c0392b;
+    }
+
+
+
+
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  grid-column: 1 / -1;
+}
+.empty-state i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: red;
+}
+.empty-state p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+
+
+
+/* Dark mode styles */
+body.dark-mode .favorito-item {background: #2d3748;}
+body.dark-mode .favorito-titulo {color: #e2e8f0;}
+body.dark-mode .favorito-preco {color: #68d391;}
+body.dark-mode .favorito-loja {color: #a0aec0;}
+body.dark-mode .favorito-imagem {background: #4a5568;}
+
+
+
+
+
+@media (max-width: 768px) {
+  .favoritos-grid {grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));}
+  .favoritos-container {
+    margin-top: 60px;
+    padding: 15px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .favoritos-grid {grid-template-columns: 1fr;}
+}
