@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SafeLinks - Meu Perfil </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="shortcut icon" href="../SafeLinks_Favicon_Logo.png">
+
+    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="../homePageNavBarStyle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="homePageNavbar" id="homePageNavbarID"> <!-- HOMEPAGE: NAVBAR -->
+        <div class="navbar-container"> 
+        <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
+            <ul class="navbar-links" id="homePageNavBarLinksID"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
+                <li><a href="../index.html"><i class="fas fa-home"></i> Início </a></li>
+                <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+                <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
+                <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
+                <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i></li> <!-- <= CONCERTO NESCESSÁRIO! -->
+            </ul>
+            <div class="hamburguerMenu" id="hamburguerMenuID"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
+                <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
+            </div>
+        </div>
+    </nav>
+    <nav class="perfilNavbarEsquerdo" id="perfilNavbarEsquerdoID"> <!-- PERFIL: NAVBAR LATERAL ESQUERDO -->
+        <div class="perfilNavbarEsquerdoDiv" id="perfilNavbarEsquerdoDivID">
+            <button> PERFIL </button>   
+            <ul class="perfilNavbarEsquerdoPerfilUl" id="perfilNavbarEsquerdoPerfilUlID">
+                <li> <i class="fa-regular fa-id-card"></i> Meus Dados </li>
+                <li> <i class="fas fa-heart"></i> Favoritos </li>
+                <li> <i class="fas fa-history"></i> Histórico </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+<script src="perfil.js"></script>
+<script src="../script.js"></script>
+<script src="../theme.js"></script>
+</html>
