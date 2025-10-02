@@ -9,7 +9,7 @@
   z-index: 99;
 }
   body.dark-mode .homePageNavbar {
-  background: rgba(45, 55, 72, 0.95);
+    background: rgba(45, 55, 72, 0.95);
   }
   @keyframes homePageNavBarShow {
     to {

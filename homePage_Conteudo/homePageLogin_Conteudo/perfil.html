@@ -29,16 +29,20 @@
             </div>
         </div>
     </nav>
-    <nav class="perfilNavbarEsquerdo" id="perfilNavbarEsquerdoID"> <!-- PERFIL: NAVBAR LATERAL ESQUERDO -->
-        <div class="perfilNavbarEsquerdoDiv" id="perfilNavbarEsquerdoDivID">
-            <button> PERFIL </button>   
-            <ul class="perfilNavbarEsquerdoPerfilUl" id="perfilNavbarEsquerdoPerfilUlID">
-                <li> <i class="fa-regular fa-id-card"></i> Meus Dados </li>
-                <li> <i class="fas fa-heart"></i> Favoritos </li>
-                <li> <i class="fas fa-history"></i> Histórico </li>
-            </ul>
+    <div class="perfilContainer">
+        <nav class="perfilNavbarEsquerdo" id="perfilNavbarEsquerdoID"> <!-- PERFIL: NAVBAR LATERAL ESQUERDO -->
+            <div class="perfilNavbarEsquerdoDiv" id="perfilNavbarEsquerdoDivID">
+                <button> PERFIL <i class="fa-solid fa-angle-up" id="perfilNavbarEsquerdoButtonArrowIcon"></i> </button>   
+                <ul class="perfilNavbarEsquerdoPerfilUl" id="perfilNavbarEsquerdoPerfilUlID">
+                    <li> <i class="fa-regular fa-id-card"></i> Meus Dados </li>
+                    <li> <i class="fas fa-heart"></i> Favoritos </li>
+                    <li> <i class="fas fa-history"></i> Histórico </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="perfilDados" id="perfilDadosID">
         </div>
-    </nav>
+    </div>
 </body>
 <script src="perfil.js"></script>
 <script src="../script.js"></script>

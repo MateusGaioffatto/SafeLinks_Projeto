@@ -28,6 +28,8 @@ function createUserTables($conn) {
         nome VARCHAR(100) NOT NULL,
         email VARCHAR(100) NOT NULL UNIQUE,
         senha VARCHAR(255) NOT NULL,
+        -- user_dataNascimento DATE NOT NULL, <= SUGESTÃO: user_dataNascimento = data de nascimento do usuário
+        -- user_idade INT NOT NULL, <= SUGESTÃO: user_idade = idade recente do usuário
         data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
     )";
 
