@@ -125,6 +125,8 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
 
+    justify-content: center;
+
     z-index: 1;
 
     display: none;
@@ -132,8 +134,41 @@
     body.dark-mode .perfilDados {
         background: rgba(55, 55, 72);
     }
-    @media (max-width: 500px) {
-        .perfilContainer {flex-direction: column;}
-        .perfilNavbarEsquerdo {width: 100%;}
-        .perfilDados {display: none;}
+
+
+
+
+
+.voltarPerfilUl {
+    display: none;
+
+    position: relative;
+    top: 40vh;
+
+    width: 100px;
+    height: 35px;
+
+    background-color: #fff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+    cursor: pointer;
+}
+    body.dark-mode .voltarPerfilUl {
+        background: rgba(45, 55, 72, 0.95);
     }
+
+
+
+
+
+@media (max-width: 500px) {
+    .perfilContainer {flex-direction: column;}
+    .perfilNavbarEsquerdo {width: 100%;}
+    .perfilDados {display: none;}
+    .voltarPerfilUl {display: flex;}
+}
