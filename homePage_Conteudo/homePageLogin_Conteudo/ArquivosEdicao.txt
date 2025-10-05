@@ -1,0 +1,4 @@
+favoritos.html => Manter favoritos.html ou continuar com favoritos.php
+historico.html => Manter historico.html ou continuar com historico.php
+
+favoritos.API.php => Existe nescesidade de existir do arquivo ser separado?

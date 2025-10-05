@@ -1,85 +1,45 @@
-<?php
-session_start();
-require_once 'config.php';
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meus Produtos Favoritos - SafeLinks</title>
+        <link rel="stylesheet" href="favoritosStyle.css">
+        <link rel="stylesheet" href="../homePageNavBarStyle.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="../SafeLinks_Favicon_Logo.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+    <!-- NAVBAR -->
+    <nav class="homePageNavbar" id="homePageNavbarID">
+        <div class="navbar-container">
+            <div class="navbar-logo"><a href="../index.html">SafeLinks</a></div>
+            <ul class="navbar-links" id="favoritosNavBarLinksID">
+                <li id="usuarioLoginLi"><a href="login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
+                <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+                <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
+                <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
+                <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i></li> <!-- <= CONCERTO NESCESSÁRIO! -->
+            </ul>
+            <div class="hamburguerMenu" id="hamburguerMenuID"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
 
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    http_response_code(401);
-    echo json_encode(['error' => 'Não autorizado']);
-    exit();
-}
-
-header('Content-Type: application/json');
-
-$usuario_id = $_SESSION['usuario_id'];
-$conn = getDBConnection();
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Buscar produtos favoritos
-    try {
-        $stmt = $conn->prepare("SELECT id, usuario_id, produto_nome, produto_url, loja_nome, preco, imagem, data_adicao 
-                               FROM favoritos 
-                               WHERE usuario_id = ? 
-                               ORDER BY data_adicao DESC");
-        $stmt->execute([$usuario_id]);
-        $favoritos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($favoritos);
-    } catch (PDOException $e) {
-        http_response_code(500);
-        echo json_encode(['error' => 'Erro ao buscar favoritos: ' . $e->getMessage()]);
-    }
-    
-} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Adicionar/remover favorito
-    $dados = json_decode(file_get_contents('php://input'), true);
-    
-    $produto_nome = $dados['produto_nome'] ?? '';
-    $produto_url = $dados['produto_url'] ?? '';
-    $loja_nome = $dados['loja_nome'] ?? '';
-    $preco = $dados['preco'] ?? '';
-    $imagem = $dados['imagem'] ?? '';
-    $acao = $dados['acao'] ?? '';
-    
-    // Permitir remoção apenas com a URL (para compatibilidade com a página de favoritos)
-    if (($acao === 'remover' && !empty($produto_url)) || 
-        ($acao === 'adicionar' && !empty($produto_nome) && !empty($produto_url))) {
+    <div class="favoritos-container">
+        <div class="favoritos-header">
+            <h1><i class="fas fa-heart"></i> Meus Produtos Favoritos</h1>
+            <p>Gerencie todos os produtos que você salvou para consultas futuras</p>
+        </div>
         
-        try {
-            if ($acao === 'adicionar') {
-                // Verificar se já existe para evitar duplicatas
-                $stmt = $conn->prepare("SELECT id FROM favoritos 
-                                       WHERE usuario_id = ? AND produto_url = ?");
-                $stmt->execute([$usuario_id, $produto_url]);
-                
-                if ($stmt->rowCount() === 0) {
-                    $stmt = $conn->prepare("INSERT INTO favoritos 
-                                          (usuario_id, produto_nome, produto_url, loja_nome, preco, imagem, data_adicao) 
-                                          VALUES (?, ?, ?, ?, ?, ?, NOW())");
-                    $stmt->execute([$usuario_id, $produto_nome, $produto_url, $loja_nome, $preco, $imagem]);
-                    echo json_encode(['success' => true, 'message' => 'Produto adicionado aos favoritos']);
-                } else {
-                    echo json_encode(['success' => false, 'message' => 'Produto já está nos favoritos']);
-                }
-            } elseif ($acao === 'remover') {
-                $stmt = $conn->prepare("DELETE FROM favoritos 
-                                       WHERE usuario_id = ? AND produto_url = ?");
-                $stmt->execute([$usuario_id, $produto_url]);
-                
-                if ($stmt->rowCount() > 0) {
-                    echo json_encode(['success' => true, 'message' => 'Produto removido dos favoritos']);
-                } else {
-                    echo json_encode(['success' => false, 'message' => 'Produto não encontrado nos favoritos']);
-                }
-            }
-        } catch (PDOException $e) {
-            http_response_code(500);
-            echo json_encode(['error' => 'Erro ao atualizar favoritos: ' . $e->getMessage()]);
-        }
-    } else {
-        http_response_code(400);
-        echo json_encode(['error' => 'Dados inválidos']);
-    }
-} else {
-    http_response_code(405);
-    echo json_encode(['error' => 'Método não permitido']);
-}
-?>
+        <div class="favoritos-grid" id="favoritosGrid">
+            <div class="empty-state">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Carregando seus produtos favoritos...</p>
+            </div>
+        </div>
+    </div>
+    <script src="favoritosScript.js"></script>
+    <script src="../theme.js"></script>
+</body>
+</html>

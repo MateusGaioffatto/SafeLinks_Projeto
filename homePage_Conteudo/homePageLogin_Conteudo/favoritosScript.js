@@ -6,6 +6,10 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+
+
+
+
 // Função para tentar obter imagem do produto
 function getProductImageFromData(produto) {
     // Se houver campo de imagem no banco, use-o
@@ -27,27 +31,14 @@ function getProductImageFromData(produto) {
     return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSI gaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+UHJvZHV0bzwvdGV4dD48L3N2Zz4=';
 }
 
-// Função para obter ícone da loja
-// function getStoreIcon(storeName) {
-//     const storeIcons = {
-//         'Amazon': 'https://www.amazon.com/favicon.ico',
-//         'Mercado Livre': 'https://www.mercadolivre.com/favicon.ico',
-//         'Americanas': 'https://www.americanas.com/favicon.ico',
-//         'Submarino': 'https://www.submarino.com/favicon.ico',
-//         'Magazine Luiza': 'https://www.magazineluiza.com.br/favicon.ico',
-//         'Casas Bahia': 'https://www.casasbahia.com.br/favicon.ico',
-//         'AliExpress': 'https://www.aliexpress.com/favicon.ico',
-//         'Shopee': 'https://www.shopee.com.br/favicon.ico',
-//         'Amazon.com.br': 'https://www.amazon.com.br/favicon.ico'
-//     };
-    
-//     return storeIcons[storeName] || `https://www.google.com/s2/favicons?domain=${encodeURIComponent(storeName.toLowerCase().replace(/\s+/g, ''))}.com.br&size=32`;
-// }
+
+
+
 
 async function loadFavoritos() {
     try {
         console.log('Carregando favoritos...');
-        const response = await fetch('favoritos.php');
+        const response = await fetch('favoritos_API.php');
         
         if (!response.ok) {
             throw new Error(`Erro HTTP: ${response.status}`);
@@ -169,7 +160,7 @@ async function removerFavorito(produtoUrlEncoded) {
     if (!confirm('Tem certeza que deseja remover este produto dos favoritos?')) return;
     
     try {
-        const response = await fetch('favoritos.php', {
+        const response = await fetch('favoritos_API.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

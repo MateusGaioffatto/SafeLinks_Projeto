@@ -6,10 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = $_POST['password'];
+    $data_nascimento = $_POST['nascimento_register'];
     $confirmar_senha = $_POST['password_confirm'];
     
     // Validações
-    if (empty($nome) || empty($email) || empty($senha)) {
+    if (empty($nome) || empty($email) || empty($senha) || empty($data_nascimento)) {
         header('Location: login.html?message=' . urlencode('Todos os campos são obrigatórios!') . '&type=error');
         exit();
     }
@@ -46,10 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
         
         // Inserir usuário
-        $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)");
+        $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, data_nascimento) VALUES (:nome, :email, :senha, :data_nascimento)");
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $senha_hash);
+        $stmt->bindParam(':data_nascimento', $data_nascimento);
         
         if ($stmt->execute()) {
             header('Location: login.html?message=' . urlencode('Cadastro realizado com sucesso! Faça login.') . '&type=success');
