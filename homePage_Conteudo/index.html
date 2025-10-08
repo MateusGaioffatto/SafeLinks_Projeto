@@ -8,6 +8,7 @@
   <title> SafeLinks - Pesquisa Segura de Produtos </title>
 
   <link rel="stylesheet" href="style.css"> <!-- HOMEPAGE ESTILOS: ARQUIVO CSS -->
+  <link rel="stylesheet" href="tutorial.css">
   <link rel="stylesheet" href="homePageNavBarStyle.css"> <!-- HOMEPAGE NAVBAR ESTILOS: ARQUIVO CSS -->
   <link rel="stylesheet" href="homePageSearchBarStyle.css"> <!-- HOMEPAGE SEARCHBAR ESTILOS: ARQUIVO CSS -->
 
@@ -16,25 +17,46 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
 </head>
-  
   <body>
+    <div class="homePageBlurEffect" id="homePageBlurEffectID"></div>
+    
+    <nav class="homePageNavbar" id="homePageNavbarID"> <!-- HOMEPAGE: NAVBAR -->
+      <div class="navbar-container"> 
+      <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
+          <ul class="navbar-links" id="homePageNavBarLinksID"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
+            <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
+            <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+            <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
+            <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
+            <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i></li> <!-- <= CONCERTO NESCESSÁRIO! -->
+          </ul>
+          <div class="hamburguerMenu" id="hamburguerMenuID"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
+            <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
+          </div>
+      </div>
+    </nav>
 
-      <nav class="homePageNavbar" id="homePageNavbarID"> <!-- HOMEPAGE: NAVBAR -->
-        <div class="navbar-container"> 
-        <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
-            <ul class="navbar-links" id="homePageNavBarLinksID"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
-              <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
-              <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
-              <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
-              <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
-              <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i></li> <!-- <= CONCERTO NESCESSÁRIO! -->
-            </ul>
-            <div class="hamburguerMenu" id="hamburguerMenuID"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
-              <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
-            </div>
-        </div>
-      </nav>
-
+    <div class="tutorialBoxes" id="tutorialBoxesID" >
+      <div class="tutorialBoxesMinusCloseStyles">
+        <h5> 1/5 </h5>
+        <i class="fa light fa-minus"></i>
+        <i class="fa light fa-xmark"></i>
+      </div>
+      <div class="tutorialBoxesImagensStyles">
+        <img src="homePageTutoriais_GIFs\Tutorial01.gif">
+      </div>
+      <p> Caixas de tutorial vão seguir esse padrão! </p>
+      <div class="tutorialBoxesButtonDivStyles">
+        <button class="tutorialBoxesButtonStyles"> Mais Tarde </button>
+        <button class="tutorialBoxesButtonStyles"> Próximo </button>
+      </div>
+    </div>
+    <div class="tutorialBoxesMinimize" id="tutorialBoxesMinimizeID"> 
+      Primeiras Noções 
+      <i class="fa light fa-expand"></i>
+      <i class="fa light fa-xmark"></i>
+    </div>
+      
     <div class="homePageConteudoCentral"> <!-- HOMEPAGE: CONTEÚDO DO CENTRO -->
       <header> <!-- HOMEPAGE: TÍTULO E SUBTÍTULO -->
         <div class="homePageTitulo">SafeLinks</div> <!-- HOMEPAGE: TÍTULO -->
@@ -74,6 +96,7 @@
     </div>
 
     <script src="script.js"></script> 
+    <script src="tutorial.js"></script>
     <script src="theme.js"></script>
     <script src="homePagePesquisaFavoritosHistorico.js"></script>
 

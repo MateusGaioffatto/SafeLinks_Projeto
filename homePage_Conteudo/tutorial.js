@@ -1,4 +1,5 @@
 const tutorialBoxes = document.getElementById("tutorialBoxesID");
+const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
 
 const tutorialBoxesH5 = document.querySelector(".tutorialBoxesMinusCloseStyles h5");
 const tutorialBoxesMinusCloseStyles = document.querySelectorAll(".tutorialBoxesMinusCloseStyles i");
@@ -16,20 +17,13 @@ const tutorialBoxes_tutorialBoxesMinimize = [tutorialBoxes, tutorialBoxesMinimiz
 
 
 
-// if (tutorialBoxes || tutorialBoxesMinimizeIcons) {
-//   document.body.style.filter = 'blur(5px)';
-// }
-
-
-
-
-
 tutorialBoxesMinusCloseStyles[0].addEventListener('click', function() {
     tutorialBoxes.style.display = 'none'; 
     tutorialBoxesMinimize.style.display = 'inherit';
 })
 tutorialBoxesMinusCloseStyles[1].addEventListener('click', function() {
   tutorialBoxes.style.display = 'none'; 
+  document.body.removeChild(homePageBlurEffect);
 })
 
 
@@ -38,29 +32,39 @@ tutorialBoxesMinusCloseStyles[1].addEventListener('click', function() {
 let tutorialGifCount = 1;
 
 tutorialBoxesButtonDivStyles[0].addEventListener('click', function() {
-  if (tutorialGifCount === 1) {tutorialBoxes.style.display = 'none';}
+  if (tutorialGifCount === 1) {
+    tutorialBoxes.style.display = 'none';
+  }
 })
-
 tutorialBoxesButtonDivStyles[0].addEventListener('click', function() {
   tutorialGifCount--;
-  if (tutorialGifCount < 1) {tutorialGifCount = 1;}
+  console.log(tutorialGifCount);
+  if (tutorialGifCount === 0) {document.body.removeChild(homePageBlurEffect);}
+
   tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
   tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
 })
+
 tutorialBoxesButtonDivStyles[1].addEventListener('click', function() {
     tutorialGifCount++;
+    console.log(tutorialGifCount);
     if (tutorialGifCount > 5) {tutorialGifCount = 1;}
-    tutorialBoxesButtonDivStyles[0].textContent = tutorialGifCount === 1 ? "Mais tarde" : "Anterior";
+
     tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
     tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
 })
 
+
+
+
+
 tutorialBoxesMinimizeIcons[0].addEventListener('click', function() {
-    tutorialBoxes.style.display = 'inherit'; 
+    tutorialBoxes.style.display = 'initial'; 
     tutorialBoxesMinimize.style.display = 'none';
 })
 tutorialBoxesMinimizeIcons[1].addEventListener('click', function() {
     tutorialBoxesMinimize.style.display = 'none';
+    document.body.removeChild(homePageBlurEffect);
 })
 
 
