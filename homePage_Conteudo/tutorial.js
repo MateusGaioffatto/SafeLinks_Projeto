@@ -1,54 +1,113 @@
-const tutorialBoxesStyles = document.getElementById("tutorialBoxesStylesID");
+const tutorialBoxes = document.getElementById("tutorialBoxesID");
+
+const tutorialBoxesH5 = document.querySelector(".tutorialBoxesMinusCloseStyles h5");
 const tutorialBoxesMinusCloseStyles = document.querySelectorAll(".tutorialBoxesMinusCloseStyles i");
+
 const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
+
 const tutorialBoxesButtonDivStyles = document.querySelectorAll(".tutorialBoxesButtonDivStyles button");
-const tutorialBoxesMinimizeStyles = document.getElementById("tutorialBoxesMinimizeStylesID")
-const tutorialBoxesMinimizeIcons = document.querySelectorAll(".tutorialBoxesMinimizeStyles i");
+
+const tutorialBoxesMinimize = document.getElementById("tutorialBoxesMinimizeID")
+const tutorialBoxesMinimizeIcons = document.querySelectorAll(".tutorialBoxesMinimize i");
+
+const tutorialBoxes_tutorialBoxesMinimize = [tutorialBoxes, tutorialBoxesMinimize];
+
+
+
+
+
+// if (tutorialBoxes || tutorialBoxesMinimizeIcons) {
+//   document.body.style.filter = 'blur(5px)';
+// }
 
 
 
 
 
 tutorialBoxesMinusCloseStyles[0].addEventListener('click', function() {
-    tutorialBoxesStyles.style.display = 'none'; 
-    tutorialBoxesMinimizeStyles.style.display = 'inherit';
+    tutorialBoxes.style.display = 'none'; 
+    tutorialBoxesMinimize.style.display = 'inherit';
 })
 tutorialBoxesMinusCloseStyles[1].addEventListener('click', function() {
-    tutorialBoxesStyles.style.display = 'none'; 
+  tutorialBoxes.style.display = 'none'; 
 })
 
+
+
+
 let tutorialGifCount = 1;
+
+tutorialBoxesButtonDivStyles[0].addEventListener('click', function() {
+  if (tutorialGifCount === 1) {tutorialBoxes.style.display = 'none';}
+})
+
+tutorialBoxesButtonDivStyles[0].addEventListener('click', function() {
+  tutorialGifCount--;
+  if (tutorialGifCount < 1) {tutorialGifCount = 1;}
+  tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
+  tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
+})
 tutorialBoxesButtonDivStyles[1].addEventListener('click', function() {
     tutorialGifCount++;
-    if (tutorialGifCount === 6) {tutorialGifCount = 1;}
+    if (tutorialGifCount > 5) {tutorialGifCount = 1;}
+    tutorialBoxesButtonDivStyles[0].textContent = tutorialGifCount === 1 ? "Mais tarde" : "Anterior";
     tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
+    tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
 })
 
 tutorialBoxesMinimizeIcons[0].addEventListener('click', function() {
-    tutorialBoxesStyles.style.display = 'inherit'; 
-    tutorialBoxesMinimizeStyles.style.display = 'none';
+    tutorialBoxes.style.display = 'inherit'; 
+    tutorialBoxesMinimize.style.display = 'none';
 })
+tutorialBoxesMinimizeIcons[1].addEventListener('click', function() {
+    tutorialBoxesMinimize.style.display = 'none';
+})
+
+
 
 
 
 let tutorialBoxMovendo = false;
 let eixo_X, eixo_Y;
+tutorialBoxes_tutorialBoxesMinimize[0].addEventListener("mousedown", (e) => {
+    tutorialBoxMovendo = true;
+    // Calculate the offset from the mouse position to the box's top-left corner
+    eixo_X = e.clientX - tutorialBoxes_tutorialBoxesMinimize[0].getBoundingClientRect().left;
+    eixo_Y = e.clientY - tutorialBoxes_tutorialBoxesMinimize[0].getBoundingClientRect().top;
+  });
 
-tutorialBoxesStyles.addEventListener("mousedown", (e) => {
-  tutorialBoxMovendo = true;
-  // Calculate the offset from the mouse position to the box's top-left corner
-  eixo_X = e.clientX - tutorialBoxesStyles.getBoundingClientRect().left;
-  eixo_Y = e.clientY - tutorialBoxesStyles.getBoundingClientRect().top;
-});
+  document.addEventListener("mousemove", (e) => {
+    if (!tutorialBoxMovendo) return;
 
-document.addEventListener("mousemove", (e) => {
-  if (!tutorialBoxMovendo) return;
+    // Update the box's position based on the mouse coordinates and initial offset
+    tutorialBoxes_tutorialBoxesMinimize[0].style.left = `${e.clientX - eixo_X}px`;
+    tutorialBoxes_tutorialBoxesMinimize[0].style.top = `${e.clientY - eixo_Y}px`;
+  });
 
-  // Update the box's position based on the mouse coordinates and initial offset
-  tutorialBoxesStyles.style.left = `${e.clientX - eixo_X}px`;
-  tutorialBoxesStyles.style.top = `${e.clientY - eixo_Y}px`;
-});
+  document.addEventListener("mouseup", () => {
+    tutorialBoxMovendo = false;
+  });
 
-document.addEventListener("mouseup", () => {
-  tutorialBoxMovendo = false;
-});
+  
+
+let tutorialBoxMinimizeMovendo = false;
+let eixo_x, eixo_y;
+tutorialBoxes_tutorialBoxesMinimize[1].addEventListener("mousedown", (e) => {
+    tutorialBoxMinimizeMovendo = true;
+    // Calculate the offset from the mouse position to the box's top-left corner
+    eixo_x = e.clientX - tutorialBoxes_tutorialBoxesMinimize[1].getBoundingClientRect().left;
+    eixo_y = e.clientY - tutorialBoxes_tutorialBoxesMinimize[1].getBoundingClientRect().top;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!tutorialBoxMinimizeMovendo) return;
+
+    // Update the box's position based on the mouse coordinates and initial offset
+    tutorialBoxes_tutorialBoxesMinimize[1].style.left = `${e.clientX - eixo_x}px`;
+    tutorialBoxes_tutorialBoxesMinimize[1].style.top = `${e.clientY - eixo_y}px`;
+  });
+
+  document.addEventListener("mouseup", () => {
+    tutorialBoxMinimizeMovendo = false;
+  });
+
