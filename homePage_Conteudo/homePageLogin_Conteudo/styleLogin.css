@@ -29,19 +29,19 @@ body {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow);
-    animation: homePageNavBarShow 1s forwards;
+    animation: navBarElementoShow 1s forwards;
     z-index: 99;
 }
     body.dark-mode .loginNavbar {
         background: rgba(45, 55, 72, 0.95);
     }
-    @keyframes homePageNavBarShow {
+    @keyframes navBarElementoShow {
         to {
             top: 0px;
         }
     }
 
-.navbar-container {
+.navBarContainer {
     max-width: 1100px;
     margin: 0 auto;
     padding: 12px 20px;
@@ -49,24 +49,24 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-    .navbar-logo {
+    .navBarLogo {
         font-size: 1.5rem;
         font-weight: bold;
     }
-        .navbar-logo a {
+        .navBarLogo a {
             color: #4361ee;
             text-decoration: none;
         }
-        body.dark-mode .navbar-logo {
+        body.dark-mode .navBarLogo {
             color: #6c8eff;
         }
 
-    .navbar-links {
+    .navBarLinks {
         list-style: none;
         display: flex;
         gap: 25px;
     }
-        .navbar-links li a {
+        .navBarLinks li a {
             text-decoration: none;
             color: var(--dark);
             font-size: 0.95rem;
@@ -75,14 +75,14 @@ body {
             gap: 6px;
             transition: all 0.3s ease;
         }
-        body.dark-mode .navbar-links li a {
+        body.dark-mode .navBarLinks li a {
             color: white;
         }
-        .navbar-links li a:hover {
+        .navBarLinks li a:hover {
             color: #4361ee;
             transform: translateY(-2px);
         }
-            body.dark-mode .navbar-links li a:hover {
+            body.dark-mode .navBarLinks li a:hover {
                 color: #6c8eff;
             }
         
@@ -224,7 +224,7 @@ body {
         .form-container button:hover {
             opacity: 0.9;
         }
-    .hamburguerMenu {
+    .menuHamburguerElemento {
         display: none;
         font-size: 1.4rem;
         cursor: pointer;
@@ -232,13 +232,13 @@ body {
         background: none;
         color: var(--dark);
     }
-        body.dark-mode .hamburguerMenu {
+        body.dark-mode .menuHamburguerElemento {
             color: var(--light);
         }
 
         /* Responsive navbar */
         @media (max-width: 768px) {
-        .navbar-links {
+        .navBarLinks {
             position: absolute;
             top: 70px;
             right: 0;
@@ -254,14 +254,14 @@ body {
             pointer-events: visible;
             transition: var(--transition);
         }
-        #homePageModoEscuroClaroID {
+        #modoEscuroClaroElementoId {
             position: relative;
             left: 0px;
         }
-            body.dark-mode .navbar-links {
+            body.dark-mode .navBarLinks {
             background: rgba(45, 55, 72, 0.95);
             }
-            .hamburguerMenu {
+            .menuHamburguerElemento {
             display: block;
             }
         }   

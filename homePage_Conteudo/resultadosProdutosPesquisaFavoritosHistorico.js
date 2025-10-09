@@ -10,7 +10,7 @@ resultadosProdutosSearchInput.addEventListener("keydown", function() {
     }
   });
 resultadosProdutosSearchButton.addEventListener('click', function() {
-  searchInputText = resultadosProdutosSearchInput.value || homePageSearchInput.value;
+  searchInputText = resultadosProdutosSearchInput.value || searchInput.value;
   if (searchInputText.trim() !== "") {
     // COMERTAR =>
     window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(searchInputText)}`;
@@ -19,15 +19,15 @@ resultadosProdutosSearchButton.addEventListener('click', function() {
 
 
     // Limpar pesquisa
-    barraDePesquisaLimparTexto.addEventListener('click', function() {
-      homePageSearchInput.value = '';
+    limparTexto.addEventListener('click', function() {
+      searchInput.value = '';
       resultadosProdutosSearchInput.value = '';
       searchInputText = '';
       homePageProdutosDiv.style.display = 'none';
       pesquisasRecentes.style.display = 'none';
     });
     // Mostrar histórico de pesquisas
-    barraDePesquisaHistorico.addEventListener('click', function() {
+    acessarHistorico.addEventListener('click', function() {
       if (searchHistory.length > 0) {
         pesquisasRecentes.style.display = pesquisasRecentes.style.display === 'block' ? 'none' : 'block';
       } else {

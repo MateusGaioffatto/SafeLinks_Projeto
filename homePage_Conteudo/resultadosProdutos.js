@@ -1,6 +1,6 @@
 // CAMPO DE ANÚNCIOS E PRODUTOS: VARIÁVEIS CONSTANTES
-const resultadosProdutosHamburguerMenu = document.getElementById('hamburguerMenu');
-const resultadosProdutosNavbarLinks = document.querySelectorAll('.navbar-links');
+const resultadosProdutosmenuHamburguerElemento = document.getElementById('menuHamburguerElemento');
+const resultadosProdutosNavbarLinks = document.querySelectorAll('.navBarLinks');
 
 
 const resultadosProdutosDiv = document.getElementById("resultadosProdutosDivID"); // VARIÁVEL CONSTANTE, DIV BOXES
@@ -14,11 +14,11 @@ const resultadosProdutosVoiceIcon = document.getElementById("resultadosProdutosV
 
 
 
-// let hamburguerMenuClick = 0;
+// let menuHamburguerElementoClick = 0;
 // document.addEventListener('DOMContentLoaded', () => {
-//     resultadosProdutosHamburguerMenu.addEventListener('click', () => {
-//       hamburguerMenuClick++;
-//       if (hamburguerMenuClick === 1) {
+//     resultadosProdutosmenuHamburguerElemento.addEventListener('click', () => {
+//       menuHamburguerElementoClick++;
+//       if (menuHamburguerElementoClick === 1) {
 //         resultadosProdutosNavbarLinks.forEach(link => {
 //           link.style.opacity = 1;
 //           link.style.pointerEvents = 'auto';
@@ -28,19 +28,19 @@ const resultadosProdutosVoiceIcon = document.getElementById("resultadosProdutosV
 //         resultadosProdutosNavbarLinks.forEach(link => {
 //           link.style.opacity = 0;
 //           link.style.pointerEvents = 'none';
-//           hamburguerMenuClick = 0;
+//           menuHamburguerElementoClick = 0;
 //         })
 //       }
 //     });
 // });
 // MENU HAMBURGUER: VARIÁVEIS
-  const hamburguerMenu = document.getElementById("hamburguerMenu");
+  const menuHamburguerElemento = document.getElementById("menuHamburguerElemento");
   const navBarLinks = document.getElementById("resutadosProdutosLinksID");
   const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
   let navBarClickContagem = 0;
 
   // MENU HAMBURGUER: FUNÇÕES
-  hamburguerMenu.addEventListener("click", () => { 
+  menuHamburguerElemento.addEventListener("click", () => { 
   navBarClickContagem++;
   if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
   else {

@@ -1,24 +1,24 @@
-.homePageNavbar {
+.navBarElemento {
   position: fixed;
   top: -70px; /* hidden by default */
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow);
-  animation: homePageNavBarShow 1s forwards;
+  animation: navBarElementoShow 1s forwards;
   z-index: 99;
 }
-  body.dark-mode .homePageNavbar {
+  body.dark-mode .navBarElemento {
     background: rgba(45, 55, 72, 0.95);
   }
-  @keyframes homePageNavBarShow {
+  @keyframes navBarElementoShow {
     to {
       top: 0px;
     }
   }
 
 
-.navbar-container {
+.navBarContainer {
   max-width: 1100px;
   margin: 0 auto;
   padding: 12px 20px;
@@ -26,19 +26,19 @@
   align-items: center;
   justify-content: space-between;
 }
-.navbar-logo {
+.navBarLogo {
   font-size: 1.5rem;
   font-weight: bold;
 }
-  .navbar-logo a {
+  .navBarLogo a {
     color: var(--primary);
     text-decoration: none;
   }
-  body.dark-mode .navbar-logo {
+  body.dark-mode .navBarLogo {
     color: #6c8eff;
   }
 
-.navbar-links {
+.navBarLinks {
   list-style: none;
   display: inline-flex;
   gap: 20px;
@@ -47,7 +47,7 @@
       display: inline-flex;
   }
 
-.navbar-links li a {
+.navBarLinks li a {
   text-decoration: none;
   color: var(--dark);
   font-size: 0.95rem;
@@ -56,19 +56,19 @@
   gap: 6px;
   transition: var(--transition);
 }
-  body.dark-mode .navbar-links li a {
+  body.dark-mode .navBarLinks li a {
     color: var(--light);
   }
-  .navbar-links li a:hover {
+  .navBarLinks li a:hover {
     color: var(--primary);
     transform: translateY(-2px);
   }
-    body.dark-mode .navbar-links li a:hover {
+    body.dark-mode .navBarLinks li a:hover {
       color: #6c8eff;
     }
 
     
-.hamburguerMenu {
+.menuHamburguerElemento {
   display: none;
   font-size: 1.4rem;
   cursor: pointer;
@@ -76,7 +76,7 @@
   background: none;
   color: var(--dark);
 }
-  body.dark-mode .hamburguerMenu {
+  body.dark-mode .menuHamburguerElemento {
     color: var(--light);
   }
 
@@ -84,7 +84,7 @@
 
 
 
-#homePageModoEscuroClaroTexto {
+#modoEscuroClaroElementoTexto {
   cursor: pointer;
   position: relative;
   left: 22px;
@@ -97,7 +97,7 @@
 
 /* Responsive navbar */
 @media (max-width: 768px) {
-  .navbar-links {
+  .navBarLinks {
     position: absolute;
     top: 70px;
     right: 0;
@@ -113,14 +113,14 @@
     pointer-events: visible;
     transition: var(--transition);
   }
-  #homePageModoEscuroClaroID {
+  #modoEscuroClaroElementoId {
     position: relative;
     left: 0px;
   }
-    body.dark-mode .navbar-links {
+    body.dark-mode .navBarLinks {
       background: rgba(45, 55, 72, 0.95);
     }
-    .hamburguerMenu {
+    .menuHamburguerElemento {
       display: block;
     }
 }

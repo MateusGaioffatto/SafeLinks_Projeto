@@ -7,17 +7,17 @@ let placeholderIndex = 0;
 
 // MODIFICAR TEXTO DE PLACEHOLDER A CADA 5 SEGUNDOS: FUNCTION
 function modificarTextoPlaceholder() {
-    homePageSearchInput.classList.add("fade-out");
+    searchInput.classList.add("fade-out");
 
   setTimeout(() => {
-    homePageSearchInput.placeholder = searchInputPlaceholders[placeholderIndex];
+    searchInput.placeholder = searchInputPlaceholders[placeholderIndex];
     placeholderIndex = (placeholderIndex + 1) % searchInputPlaceholders.length;
 
-    homePageSearchInput.classList.remove("fade-out");
-    homePageSearchInput.classList.add("fade-in");
+    searchInput.classList.remove("fade-out");
+    searchInput.classList.add("fade-in");
 
     setTimeout(() => {
-      homePageSearchInput.classList.remove("fade-in");
+      searchInput.classList.remove("fade-in");
     }, 500);
 
   }, 3000);
@@ -28,8 +28,8 @@ function modificarTextoPlaceholder() {
 
 
 // PESQUISA POR VOZ: VARIÁVEIS CONSTANTES
-const homePageVoiceSearchButton = document.getElementById("homePageVoiceSearchButtonID");
-const homePageVoiceIcon = document.getElementById("homePageVoiceIconID");
+const voiceSearch = document.getElementById("voiceSearchId");
+const homePageVoiceIcon = document.getElementById("voiceSearchIcon");
 
 // PESQUISA POR VOZ: VARIÁVEIS
 let recognition;
@@ -45,7 +45,7 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) { // V
 
   recognition.onstart = () => { // PESQUISA POR VOZ: INÍCIO DO RECONHECIMENTO
     recognizing = true;
-    homePageVoiceSearchButton.classList.add('active');
+    voiceSearch.classList.add('active');
     homePageVoiceIcon.style.color = 'red';
   };
 
@@ -56,15 +56,15 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) { // V
     console.log(transcript);
   };
   recognition.onerror = () => { // PESQUISA POR VOZ: ERRO NO RECONHECIMENTO
-    homePageVoiceSearchButton.classList.remove('active');
+    voiceSearch.classList.remove('active');
   };
   
   recognition.onend = () => { // PESQUISA POR VOZ: FIM DO RECONHECIMENTO
     recognizing = false;
-    homePageVoiceSearchButton.classList.remove('active');
+    voiceSearch.classList.remove('active');
   };
 
-  homePageVoiceSearchButton.onclick = () => { // PESQUISA POR VOZ: BOTÃO DE INÍCIO/FIM DO RECONHECIMENTO
+  voiceSearch.onclick = () => { // PESQUISA POR VOZ: BOTÃO DE INÍCIO/FIM DO RECONHECIMENTO
     if (recognizing) {
       recognition.stop();
       homePageVoiceIcon.style.color = '';
@@ -73,7 +73,7 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) { // V
     }
   };
 } else {
-  homePageVoiceSearchButton.disabled = true;
+  voiceSearch.disabled = true;
   homePageVoiceIcon.textContent = 'mic_off';
   homePageVoiceIcon.style.color = 'red';
   homePageVoiceIcon.title = 'Navegador não reconhece pesquisa por voz';
@@ -116,7 +116,7 @@ function isUrl(valor) {
 }
 
 // Função para mostrar resultados da verificação de URL
-function mostrarResultadoVerificacaoUrl(resultado, url) {
+function mostrarresultadoVerificacaoURLUrl(resultado, url) {
     // Criar modal ou overlay para mostrar resultados
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
@@ -196,7 +196,7 @@ async function processarEntradaUsuario(entrada) {
     if (isUrl(texto)) {
         // É uma URL - verificar segurança
         const resultado = await verificarUrlSegura(texto);
-        mostrarResultadoVerificacaoUrl(resultado, texto);
+        mostrarresultadoVerificacaoURLUrl(resultado, texto);
     } else {
         // É um termo de pesquisa - redirecionar para resultados
         window.location.href = `resultadosProdutos.html?query=${encodeURIComponent(texto)}`;
@@ -204,20 +204,20 @@ async function processarEntradaUsuario(entrada) {
 }
 
 // Modificar os event listeners
-homePageSearchInput.addEventListener("keydown", async function(event) {
+searchInput.addEventListener("keydown", async function(event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        await processarEntradaUsuario(homePageSearchInput.value);
+        await processarEntradaUsuario(searchInput.value);
     }
 });
 
-homePageSearchButton.addEventListener('click', async function() {
-    await processarEntradaUsuario(homePageSearchInput.value);
+searchButton.addEventListener('click', async function() {
+    await processarEntradaUsuario(searchInput.value);
 });
 
 // Limpar pesquisa
-barraDePesquisaLimparTexto.addEventListener('click', function() {
-  homePageSearchInput.value = '';
+limparTexto.addEventListener('click', function() {
+  searchInput.value = '';
     resultadosProdutosSearchInput.value = '';
   searchInputText = '';
     homePageProdutosDiv.style.display = 'none';
@@ -225,7 +225,7 @@ barraDePesquisaLimparTexto.addEventListener('click', function() {
 });
 
 // Mostrar histórico de pesquisas
-barraDePesquisaHistorico.addEventListener('click', function() {
+acessarHistorico.addEventListener('click', function() {
   if (searchHistory.length > 0) {
     pesquisasRecentes.style.display = pesquisasRecentes.style.display === 'block' ? 'none' : 'block';
   } else {
@@ -299,7 +299,7 @@ barraDePesquisaHistorico.addEventListener('click', function() {
 //     item.textContent = term;
     
 //     item.addEventListener('click', () => {
-//       homePageSearchInput.value = term;
+//       searchInput.value = term;
 //       searchInputText = term;
 //       homePageProdutosDiv.style.display = 'flex';
 //       homePageProdutosDiv.classList.add('fade-in');

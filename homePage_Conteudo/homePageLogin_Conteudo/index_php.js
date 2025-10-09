@@ -82,7 +82,7 @@
     
     // Função para verificar a segurança da URL
     function verificarUrlSegura(url) {
-      const resultadoDiv = document.getElementById('resultadoVerificacao');
+      const resultadoDiv = document.getElementById('resultadoVerificacaoURL');
       resultadoDiv.style.display = 'block';
       resultadoDiv.innerHTML = '<div style="text-align: center;"><i class="fas fa-spinner fa-spin"></i> Verificando URL...</div>';
       
@@ -152,8 +152,8 @@
     }
     
     // Adicionar evento de clique no botão de pesquisa
-    document.getElementById('homePageSearchButtonID').addEventListener('click', function() {
-      const url = document.getElementById('homePageSearchInputID').value.trim();
+    document.getElementById('searchButtonId').addEventListener('click', function() {
+      const url = document.getElementById('searchInputId').value.trim();
       if (url) {
         verificarUrlSegura(url);
       } else {
@@ -162,7 +162,7 @@
     });
     
     // Adicionar evento de pressionar Enter no campo de pesquisa
-    document.getElementById('homePageSearchInputID').addEventListener('keypress', function(e) {
+    document.getElementById('searchInputId').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         const url = this.value.trim();
         if (url) {

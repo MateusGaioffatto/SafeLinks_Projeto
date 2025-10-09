@@ -1,10 +1,10 @@
 // CONSTANTES
-const homePageSearchInput = document.getElementById("homePageSearchInputID");
-const homePageSearchButton = document.getElementById("homePageSearchButtonID");
-const barraDePesquisaLimparTexto = document.getElementById("barraDePesquisaLimparTexto");
-const barraDePesquisaHistorico = document.getElementById("barraDePesquisaHistorico");
-const pesquisasRecentes = document.getElementById("homePagePesquisasRecentesID");
-const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsID");
+const searchInput = document.getElementById("searchInputId");
+const searchButton = document.getElementById("searchButtonId");
+const limparTexto = document.getElementById("limparTexto");
+const acessarHistorico = document.getElementById("acessarHistorico");
+const pesquisasRecentes = document.getElementById("pesquisasRecentesId");
+const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsId");
 
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
@@ -48,7 +48,7 @@ async function loadSearchHistory() {
                 recentItem.className = 'recent-item';
                 recentItem.textContent = item.termo_pesquisa;
                 recentItem.addEventListener('click', function() {
-                    homePageSearchInput.value = item.termo_pesquisa;
+                    searchInput.value = item.termo_pesquisa;
                     redirectToResults(item.termo_pesquisa);
                 });
                 listaPesquisasRecentes.appendChild(recentItem);
@@ -66,7 +66,7 @@ async function loadSearchHistory() {
         recentItem.className = 'recent-item';
         recentItem.textContent = item;
         recentItem.addEventListener('click', function() {
-            homePageSearchInput.value = item;
+            searchInput.value = item;
             redirectToResults(item);
         });
         listaPesquisasRecentes.appendChild(recentItem);
@@ -74,8 +74,8 @@ async function loadSearchHistory() {
 }
 
 // EVENT LISTENERS
-homePageSearchInput.addEventListener("keydown", function(event) {
-    searchInputText = homePageSearchInput.value;
+searchInput.addEventListener("keydown", function(event) {
+    searchInputText = searchInput.value;
     if (event.key === 'Enter') {
         if (searchInputText.trim() !== "") { 
             redirectToResults(searchInputText);
@@ -83,22 +83,22 @@ homePageSearchInput.addEventListener("keydown", function(event) {
     }  
 });
 
-homePageSearchButton.addEventListener('click', function() {
-    searchInputText = homePageSearchInput.value.trim();
+searchButton.addEventListener('click', function() {
+    searchInputText = searchInput.value.trim();
     if (searchInputText !== "") {
         redirectToResults(searchInputText);
     }
 });
 
 // BOTÃO LIMPAR TEXTO
-barraDePesquisaLimparTexto.addEventListener('click', function() {
-    homePageSearchInput.value = '';
-    homePageSearchInput.focus();
+limparTexto.addEventListener('click', function() {
+    searchInput.value = '';
+    searchInput.focus();
     pesquisasRecentes.style.display = 'none';
 });
 
 // BOTÃO HISTÓRICO
-barraDePesquisaHistorico.addEventListener('click', function() {
+acessarHistorico.addEventListener('click', function() {
     pesquisasRecentes.style.display = pesquisasRecentes.style.display === 'block' ? 'none' : 'block';
     loadSearchHistory();
 });

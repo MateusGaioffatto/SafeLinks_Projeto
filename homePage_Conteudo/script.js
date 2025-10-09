@@ -1,22 +1,22 @@
 // CAMPO DE PESQUISA: VARIÁVEIS CONSTANTES
-const homePageSearchInput = document.getElementById("homePageSearchInputID");
-const homePageSearchButton = document.getElementById("homePageSearchButtonID");
+const searchInput = document.getElementById("searchInputId");
+const searchButton = document.getElementById("searchButtonId");
 
-const homePageSearchIcon = document.getElementById("homePageSearchIconID");
+const homePageSearchIcon = document.getElementById("searchButtonIcon");
 
 
 
 
 
 // LIMPAR TEXTO INSERIDO: VARIÁVEL CONSTANTE, BUTTON
-const barraDePesquisaLimparTexto = document.getElementById("barraDePesquisaLimparTexto");
+const limparTexto = document.getElementById("limparTexto");
 // HISTÓRICO DE PESQUISA: VARIÁVEL CONSTANTE: BUTTON
-const barraDePesquisaHistorico = document.getElementById("barraDePesquisaHistorico");
+const acessarHistorico = document.getElementById("acessarHistorico");
 
 // CAMPO DE PESQUISAS RECENTES: VARIÁVEL CONSTANTE, DIV
-const pesquisasRecentes = document.getElementById("homePagePesquisasRecentesID");
+const pesquisasRecentes = document.getElementById("pesquisasRecentesId");
 // CAMPO DE PESQUISAS RECENTES, ITEMS PESQUISADOS: VARIÁVEL CONSTANTE, DIV
-const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsID");
+const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsId");
 
 // TEXTO INSERIDO PELO USUÁRIO: VARIÁVEL
 let searchInputText = '';
@@ -36,13 +36,13 @@ let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; // 
 
 
 // MENU HAMBURGUER: VARIÁVEIS
-const hamburguerMenu = document.getElementById("hamburguerMenuID");
-const navBarLinks = document.getElementById("homePageNavBarLinksID");
+const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId");
+const navBarLinks = document.getElementById("navBarLinksId");
 const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
 let navBarClickContagem = 0;
 
 // MENU HAMBURGUER: FUNÇÕES
-hamburguerMenu.addEventListener("click", () => { 
+menuHamburguerElemento.addEventListener("click", () => { 
   navBarClickContagem++;
   if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
   else {
