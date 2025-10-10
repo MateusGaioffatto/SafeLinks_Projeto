@@ -1,3 +1,25 @@
+/* 
+<nav class="navBarElemento" id="navBarElementoId"> <!-- HOMEPAGE: NAVBAR -->
+  <div class="navBarContainer"> 
+  <div class="navBarLogo" id="navBarLogoId"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
+      <ul class="navBarLinks" id="navBarLinksId"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
+        <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
+        <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+        <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
+        <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
+        <li class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId"><i class="fas fa-moon"></i></li> <!-- <= CONCERTO NESCESSÁRIO! -->
+      </ul>
+      <div class="menuHamburguerElemento" id="menuHamburguerElementoId"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
+        <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
+      </div>
+  </div>
+</nav> 
+*/
+
+
+
+
+
 .navBarElemento {
   position: fixed;
   top: -70px; /* hidden by default */

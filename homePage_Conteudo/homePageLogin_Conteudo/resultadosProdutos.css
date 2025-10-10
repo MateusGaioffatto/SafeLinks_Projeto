@@ -298,7 +298,7 @@ body.dark-mode .resultadosProdutosDiv {
 /* ... (mantenha todo o CSS existente até a seção de filtros) */
 
 /* ESTILOS PARA OS FILTROS */
-.filtros-container {
+.filtrosContainer {
   position: relative;
   top: 180px;
   width: 80%;
@@ -312,7 +312,7 @@ body.dark-mode .resultadosProdutosDiv {
   animation: resultadosProdutosConteudoCentralOpacity 2s ease forwards;
 }
 
-body.dark-mode .filtros-container {
+body.dark-mode .filtrosContainer {
   background: rgba(45, 55, 72, 0.95);
 }
 

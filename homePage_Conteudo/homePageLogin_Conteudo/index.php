@@ -99,7 +99,7 @@ require_once 'config.php';
     <div class="homePageProdutosDiv" id="homePageProdutosDivID">
       <li class="homePageProdutosLi" id="genericoLi" style="display: none;">
         <button class="favorite-btn" data-store="" id="genericoHeartIconButton"><i class="far fa-heart"></i></button>            
-        <p class="liProdutosTitulos" id="genericoP" style="display: none;"></p>
+        <p class="liProdutosTitulos" id="liProdutosLojasNomesP" style="display: none;"></p>
       </li>
       <ul class="homePageProdutosUl" id="homePageProdutosUlID">
       </ul>
