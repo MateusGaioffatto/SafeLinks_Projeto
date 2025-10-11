@@ -283,7 +283,8 @@ body {
     transition: opacity 0.3s ease;
 }
 
-#loginShowPasswordIcone {
+#mostrarSenhaIcone, #mostrarSenhaRegistroIcone {
+    position: absolute;
     color: #b9b9b9;
 
     visibility: visible;
@@ -295,17 +296,17 @@ body {
 
     cursor: pointer;
 
-    transition: all 0.3s ease;;
+    transition: var(--transition);
 }
-    #loginShowPasswordIcone u {
+    #mostrarSenhaIcone u, #mostrarSenhaRegistroIcone u {
         font-size: small;
         font-family: Arial, Helvetica, sans-serif;
     }   
-    #loginShowPasswordIcone:hover {
-        color: black;
+    #mostrarSenhaIcone:hover, #mostrarSenhaRegistroIcone:hover {
+        color: var(--primary);
+        transform: translateY(-2px);
     }
-    body.dark-mode #loginShowPasswordIcone:hover {
-        transform: scale(1.1);
+    body.dark-mode #mostrarSenhaIcone, #mostrarSenhaRegistroIcone:hover {
         color: #6c8eff;
     }
 
@@ -324,45 +325,27 @@ body {
 
         cursor: pointer;
     }
+        
+
+        
 
 
-        .link {
-            text-align: center;
-            margin-top: 20px;
-        }
-            body.dark-mode .link  {
-                color: white;
-            }
-        
-        .link a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        
-        .link a:hover {
-            color: #8e44ad;
-            text-decoration: underline;
-        }
-        
-        .forgot-password {
-            text-align: right;
-            margin-top: -10px;
-            margin-bottom: 15px;
+        .forgot-password_mostrarSenhaIcone {
+            display: inline;
+            font-size: medium;
+            width: 100%;
         }
         
         .forgot-password a {
-            color: #3498db;
+            position: absolute;
+            color: #b9b9b9;
             text-decoration: none;
-            font-size: 13px;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
         
         .forgot-password a:hover {
-            color: #8e44ad;
-            text-decoration: underline;
+            color: var(--primary);
+            transform: translateY(-2px);
         }
         
         #login-form, #register-form, #recover-form {
@@ -394,4 +377,48 @@ body {
                 padding: 15px 20px;
             }
         }
-   
+
+        
+
+.registrarUsuarioLinkDiv {
+    text-align: center;
+    padding: 15px;
+}
+    .registrarUsuarioLink {
+        color: #b9b9b9;
+        text-decoration: none;
+
+        cursor: pointer;
+
+        transition: var(--transition);
+    }
+        .registrarUsuarioLink:hover {
+            color: var(--primary);
+        }
+
+
+
+
+
+.recuperarSenha {
+    background: none;
+
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #f0f0f0;
+
+    color: #4361ee;
+
+    font-weight: 600;
+    font-size: 17px;
+
+    display: block;
+
+    padding: 12px;
+    margin: 20px 0;
+    width: 100%;
+
+    cursor: pointer;
+    
+    transition: opacity 0.3s ease;
+}

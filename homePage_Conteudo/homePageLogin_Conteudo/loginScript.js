@@ -1,4 +1,3 @@
-// Elementos do DOM
 const loginForm = document.getElementById('login-form');
 const registerForm = document.getElementById('register-form');
 const recoverForm = document.getElementById('recover-form');
@@ -15,34 +14,6 @@ const messageDiv = document.getElementById('message');
 
 
 
-// MENU HAMBURGUER: VARIÁVEIS
-const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId");
-const navBarLinks = document.getElementById("loginNavBarLinksID");
-const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
-let navBarClickContagem = 0;
-
-// MENU HAMBURGUER: FUNÇÕES
-menuHamburguerElemento.addEventListener("click", () => { 
-    navBarClickContagem++;
-    if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
-    else {
-        navBarLinks.style.opacity = 0; 
-        navBarClickContagem = 0;
-    }
-    });
-    homePageWindowLargura.addEventListener("change", () => {
-    if (!homePageWindowLargura.matches) {
-        navBarLinks.style.opacity = 1;
-        navBarClickContagem = 0;
-    }
-    else {navBarLinks.style.opacity = 0;}
-});
-
-
-
-
-
-// Alternar entre formulários
 showRegister.addEventListener('click', (e) => {
     e.preventDefault();
     hideAllForms();
@@ -85,7 +56,6 @@ function hideAllForms() {
     
 
 
-// Validação de formulários
 const forms = document.querySelectorAll('form');
 forms.forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -119,7 +89,10 @@ emailInputs.forEach(input => {
     });
 });
 
-// Validação de confirmação de senha
+
+
+
+
 const loginGerarPassword = document.getElementById('loginGerarPasswordID');
 const password = document.getElementById('register-password');
 const passwordConfirm = document.getElementById('register-password-confirm');
@@ -155,18 +128,62 @@ function gerarPasswordForte() {
 }
 
 
-const loginShowPasswordIcone = document.getElementById('loginShowPasswordIcone');
-const loginRegisterPassword = document.querySelectorAll('#loginFormPassword input');
 
-let loginShowPasswordIconeClick = 0;
-loginShowPasswordIcone.addEventListener('click', function() {
-    loginShowPasswordIconeClick++;
 
-    loginRegisterPassword.forEach(inputPassword => {
-        if (loginShowPasswordIconeClick === 1) {inputPassword.type = "text";}
-        else {inputPassword.type = "password"; loginShowPasswordIconeClick = 0;}
+
+const mostrarSenhaIcone = document.getElementById("mostrarSenhaIcone");
+const mostrarSenhaRegistroIcone = document.getElementById("mostrarSenhaRegistroIcone");
+
+const mostrarSenhaIcone_RegistroIcone = [mostrarSenhaIcone, mostrarSenhaRegistroIcone];
+
+const senhaLogin = document.getElementById('login-password');
+const register_password = document.getElementById("register-password");
+const register_password_confirm = document.getElementById("register-password-confirm");
+
+const senhaLogin_registerPasswords = [senhaLogin, register_password, register_password_confirm];
+
+let mostrarSenhaIconeClick = 0;
+for (let i = 0; i < mostrarSenhaIcone_RegistroIcone.length; i++) {
+
+    mostrarSenhaIcone_RegistroIcone[i].addEventListener('click', function() {
+        mostrarSenhaIconeClick++;
+
+        for (let index = 0; index < senhaLogin_registerPasswords.length; index++) {
+            if (mostrarSenhaIconeClick === 1) {
+                senhaLogin_registerPasswords[index].type = "text";
+                mostrarSenhaIcone_RegistroIcone[i].classList.remove('fa-eye');
+                mostrarSenhaIcone_RegistroIcone[i].classList.add('fa-eye-slash');
+                mostrarSenhaIcone_RegistroIcone[i].style.color = 'var(--primary)';
+            }
+            else if (mostrarSenhaIconeClick === 2){
+                senhaLogin_registerPasswords[i].type = "password"; 
+                mostrarSenhaIcone_RegistroIcone[i].classList.remove('fa-eye-slash')
+                mostrarSenhaIcone_RegistroIcone[i].classList.add('fa-eye');
+                mostrarSenhaIcone_RegistroIcone[i].style.color = '#b9b9b9';
+                mostrarSenhaIconeClick = 0;
+            }
+        }
     })
-})
+    
+}
+// mostrarSenhaIcone.addEventListener('click', function() {
+//     mostrarSenhaIconeClick++;
+
+//     for (let index = 0; index < senhaLogin_registerPasswords.length; index++) {
+//         console.log(senhaLogin_registerPasswords[i]);
+//         if (mostrarSenhaIconeClick === 1) {
+//             senhaLogin_registerPasswords[index].type = "text";
+//             mostrarSenhaIcone.classList.remove('fa-eye');
+//             mostrarSenhaIcone.classList.add('fa-eye-slash')
+//         }
+//         else {
+//             senhaLogin_registerPasswords[i].type = "password"; 
+//             mostrarSenhaIcone.classList.remove('fa-eye-slash')
+//             mostrarSenhaIcone.classList.add('fa-eye');
+//             mostrarSenhaIconeClick = 0;
+//         }
+//     }
+// })
 
 
 
