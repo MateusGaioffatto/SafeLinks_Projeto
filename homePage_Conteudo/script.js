@@ -3,14 +3,19 @@ const searchInput = document.getElementById("searchInputId");
 const searchButton = document.getElementById("searchButtonId");
 const homePageSearchIcon = document.getElementById("searchButtonIcon");
 
-const limparTexto = document.getElementById("limparTexto");
+  const searchInput_posicionamento = searchInput.getBoundingClientRect();
 
+
+const limparTexto = document.getElementById("limparTexto");
 const acessarHistorico = document.getElementById("acessarHistorico");
 
 const pesquisasRecentes = document.getElementById("pesquisasRecentesId");
 const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsId");
 
 let searchInputText = '';
+
+const resultadoVerificacaoURL = document.getElementById('resultadoVerificacaoURL');
+const resultadoVerificacaoURLDiv = document.querySelector('.resultadoVerificacaoURL div');
 
 let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; 
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; 
@@ -40,4 +45,4 @@ homePageWindowLargura.addEventListener("change", () => {
       navBarClickContagem = 0;
   }
   else {navBarLinks.style.opacity = 0;}
-});
+})

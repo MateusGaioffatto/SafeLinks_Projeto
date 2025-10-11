@@ -6,11 +6,12 @@ const tutorialBoxesMinusCloseStyles = document.querySelectorAll(".tutorialBoxesM
 
 const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
 
-const tutorialBoxesButtonDivStyles = document.querySelectorAll(".tutorialBoxesButtonDivStyles button");
+let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
+
+const tutorialBoxesButtonDiv = document.querySelectorAll(".tutorialBoxesButtonDiv button");
 
 const tutorialBoxesMinimize = document.getElementById("tutorialBoxesMinimizeID")
 const tutorialBoxesMinimizeIcons = document.querySelectorAll(".tutorialBoxesMinimize i");
-
 const tutorialBoxes_tutorialBoxesMinimize = [tutorialBoxes, tutorialBoxesMinimize];
 
 
@@ -29,30 +30,120 @@ tutorialBoxesMinusCloseStyles[1].addEventListener('click', function() {
 
 
 
-let tutorialGifCount = 1;
 
-tutorialBoxesButtonDivStyles[0].addEventListener('click', function() {
+let tutorialGifCount = 1;
+if (tutorialGifCount === 1) {tutorialBoxesPosicionamento(tutorialGifCount);}
+
+tutorialBoxesButtonDiv[0].addEventListener('click', function() {
   if (tutorialGifCount === 1) {
     tutorialBoxes.style.display = 'none';
   }
 })
-tutorialBoxesButtonDivStyles[0].addEventListener('click', function() {
+tutorialBoxesButtonDiv[0].addEventListener('click', function() {
   tutorialGifCount--;
-  console.log(tutorialGifCount);
   if (tutorialGifCount === 0) {document.body.removeChild(homePageBlurEffect);}
 
   tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
   tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
+
+  tutorialBoxesPosicionamento(tutorialGifCount);
 })
 
-tutorialBoxesButtonDivStyles[1].addEventListener('click', function() {
+tutorialBoxesButtonDiv[1].addEventListener('click', function() {
     tutorialGifCount++;
-    console.log(tutorialGifCount);
     if (tutorialGifCount > 5) {tutorialGifCount = 1;}
 
     tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
     tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
+
+    tutorialBoxesPosicionamento(tutorialGifCount);
 })
+
+
+
+function tutorialBoxesPosicionamento(tutorialGifCount) {
+  if (menuHamburguerElemento && getComputedStyle(menuHamburguerElemento).display === "block") {
+    tutorialBoxes.style.left = `85px`;
+    tutorialBoxes.style.top = `307.667px`;
+
+    if (tutorialGifCount === 3) {
+      const enter = new KeyboardEvent('keydown',{key: 'Enter'});
+      searchInput.value = "http://127.0.0.1:5502/homePage_Conteudo/index.html";
+      searchInput.dispatchEvent(enter);
+
+      tutorialBoxes.style.top = '170px';
+    }
+    else {
+      limparInputValue_ResultadoVerificacaoURLDiv();
+    }
+  }
+  else {
+      switch (tutorialGifCount) {
+      case 1:
+        tutorialBoxesButtonDiv[0].textContent = "Mais Tarde";
+        tutorialBoxesButtonDiv[1].textContent = "Próximo";
+
+        tutorialBoxesTexto.textContent = "BARRA DE PESQUISA - TEXTO";
+
+        tutorialBoxes.style.animation = "none";
+        void tutorialBoxes.offsetWidth;
+        tutorialBoxes.style.animation = "tutorialBoxesOpacity 0.5s ease forwards";
+
+        tutorialBoxes.style.left = `870px`;
+        tutorialBoxes.style.top = `167.667px`;
+      break;
+      case 2:
+        tutorialBoxesButtonDiv[0].textContent = "Anterior"; 
+        limparInputValue_ResultadoVerificacaoURLDiv();
+
+        tutorialBoxesTexto.textContent = "CADASTRO DO USUARIO / ARGUMENTOS PARA EFETUAR CADASTRO - TEXTO";
+        
+        tutorialBoxes.style.animation = "none";
+        void tutorialBoxes.offsetWidth;
+        tutorialBoxes.style.animation = "tutorialBoxesOpacity 0.5s ease forwards";
+
+        tutorialBoxes.style.left = `443px`;
+        tutorialBoxes.style.top = `70px`;
+      break;
+      case 3:
+        const enter = new KeyboardEvent('keydown',{key: 'Enter'});
+        searchInput.value = "http://127.0.0.1:5502/homePage_Conteudo/index.html";
+        searchInput.dispatchEvent(enter);
+
+        tutorialBoxesTexto.textContent = "VERIFICAÇÃO DE LINKS / EXPLICAÇÃO DO PORQUÊ FAZER ISSO - TEXTO";
+        tutorialBoxes.style.animation = 'tutorialBoxesOpacity 1s ease forwards';
+        
+        tutorialBoxes.style.animation = "none";
+        void tutorialBoxes.offsetWidth;
+        tutorialBoxes.style.animation = "tutorialBoxesOpacity 0.5s ease forwards";
+
+        tutorialBoxes.style.left = `25px`;
+        tutorialBoxes.style.top = `167.667px`;
+      break;
+      case 4:
+        limparInputValue_ResultadoVerificacaoURLDiv();
+
+        tutorialBoxes.style.animation = "none";
+        void tutorialBoxes.offsetWidth;
+        tutorialBoxes.style.animation = "tutorialBoxesOpacity 0.5s ease forwards";
+      break;
+      case 5:
+        tutorialBoxesButtonDiv[1].textContent = "Repetir";
+
+        tutorialBoxes.style.animation = "none";
+        void tutorialBoxes.offsetWidth;
+        tutorialBoxes.style.animation = "tutorialBoxesOpacity 0.5s ease forwards";
+      break;
+      default:
+        console.log("ué"); 
+      break;       
+    }
+  }
+  function limparInputValue_ResultadoVerificacaoURLDiv() {
+        searchInput.value = "";
+        resultadoVerificacaoURL.style.display = 'none';
+  }
+}
 
 
 
@@ -92,7 +183,9 @@ tutorialBoxes_tutorialBoxesMinimize[0].addEventListener("mousedown", (e) => {
     tutorialBoxMovendo = false;
   });
 
-  
+
+
+
 
 let tutorialBoxMinimizeMovendo = false;
 let eixo_x, eixo_y;
@@ -114,4 +207,3 @@ tutorialBoxes_tutorialBoxesMinimize[1].addEventListener("mousedown", (e) => {
   document.addEventListener("mouseup", () => {
     tutorialBoxMinimizeMovendo = false;
   });
-

@@ -116,7 +116,7 @@ function isUrl(valor) {
 }
 
 // Função para mostrar resultados da verificação de URL
-function mostrarresultadoVerificacaoURLUrl(resultado, url) {
+function mostrarresultadoVerificacaoURLUrl(resultadoVerificacaoURL, url) {
     // Criar modal ou overlay para mostrar resultados
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
@@ -137,7 +137,7 @@ function mostrarresultadoVerificacaoURLUrl(resultado, url) {
     modal.style.maxWidth = '500px';
     modal.style.width = '90%';
     
-    if (resultado.segura) {
+    if (resultadoVerificacaoURL.segura) {
         modal.innerHTML = `
             <div style="text-align: center;">
                 <i class="fas fa-shield-check" style="font-size: 48px; color: #28a745;"></i>
@@ -146,15 +146,15 @@ function mostrarresultadoVerificacaoURLUrl(resultado, url) {
                 <div style="margin-top: 20px;">
                     <button onclick="window.open('${url}', '_blank')" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-right: 10px; cursor: pointer;">
                         <i class="fas fa-external-link-alt"></i> Acessar URL
+                        <button onclick="document.body.removeChild(this.parentElement.parentElement.parentElement)" style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
                     </button>
-                    <button onclick="document.body.removeChild(this.parentElement.parentElement.parentElement)" style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
                         Fechar
                     </button>
                 </div>
             </div>
         `;
     } else {
-        const ameacas = resultado.ameacas ? resultado.ameacas.map(a => 
+        const ameacas = resultadoVerificacaoURL.ameacas ? resultadoVerificacaoURL.ameacas.map(a => 
             `<li>${a.tipo} (${a.plataforma})</li>`
         ).join('') : '<li>URL suspeita</li>';
         

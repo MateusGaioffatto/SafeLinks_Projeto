@@ -1,8 +1,7 @@
       // Função para verificar a segurança da URL
       function verificarUrlSegura(url) {
-        const resultadoDiv = document.getElementById('resultadoVerificacaoURL');
-        resultadoDiv.style.display = 'block';
-        resultadoDiv.innerHTML = '<div style="text-align: center;"><i class="fas fa-spinner fa-spin"></i> Verificando URL...</div>';
+        resultadoVerificacaoURL.style.display = 'block';
+        resultadoVerificacaoURL.innerHTML = '<div style="text-align: center;"><i class="fas fa-spinner fa-spin"></i> Verificando URL...</div>';
         
         fetch('safe_browsing_api.php', {
           method: 'POST',
@@ -14,7 +13,7 @@
         .then(response => response.json())
         .then(data => {
           if (data.segura) {
-            resultadoDiv.innerHTML = `
+            resultadoVerificacaoURL.innerHTML = `
               <div style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 8px;">
                 <i class="fas fa-check-circle"></i> <strong>URL Segura</strong><br>
                 A URL ${data.url} é considerada segura.
@@ -24,21 +23,23 @@
             
             // Adicionar ao histórico de pesquisas
             adicionarAoHistorico(url);
-          } else {
+          } 
+          else {
             if (data.erro) {
-              resultadoDiv.innerHTML = `
+              resultadoVerificacaoURL.innerHTML = `
                 <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px;">
                   <i class="fas fa-exclamation-triangle"></i> <strong>Erro na Verificação</strong><br>
                   ${data.erro}
                 </div>
               `;
-            } else if (data.ameacas) {
+            } 
+            else if (data.ameacas) {
               let ameacasHTML = '';
               data.ameacas.forEach(ameaca => {
                 ameacasHTML += `<li><strong>${ameaca.tipo}</strong> em ${ameaca.plataforma}</li>`;
               });
               
-              resultadoDiv.innerHTML = `
+              resultadoVerificacaoURL.innerHTML = `
                 <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px;">
                   <i class="fas fa-exclamation-triangle"></i> <strong>URL Não Segura</strong><br>
                   A URL ${data.url} contém as seguintes ameaças:
@@ -51,7 +52,7 @@
           }
         })
         .catch(error => {
-          resultadoDiv.innerHTML = `
+          resultadoVerificacaoURL.innerHTML = `
             <div style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px;">
               <i class="fas fa-exclamation-circle"></i> <strong>Erro de Conexão</strong><br>
               Não foi possível verificar a URL no momento. Por favor, tente novamente mais tarde.
