@@ -1,18 +1,26 @@
-body{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #bbdefb);
-}
-    body.dark-mode {
-        background: linear-gradient(135deg, #1a237e, #311b92);
-        color: white;
-    }
-
-
-
-
-
+/*
+    <div class="homePageBlurEffect" id="homePageBlurEffectID"></div>
+    <div class="tutorialBoxes" id="tutorialBoxesID" >
+        <div class="tutorialBoxesMinusCloseStyles">
+        <h5> 1/5 </h5>
+        <i class="fa light fa-minus"></i>
+        <i class="fa light fa-xmark"></i>
+        </div>
+        <div class="tutorialBoxesImagensStyles">
+        <img src="homePageTutoriais_GIFs\Tutorial01.gif">
+        </div>
+        <p> Caixas de tutorial vão seguir esse padrão! </p>
+        <div class="tutorialBoxesButtonDiv">
+        <button class="tutorialBoxesButtonStyles"> Mais Tarde </button>
+        <button class="tutorialBoxesButtonStyles"> Próximo </button>
+        </div>
+    </div>
+    <div class="tutorialBoxesMinimize" id="tutorialBoxesMinimizeID"> 
+        Primeiras Noções 
+        <i class="fa light fa-expand"></i>
+        <i class="fa light fa-xmark"></i>
+    </div>
+*/
 .homePageBlurEffect {
     position: absolute;
     z-index: 1;

@@ -28,7 +28,7 @@
   background: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow);
   animation: navBarElementoShow 1s forwards;
-  z-index: 99;
+  z-index: 1;
 }
   body.dark-mode .navBarElemento {
     background: rgba(45, 55, 72, 0.95);

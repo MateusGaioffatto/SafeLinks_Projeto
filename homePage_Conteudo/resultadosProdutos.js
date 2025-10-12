@@ -5,6 +5,14 @@ const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID");
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.style.overflow = 'auto';
+});
+
+
+
+
+
 let produtosLi = []; 
 let produtosFoto = [] 
 let produtosTexto = []; 

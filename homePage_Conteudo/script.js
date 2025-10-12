@@ -1,10 +1,13 @@
+const navBarElemento = document.getElementById("navBarElementoId");
 
+const homePage_Titulo_Pesquisa_Opcoes = document.getElementById("homePage_Titulo_Pesquisa_OpcoesId");
+const searchInput_searchButtonsDiv = document.getElementById("searchInput_searchButtonsDivId");
+
+const searchInputDiv = document.getElementById("searchInputDivId");
 const searchInput = document.getElementById("searchInputId");
 const searchButton = document.getElementById("searchButtonId");
 const homePageSearchIcon = document.getElementById("searchButtonIcon");
-
   const searchInput_posicionamento = searchInput.getBoundingClientRect();
-
 
 const limparTexto = document.getElementById("limparTexto");
 const acessarHistorico = document.getElementById("acessarHistorico");
@@ -24,6 +27,7 @@ const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId
 
 const navBarLinks = document.getElementById("navBarLinksId");
 let navBarClickContagem = 0;
+
 
 const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
 
