@@ -1,3 +1,5 @@
+const { version } = require("react");
+
 let tutorialGifCount = 1;
 if (tutorialGifCount === 1) {tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);}
 
@@ -11,7 +13,7 @@ tutorialBoxesButtonDiv[0].addEventListener('click', function() {
   if (tutorialGifCount === 0) {document.body.removeChild(homePageBlurEffect);}
 
   tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
-  tutorialBoxesH5.textContent = `${tutorialGifCount}/4`
+  tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
 
   tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);
 })
@@ -41,19 +43,31 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxesButtonDiv[0].textContent = "Mais Tarde";
         tutorialBoxesButtonDiv[1].textContent = "Próximo";
 
-        tutorialBoxesTexto.textContent = "BARRA DE PESQUISA - TEXTO / EXPLICAR COMO FUNCIONA E O QUE É";
+        tutorialBoxesTexto.textContent = "RESULTADOS PRODUTOS: CAMPO DE PESQUISA";
 
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
 
-        tutorialBoxes.style.left = `870px`;
-        tutorialBoxes.style.top = `167.667px`;
+        tutorialBoxes.style.left = `872px`;
+        tutorialBoxes.style.top = `42.667px`;
       break;
       case 2:
         tutorialBoxesButtonDiv[0].textContent = "Anterior"; 
         limparInputValue_ResultadoVerificacaoURLDiv();
 
-        tutorialBoxesTexto.textContent = "CADASTRO DO USUARIO / ARGUMENTOS PARA EFETUAR CADASTRO - TEXTO";
+        tutorialBoxesTexto.textContent = "VITRINE DE PRODUTOS: EXPLICAR TODOS OS DADOS PRESENTE";
+        
+        tutorialBoxesAnimationOpacityStyle();
+        homePageElementos_zIndexStyle(tutorialGifCount);
+
+        tutorialBoxes.style.left = `339px`;
+        tutorialBoxes.style.top = '471.667px';
+      break;
+      case 3:
+        tutorialBoxesButtonDiv[1].textContent = "Próximo";
+
+        tutorialBoxesTexto.textContent = "FAVORITOS: EXPLICAÇÃO COMO FUNCIONA E COMO FICAM SALVOS NO PERFIL";
+        tutorialBoxes.style.animation = 'tutorialBoxesOpacity 1s ease forwards';
         
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
@@ -61,30 +75,18 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxes.style.left = '635px';
         tutorialBoxes.style.top = '471.667px';
       break;
-      case 3:
-        tutorialBoxesButtonDiv[1].textContent = "Próximo";
-
-        tutorialBoxesTexto.textContent = "VERIFICAÇÃO DE LINKS / EXPLICAÇÃO DO PORQUÊ FAZER ISSO - TEXTO";
-        tutorialBoxes.style.animation = 'tutorialBoxesOpacity 1s ease forwards';
-        
-        tutorialBoxesAnimationOpacityStyle();
-        homePageElementos_zIndexStyle(tutorialGifCount);
-
-        tutorialBoxes.style.left = `870px`;
-        tutorialBoxes.style.top = `167.667px`;
-      break;
       case 4:
         limparInputValue_ResultadoVerificacaoURLDiv();
 
         tutorialBoxesButtonDiv[1].textContent = "Repetir";
 
-        tutorialBoxesTexto.textContent = "EFETUAR UM PESQUISA / TUTORIAL CONTINUARÁ LOGO APÓS";
+        tutorialBoxesTexto.textContent = "HISTÓRICO: EXPLICAÇÃO COMO FUNCIONA E COMO FICA SALVO NO PERFIL";
 
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
 
-        tutorialBoxes.style.left = `25px`;
-        tutorialBoxes.style.top = `167.667px`;
+        tutorialBoxes.style.left = `935px`;
+        tutorialBoxes.style.top = '471.667px';
       break;
       default:
         console.log("ué"); 
@@ -107,19 +109,22 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
       case 1:
         resultadosProdutosDiv.style.zIndex = 0;
         searchInput_searchButtonsDiv.style.zIndex = 2;
-        filtrosContainer.style.zIndex = 0;
       break;
       case 2:
+        filtrosContainer.style.zIndex = 0;
         resultadosProdutosDiv.style.zIndex = 2;
         searchInput_searchButtonsDiv.style.zIndex = 0;
       break;
       case 3:
-        filtrosContainer.style.zIndex = 2;
-        searchInput_searchButtonsDiv.style.zIndex = 0;
-        resultadosProdutosDiv.style.zIndex = 0;
+        console.log(3);
       break;
       case 4:
-        searchInput_searchButtonsDiv.style.zIndex = 2;
+        console.log(4);
+      break;
+      case 5:
+        filtrosContainer.style.zIndex = 2;
+        resultadosProdutosDiv.style.zIndex = 0;
+        searchInput_searchButtonsDiv.style.zIndex = 0;
       break;
       default:
         console.log("🤔");  

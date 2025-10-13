@@ -5,8 +5,8 @@ const navBarElemento = document.getElementById("navBarElementoId");
 const tutorialBoxes = document.getElementById("tutorialBoxesID");
 const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
 
-const tutorialBoxesH5 = document.querySelector(".tutorialBoxesMinusCloseStyles h5");
-const tutorialBoxesMinusCloseStyles = document.querySelectorAll(".tutorialBoxesMinusCloseStyles i");
+const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
+const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
 
 const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
 
@@ -14,9 +14,7 @@ let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
 
 const tutorialBoxesButtonDiv = document.querySelectorAll(".tutorialBoxesButtonDiv button");
 
-const tutorialBoxesMinimize = document.getElementById("tutorialBoxesMinimizeID")
-const tutorialBoxesMinimizeIcons = document.querySelectorAll(".tutorialBoxesMinimize i");
-const tutorialBoxes_tutorialBoxesMinimize = [tutorialBoxes, tutorialBoxesMinimize];
+
 
 
 

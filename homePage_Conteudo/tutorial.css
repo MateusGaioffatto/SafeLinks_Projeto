@@ -1,7 +1,7 @@
 /*
     <div class="homePageBlurEffect" id="homePageBlurEffectID"></div>
     <div class="tutorialBoxes" id="tutorialBoxesID" >
-        <div class="tutorialBoxesMinusCloseStyles">
+        <div class="tutorialBoxesCloseIcone">
         <h5> 1/5 </h5>
         <i class="fa light fa-minus"></i>
         <i class="fa light fa-xmark"></i>
@@ -15,15 +15,10 @@
         <button class="tutorialBoxesButtonStyles"> Próximo </button>
         </div>
     </div>
-    <div class="tutorialBoxesMinimize" id="tutorialBoxesMinimizeID"> 
-        Primeiras Noções 
-        <i class="fa light fa-expand"></i>
-        <i class="fa light fa-xmark"></i>
-    </div>
 */
 .homePageBlurEffect {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
 
     background: linear-gradient(135deg, #fdffff, #e6f4ff);
     opacity: 70%;
@@ -39,7 +34,7 @@
 
 .tutorialBoxes {
     position: absolute;
-
+    
     z-index: 5;
 
     display: block;
@@ -68,18 +63,18 @@
         }
     }
 
-    .tutorialBoxesMinusCloseStyles {
+    .tutorialBoxesCloseIcone {
         display: flex;
         padding: 5px 15px 5px 0;
     }
 
-        .tutorialBoxesMinusCloseStyles h5 {
+        .tutorialBoxesCloseIcone h5 {
             display: flex;
             position: relative;
             left: 30px;
             margin: 0;
         }
-        .tutorialBoxesMinusCloseStyles i {   
+        .tutorialBoxesCloseIcone i {   
             position: relative;
             left: 235px;
             
@@ -124,41 +119,3 @@
 
             font-size: 100%;
         }
-
-
-
-        
-
-.tutorialBoxesMinimize {
-    position: relative;
-
-    display: none;
-
-    z-index: 5;
-
-    border-radius: 5px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-
-    justify-content: center;
-    align-items: center;
-    
-    width: 20rem;
-    height: 2rem;
-    
-    background-color: #f8f9fa; 
-
-    opacity: 0;
-    animation: tutorialBoxesOpacity 1s ease forwards;
-}
-    body.dark-mode .tutorialBoxesMinimize {
-        background: rgba(55, 55, 72);
-    }
-    @keyframes tutorialBoxesOpacity {
-    to {opacity: 1;}  
-    }
-    .tutorialBoxesMinimize i {
-        cursor: pointer;
-        position: relative;
-    }
-    .tutorialBoxesMinimize i:nth-child(1) {right: -15.95%;}
-    .tutorialBoxesMinimize i:nth-child(2) {right: -18.95%;}

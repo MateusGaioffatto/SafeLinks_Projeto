@@ -10,7 +10,7 @@ tutorialBoxesButtonDiv[0].addEventListener('click', function() {
   tutorialGifCount--;
   if (tutorialGifCount === 0) {document.body.removeChild(homePageBlurEffect);}
 
-  tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
+  tutorialBoxesGifs.src = `homePageTutoriais_GIFs/homePage_GIFs/Tutorial0${tutorialGifCount}.gif`
   tutorialBoxesH5.textContent = `${tutorialGifCount}/4`
 
   tutorial_homePageBoxesPosicionamento(tutorialGifCount);
@@ -20,7 +20,7 @@ tutorialBoxesButtonDiv[1].addEventListener('click', function() {
     tutorialGifCount++;
     if (tutorialGifCount > 4) {tutorialGifCount = 1;}
 
-    tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
+    tutorialBoxesGifs.src = `homePageTutoriais_GIFs/homePage_GIFs/Tutorial0${tutorialGifCount}.gif`
     tutorialBoxesH5.textContent = `${tutorialGifCount}/4`
 
     tutorial_homePageBoxesPosicionamento(tutorialGifCount);
@@ -52,7 +52,10 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxesButtonDiv[0].textContent = "Mais Tarde";
         tutorialBoxesButtonDiv[1].textContent = "Próximo";
 
-        tutorialBoxesTexto.textContent = "BARRA DE PESQUISA - TEXTO / EXPLICAR COMO FUNCIONA E O QUE É";
+        tutorialBoxesTexto.textContent = "CAMPO DE PESQUISA: EXPLICAR COMO FUNCIONA E O QUE É";
+
+        searchInputDiv.style.pointerEvents = 'none';
+        searchInput.value = '';
 
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
@@ -64,8 +67,10 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxesButtonDiv[0].textContent = "Anterior"; 
         limparInputValue_ResultadoVerificacaoURLDiv();
 
-        tutorialBoxesTexto.textContent = "CADASTRO DO USUARIO / ARGUMENTOS PARA EFETUAR CADASTRO - TEXTO";
+        tutorialBoxesTexto.textContent = "CADASTRO DO USUARIO: ARGUMENTOS PARA EFETUAR CADASTRO - TEXTO";
         
+        searchInputDiv.style.pointerEvents = 'initial';
+
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
 
@@ -79,7 +84,7 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
 
         tutorialBoxesButtonDiv[1].textContent = "Próximo";
 
-        tutorialBoxesTexto.textContent = "VERIFICAÇÃO DE LINKS / EXPLICAÇÃO DO PORQUÊ FAZER ISSO - TEXTO";
+        tutorialBoxesTexto.textContent = "VERIFICAÇÃO DE LINKS: EXPLICAÇÃO DO PORQUÊ FAZER ISSO";
         tutorialBoxes.style.animation = 'tutorialBoxesOpacity 1s ease forwards';
         
         tutorialBoxesAnimationOpacityStyle();
@@ -93,7 +98,7 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
 
         tutorialBoxesButtonDiv[1].textContent = "Repetir";
 
-        tutorialBoxesTexto.textContent = "EFETUAR UM PESQUISA / TUTORIAL CONTINUARÁ LOGO APÓS";
+        tutorialBoxesTexto.textContent = "EFETUAR UM PESQUISA: TUTORIAL CONTINUARÁ LOGO APÓS";
 
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
