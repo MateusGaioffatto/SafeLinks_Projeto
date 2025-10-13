@@ -1,5 +1,5 @@
 let tutorialGifCount = 1;
-if (tutorialGifCount === 1) {tutorial_homePageBoxesPosicionamento(tutorialGifCount);}
+if (tutorialGifCount === 1) {tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);}
 
 tutorialBoxesButtonDiv[0].addEventListener('click', function() {
   if (tutorialGifCount === 1) {
@@ -13,7 +13,7 @@ tutorialBoxesButtonDiv[0].addEventListener('click', function() {
   tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
   tutorialBoxesH5.textContent = `${tutorialGifCount}/4`
 
-  tutorial_homePageBoxesPosicionamento(tutorialGifCount);
+  tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);
 })
 
 tutorialBoxesButtonDiv[1].addEventListener('click', function() {
@@ -23,28 +23,17 @@ tutorialBoxesButtonDiv[1].addEventListener('click', function() {
     tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
     tutorialBoxesH5.textContent = `${tutorialGifCount}/4`
 
-    tutorial_homePageBoxesPosicionamento(tutorialGifCount);
+    tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);
 })
 
 
 
 
 
-function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
+function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
   if (menuHamburguerElemento && getComputedStyle(menuHamburguerElemento).display === "block") {
     tutorialBoxes.style.left = `85px`;
     tutorialBoxes.style.top = `307.667px`;
-
-    if (tutorialGifCount === 3) {
-      const enter = new KeyboardEvent('keydown',{key: 'Enter'});
-      searchInput.value = "http://127.0.0.1:5502/homePage_Conteudo/index.html";
-      searchInput.dispatchEvent(enter);
-
-      tutorialBoxes.style.top = '170px';
-    }
-    else {
-      limparInputValue_ResultadoVerificacaoURLDiv();
-    }
   }
   else {
       switch (tutorialGifCount) {
@@ -69,14 +58,10 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
 
-        tutorialBoxes.style.left = `443px`;
-        tutorialBoxes.style.top = `70px`;
+        tutorialBoxes.style.left = `25px`;
+        tutorialBoxes.style.top = `167.667px`;
       break;
       case 3:
-        const enter = new KeyboardEvent('keydown',{key: 'Enter'});
-        searchInput.value = "http://127.0.0.1:5502/homePage_Conteudo/index.html";
-        searchInput.dispatchEvent(enter);
-
         tutorialBoxesButtonDiv[1].textContent = "Próximo";
 
         tutorialBoxesTexto.textContent = "VERIFICAÇÃO DE LINKS / EXPLICAÇÃO DO PORQUÊ FAZER ISSO - TEXTO";
@@ -85,7 +70,7 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
 
-        tutorialBoxes.style.left = `25px`;
+        tutorialBoxes.style.left = `870px`;
         tutorialBoxes.style.top = `167.667px`;
       break;
       case 4:
@@ -98,7 +83,7 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
 
-        tutorialBoxes.style.left = `870px`;
+        tutorialBoxes.style.left = `25px`;
         tutorialBoxes.style.top = `167.667px`;
       break;
       default:
@@ -108,7 +93,6 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
   }
   function limparInputValue_ResultadoVerificacaoURLDiv() {
     searchInput.value = "";
-    resultadoVerificacaoURL.style.display = 'none';
   }
 
   function tutorialBoxesAnimationOpacityStyle() {
@@ -121,21 +105,21 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
 
     switch (tutorialGifCount) {
       case 1:
+        resultadosProdutosDiv.style.zIndex = 0;
         searchInput_searchButtonsDiv.style.zIndex = 2;
-        navBarElemento.style.zIndex = 0;
+        filtrosContainer.style.zIndex = 0;
       break;
       case 2:
+        resultadosProdutosDiv.style.zIndex = 2;
         searchInput_searchButtonsDiv.style.zIndex = 0;
-        navBarElemento.style.zIndex = 2;
       break;
       case 3:
-        resultadoVerificacaoURL.style.zIndex = 2;
-        searchInput_searchButtonsDiv.style.zIndex = 2;
-        navBarElemento.style.zIndex = 0;
+        filtrosContainer.style.zIndex = 2;
+        searchInput_searchButtonsDiv.style.zIndex = 0;
+        resultadosProdutosDiv.style.zIndex = 0;
       break;
       case 4:
         searchInput_searchButtonsDiv.style.zIndex = 2;
-        resultadoVerificacaoURL.style.zIndex = 0;
       break;
       default:
         console.log("🤔");  

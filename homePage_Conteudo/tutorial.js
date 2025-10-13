@@ -1,23 +1,3 @@
-const tutorialBoxes = document.getElementById("tutorialBoxesID");
-const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
-
-const tutorialBoxesH5 = document.querySelector(".tutorialBoxesMinusCloseStyles h5");
-const tutorialBoxesMinusCloseStyles = document.querySelectorAll(".tutorialBoxesMinusCloseStyles i");
-
-const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
-
-let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
-
-const tutorialBoxesButtonDiv = document.querySelectorAll(".tutorialBoxesButtonDiv button");
-
-const tutorialBoxesMinimize = document.getElementById("tutorialBoxesMinimizeID")
-const tutorialBoxesMinimizeIcons = document.querySelectorAll(".tutorialBoxesMinimize i");
-const tutorialBoxes_tutorialBoxesMinimize = [tutorialBoxes, tutorialBoxesMinimize];
-
-
-
-
-
 tutorialBoxesMinusCloseStyles[0].addEventListener('click', function() {
     tutorialBoxes.style.display = 'none'; 
     tutorialBoxesMinimize.style.display = 'inherit';
@@ -89,35 +69,3 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseup", () => {
   tutorialBoxMinimizeMovendo = false;
 });
-
-
-
-
-
-let tutorialGifCount = 1;
-if (tutorialGifCount === 1) {tutorial_homePageBoxesPosicionamento(tutorialGifCount);}
-
-tutorialBoxesButtonDiv[0].addEventListener('click', function() {
-  if (tutorialGifCount === 1) {
-    tutorialBoxes.style.display = 'none';
-  }
-})
-tutorialBoxesButtonDiv[0].addEventListener('click', function() {
-  tutorialGifCount--;
-  if (tutorialGifCount === 0) {document.body.removeChild(homePageBlurEffect);}
-
-  tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
-  tutorialBoxesH5.textContent = `${tutorialGifCount}/5`
-
-  tutorial_homePageBoxesPosicionamento(tutorialGifCount);
-})
-
-tutorialBoxesButtonDiv[1].addEventListener('click', function() {
-    tutorialGifCount++;
-    if (tutorialGifCount > 4) {tutorialGifCount = 1;}
-
-    tutorialBoxesGifs.src = `homePageTutoriais_GIFs/Tutorial0${tutorialGifCount}.gif`
-    tutorialBoxesH5.textContent = `${tutorialGifCount}/4`
-
-    tutorial_homePageBoxesPosicionamento(tutorialGifCount);
-})

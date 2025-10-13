@@ -1,7 +1,29 @@
 const navBarElemento = document.getElementById("navBarElementoId");
 
+
+
+const tutorialBoxes = document.getElementById("tutorialBoxesID");
+const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
+
+const tutorialBoxesH5 = document.querySelector(".tutorialBoxesMinusCloseStyles h5");
+const tutorialBoxesMinusCloseStyles = document.querySelectorAll(".tutorialBoxesMinusCloseStyles i");
+
+const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
+
+let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
+
+const tutorialBoxesButtonDiv = document.querySelectorAll(".tutorialBoxesButtonDiv button");
+
+const tutorialBoxesMinimize = document.getElementById("tutorialBoxesMinimizeID")
+const tutorialBoxesMinimizeIcons = document.querySelectorAll(".tutorialBoxesMinimize i");
+const tutorialBoxes_tutorialBoxesMinimize = [tutorialBoxes, tutorialBoxesMinimize];
+
+
+
 const homePage_Titulo_Pesquisa_Opcoes = document.getElementById("homePage_Titulo_Pesquisa_OpcoesId");
 const searchInput_searchButtonsDiv = document.getElementById("searchInput_searchButtonsDivId");
+
+
 
 const searchInputDiv = document.getElementById("searchInputDivId");
 const searchInput = document.getElementById("searchInputId");
@@ -9,24 +31,46 @@ const searchButton = document.getElementById("searchButtonId");
 const homePageSearchIcon = document.getElementById("searchButtonIcon");
   const searchInput_posicionamento = searchInput.getBoundingClientRect();
 
+
+
 const limparTexto = document.getElementById("limparTexto");
 const acessarHistorico = document.getElementById("acessarHistorico");
+
+
 
 const pesquisasRecentes = document.getElementById("pesquisasRecentesId");
 const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsId");
 
+
+
 let searchInputText = '';
+
+
 
 const resultadoVerificacaoURL = document.getElementById('resultadoVerificacaoURL');
 const resultadoVerificacaoURLDiv = document.querySelector('.resultadoVerificacaoURL div');
 
+
+
 let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; 
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; 
 
+
+
 const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId");
+
+
 
 const navBarLinks = document.getElementById("navBarLinksId");
 let navBarClickContagem = 0;
+
+
+
+const filtrosContainer = document.getElementById("filtrosContainerID");
+
+const resultadosProdutosDiv = document.getElementById("resultadosProdutosDivID"); 
+const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID"); 
+
 
 
 const homePageWindowLargura = window.matchMedia("(max-width: 768px)");

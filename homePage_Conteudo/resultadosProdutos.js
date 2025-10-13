@@ -1,10 +1,3 @@
-const resultadosProdutosDiv = document.getElementById("resultadosProdutosDivID"); 
-const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID"); 
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = 'auto';
 });
