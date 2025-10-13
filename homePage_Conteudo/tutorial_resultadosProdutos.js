@@ -58,8 +58,8 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxesAnimationOpacityStyle();
         homePageElementos_zIndexStyle(tutorialGifCount);
 
-        tutorialBoxes.style.left = `25px`;
-        tutorialBoxes.style.top = `167.667px`;
+        tutorialBoxes.style.left = '635px';
+        tutorialBoxes.style.top = '471.667px';
       break;
       case 3:
         tutorialBoxesButtonDiv[1].textContent = "Próximo";
