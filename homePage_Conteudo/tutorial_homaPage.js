@@ -33,17 +33,31 @@ tutorialBoxesButtonDiv[1].addEventListener('click', function() {
 function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
   if (menuHamburguerElemento && getComputedStyle(menuHamburguerElemento).display === "block") {
     tutorialBoxes.style.left = `85px`;
-    tutorialBoxes.style.top = `307.667px`;
+    switch (tutorialGifCount) {
+      case 1:
+        tutorialBoxes.style.top = '555.667px';
+        homePageElementos_zIndexStyle(tutorialGifCount); 
+        tutorialBoxesButtonDiv[1].textContent = "Próximo";
+      break;
+      case 2:
+        limparInputValue_ResultadoVerificacaoURLDiv();
+        tutorialBoxes.style.top = '70.667px';
+        homePageElementos_zIndexStyle(tutorialGifCount); 
+      break;
+      case 3:
+        tutorialBoxes.style.top = '15px';
+        const enter = new KeyboardEvent('keydown',{key: 'Enter'});
+        searchInput.value = "http://127.0.0.1:5502/homePage_Conteudo/index.html";
+        searchInput.dispatchEvent(enter);
 
-    if (tutorialGifCount === 3) {
-      const enter = new KeyboardEvent('keydown',{key: 'Enter'});
-      searchInput.value = "http://127.0.0.1:5502/homePage_Conteudo/index.html";
-      searchInput.dispatchEvent(enter);
-
-      tutorialBoxes.style.top = '170px';
-    }
-    else {
-      limparInputValue_ResultadoVerificacaoURLDiv();
+        homePageElementos_zIndexStyle(tutorialGifCount);
+      break;
+      case 4:
+        limparInputValue_ResultadoVerificacaoURLDiv();
+        tutorialBoxes.style.top = '80px';
+        homePageElementos_zIndexStyle(tutorialGifCount);
+        tutorialBoxesButtonDiv[1].textContent = "Repetir";
+      break;
     }
   }
   else {

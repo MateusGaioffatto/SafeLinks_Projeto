@@ -40,6 +40,9 @@
   }
 
 
+
+
+
 .navBarContainer {
   max-width: 1100px;
   margin: 0 auto;
@@ -89,7 +92,46 @@
       color: #6c8eff;
     }
 
+
     
+
+
+  /* .navBarUsuarioOpcoesDiv {
+    display: none;
+
+    position: absolute;
+    left: 370px;
+    bottom: 401px;
+    
+    width: fit-content;
+
+    background-color: #fdffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    border-radius: 0 0 5px 5px;
+
+    overflow: hidden;
+  }
+  
+    .navBarUsuarioOpcoesDiv a {
+      color: black;
+      padding: 12px 15px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s;
+    }
+        .navBarUsuarioOpcoesDiv a:hover {
+        background-color: #f1f1f1;
+        }
+    
+    #usuarioLoginLi:hover .navBarUsuarioOpcoesDiv {
+      display: block;
+    } */
+
+
+
+
+
 .menuHamburguerElemento {
   display: none;
   font-size: 1.4rem;
