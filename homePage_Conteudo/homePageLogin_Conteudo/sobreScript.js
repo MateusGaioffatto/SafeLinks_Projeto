@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const darkModeToggle = document.getElementById('homePageModoEscuroClaroID');
+    const darkModeToggle = document.getElementById('modoEscuroClaroElementoId');
     const body = document.body;
     
     if (localStorage.getItem('darkMode') === 'enabled') {
@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // MENU HAMBURGUER: VARIÁVEIS
-const hamburguerMenu = document.getElementById("hamburguerMenuID");
-const navBarLinks = document.getElementById("homePageNavBarLinksID");
+const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId");
+const navBarLinks = document.getElementById("navBarLinksId");
 const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
 let navBarClickContagem = 0;
 
 // MENU HAMBURGUER: FUNÇÕES
-hamburguerMenu.addEventListener("click", () => { 
+menuHamburguerElemento.addEventListener("click", () => { 
   navBarClickContagem++;
   if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
   else {

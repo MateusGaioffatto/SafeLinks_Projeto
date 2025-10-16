@@ -42,7 +42,7 @@ body.dark-mode {
 
 
 
-.homePageModoEscuroClaro {
+.modoEscuroClaroElemento {
   position: relative;
   left: 20px;
 
@@ -56,11 +56,11 @@ body.dark-mode {
   cursor: pointer;
   transition: var(--transition);
 }
-  #homePageModoEscuroClaroID:hover {
+  #modoEscuroClaroElementoId:hover {
     color: var(--primary);
     transform: translateY(-2px);
   }
-body.dark-mode .homePageModoEscuroClaro {
+body.dark-mode .modoEscuroClaroElemento {
   background: var(--dark);
   color: var(--light);
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -71,7 +71,7 @@ body.dark-mode .homePageModoEscuroClaro {
 
 
 
-.homePageConteudoCentral {
+.homePage_Titulo_Pesquisa_Opcoes {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -91,7 +91,7 @@ header {
   color: var(--primary);
   margin-bottom: 10px;
   opacity: 0;
-  animation: homePageConteudoCentralOpacity 2s ease forwards;
+  animation: homePage_Titulo_Pesquisa_OpcoesOpacity 2s ease forwards;
 }
 
 body.dark-mode .homePageTitulo {
@@ -102,7 +102,7 @@ body.dark-mode .homePageTitulo {
   color: var(--gray);
   margin-bottom: 20px;
   opacity: 0;
-  animation: homePageConteudoCentralOpacity 2s ease forwards;
+  animation: homePage_Titulo_Pesquisa_OpcoesOpacity 2s ease forwards;
 }
   
 
@@ -115,7 +115,7 @@ body.dark-mode .homePageSubTitulo {
 
 
 @media (max-width: 768px) {
-  .homePageSearchInput {
+  .searchInput {
     width: 200px;
   }
   

@@ -1,48 +1,83 @@
-// CAMPO DE PESQUISA: VARIÁVEIS CONSTANTES
-const homePageSearchInput = document.getElementById("homePageSearchInputID");
-const homePageSearchButton = document.getElementById("homePageSearchButtonID");
-
-const homePageSearchIcon = document.getElementById("homePageSearchIconID");
+const navBarElemento = document.getElementById("navBarElementoId");
 
 
 
+const tutorialBoxes = document.getElementById("tutorialBoxesID");
+const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
+
+const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
+const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
+
+const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
+
+let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
+
+const tutorialBoxesButtonDiv = document.querySelectorAll(".tutorialBoxesButtonDiv button");
 
 
-// LIMPAR TEXTO INSERIDO: VARIÁVEL CONSTANTE, BUTTON
-const barraDePesquisaLimparTexto = document.getElementById("barraDePesquisaLimparTexto");
-// HISTÓRICO DE PESQUISA: VARIÁVEL CONSTANTE: BUTTON
-const barraDePesquisaHistorico = document.getElementById("barraDePesquisaHistorico");
 
-// CAMPO DE PESQUISAS RECENTES: VARIÁVEL CONSTANTE, DIV
-const pesquisasRecentes = document.getElementById("homePagePesquisasRecentesID");
-// CAMPO DE PESQUISAS RECENTES, ITEMS PESQUISADOS: VARIÁVEL CONSTANTE, DIV
-const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsID");
 
-// TEXTO INSERIDO PELO USUÁRIO: VARIÁVEL
+
+const homePage_Titulo_Pesquisa_Opcoes = document.getElementById("homePage_Titulo_Pesquisa_OpcoesId");
+const searchInput_searchButtonsDiv = document.getElementById("searchInput_searchButtonsDivId");
+
+
+
+const searchInputDiv = document.getElementById("searchInputDivId");
+const searchInput = document.getElementById("searchInputId");
+const searchButton = document.getElementById("searchButtonId");
+const homePageSearchIcon = document.getElementById("searchButtonIcon");
+  const searchInput_posicionamento = searchInput.getBoundingClientRect();
+
+
+
+const limparTexto = document.getElementById("limparTexto");
+const acessarHistorico = document.getElementById("acessarHistorico");
+
+
+
+const pesquisasRecentes = document.getElementById("pesquisasRecentesId");
+const listaPesquisasRecentes = document.getElementById("pesquisasRecentesItemsId");
+
+
+
 let searchInputText = '';
 
-// LOJAS FAVORITADAS PELO USUÁRIO: VARIÁVEL
-let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; // <= RESOLVER ISSO NO BACKEND
-// HISTÓRICO DE PESQUISA DO USUÁRIO: VARIÁVEL
-let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; // <= RESOLVER ISSO NO BACKEND
+
+
+const resultadoVerificacaoURL = document.getElementById('resultadoVerificacaoURL');
+const resultadoVerificacaoURLDiv = document.querySelector('.resultadoVerificacaoURL div');
 
 
 
+let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; 
+let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; 
 
 
 
+const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId");
 
 
 
-
-// MENU HAMBURGUER: VARIÁVEIS
-const hamburguerMenu = document.getElementById("hamburguerMenuID");
-const navBarLinks = document.getElementById("homePageNavBarLinksID");
-const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
+const navBarLinks = document.getElementById("navBarLinksId");
 let navBarClickContagem = 0;
 
-// MENU HAMBURGUER: FUNÇÕES
-hamburguerMenu.addEventListener("click", () => { 
+
+
+const filtrosContainer = document.getElementById("filtrosContainerID");
+
+const resultadosProdutosDiv = document.getElementById("resultadosProdutosDivID"); 
+const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID"); 
+
+
+
+const homePageWindowLargura = window.matchMedia("(max-width: 768px)");
+
+
+
+
+
+menuHamburguerElemento.addEventListener("click", () => { 
   navBarClickContagem++;
   if (navBarClickContagem === 1) {navBarLinks.style.opacity = 1;}
   else {
@@ -56,4 +91,4 @@ homePageWindowLargura.addEventListener("change", () => {
       navBarClickContagem = 0;
   }
   else {navBarLinks.style.opacity = 0;}
-});
+})

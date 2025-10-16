@@ -4,28 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Login e Cadastro</title>
-    <link rel="icon" href="../SafeLinks_Favicon_Logo.png" type="image/png"> <!-- SITE: LOGO -->
+    <link rel="icon" href="../SafeLinks_Favicon_Logo.png" type="image/png"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navBarStyle.css">
     <link rel="stylesheet" href="styleLogin.css">   
 </head>
 <body>
 
-    <nav class="loginNavbar" id="loginNavbarID">
-    <div class="navbar-container">
-        <div class="navbar-logo"><a href="../index.html">SafeLinks</a></div>
-        <ul class="navbar-links" id="loginNavBarLinksID">
-            <li><a href="../index.html"><i class="fas fa-home"></i> Início </a></li>
-            <li><a href="#"><i class="fa fa-bell"></i> Notificações </a></li>
-            <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
-            <li><a href="../dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
-            <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i></li>
-        </ul>
-        <div class="hamburguerMenu" id="hamburguerMenuID"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
-            <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
+    <nav class="navBarElemento" id="navBarElementoId"> 
+        <div class="navBarContainer"> 
+        <div class="navBarLogo" id="navBarLogoId"><a href="../index.html"> SafeLinks </a></div> 
+            <ul class="navBarLinks" id="navBarLinksId"> 
+                <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> 
+                <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> 
+                <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
+                <li class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId"><i class="fas fa-moon"></i></li> 
+            </ul>
+            <div class="menuHamburguerElemento" id="menuHamburguerElementoId"> 
+                <i class="fas fa-bars"></i> 
+            </div>
         </div>
-        </div>
-    </nav>
+    </nav> 
+
+
+
+
 
     <div class="container" id="loginContainerID">
         <div class="header">
@@ -47,22 +52,33 @@
                 <div class="form-control">
                     <label for="login-password">Senha</label>
                     <input type="password" id="login-password" name="password" placeholder="Sua senha" required>
+                    <div class="forgot-password_mostrarSenhaIcone">
+                        <div class="forgot-password">
+                            <a href="#" id="show-recover">Esqueceu a senha?</a>
+                        </div>
+                        <i class="fas fa-eye" id="mostrarSenhaIcone"> <u>Mostrar Senha</u> </i> 
+                    </div>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Mensagem de erro</small>
                 </div>
-                
-                <div class="forgot-password">
-                    <a href="#" id="show-recover">Esqueceu a senha?</a>
-                </div>
-                
+
                 <button type="submit" class="loginEntrarButton" id="loginEntrarButtonID">Entrar</button>
                 
-                <div class="link">
-                    <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+                <div class="registrarUsuarioLinkDiv">
+                    <p>Não tem uma conta? <a href="#" id="show-register" class="registrarUsuarioLink">Cadastre-se</a></p>
                 </div>
             </form>
             
+
+
+
+
+
+
+
+
+
             <form id="register-form" class="hidden" action="register.php" method="POST">
                 <div class="form-control">
                     <label for="register-name">Nome completo</label>
@@ -86,11 +102,11 @@
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Mensagem de erro</small>
-                        <button class="loginGerarPassword" id="loginGerarPasswordID">
-                            <u> Sugestão de Senha Forte </u>
-                        </button>                             
-                        <i class="fa-solid fa-eye" id="loginShowPasswordIcone"> <u>Mostrar Senha</u> </i> 
-                    </div>
+                    <button class="loginGerarPassword" id="loginGerarPasswordID">
+                        <u> Sugestão de Senha Forte </u>
+                    </button>  
+                    <i class="fas fa-eye" id="mostrarSenhaRegistroIcone"> <u>Mostrar Senha</u> </i> 
+                </div>
                 
                 <div class="form-control" id="loginFormPassword">
                     <label for="register-password-confirm">Confirme sua senha</label>
@@ -125,7 +141,7 @@
                     <small>Mensagem de erro</small>
                 </div>
                 
-                <button type="submit">Recuperar Senha</button>
+                <button type="submit" class="recuperarSenha">enviar e-mail</button>
                 
                 <div class="link">
                     <p>Lembrou sua senha? <a href="#" id="show-login-from-recover">Faça login</a></p>
@@ -133,6 +149,10 @@
             </form>
         </div>
     </div>
+
+
+
+
 
     <script src="../theme.js"></script>
     <script src="loginScript.js"></script>

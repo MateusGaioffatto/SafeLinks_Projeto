@@ -7,14 +7,14 @@
     <link rel="icon" href="../SafeLinks_Favicon_Logo.png" type="image/png">
 
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../homePageNavBarStyle.css">
+    <link rel="stylesheet" href="../navBarStyle.css">
     <link rel="stylesheet" href="resultadosProdutos.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
 <!-- Adicione este estilo inline para garantir que os filtros sejam exibidos corretamente -->
 <style>
-    .filtros-container {
+    .filtrosContainer {
         display: block !important;
     }
 </style>
@@ -22,22 +22,22 @@
 <body>
 
     <!-- NAVBAR: HOMEPAGE -->
-    <nav class="homePageNavbar" id="homePageNavbarID">
-      <div class="navbar-container">
-        <div class="navbar-logo" id="homePageNavBarLogo"><a href="index.php"> SafeLinks </a></div>
-          <ul class="navbar-links" id="homePageNavBarLinksID">
+    <nav class="navBarElemento" id="navBarElementoId">
+      <div class="navBarContainer">
+        <div class="navBarLogo" id="navBarLogoId"><a href="index.php"> SafeLinks </a></div>
+          <ul class="navBarLinks" id="navBarLinksId">
             <li><a href="index.php"><i class="fas fa-home"></i> Início </a></li>
             
             <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
             <li><a href="../sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
             <li id="modoEscuroClaroLi">
-              <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">   <!-- HOMEPAGE: BOTÃO MODO ESCURO E CLARO -->
+              <button class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId">   <!-- HOMEPAGE: BOTÃO MODO ESCURO E CLARO -->
                 <i class="fas fa-moon"></i> <!-- MODO ESCURO: ÍCONE -->
               </button>
-              <p id="homePageModoEscuroClaroTexto"> Modo </p>
+              <p id="modoEscuroClaroElementoTexto"> Modo </p>
             </li>
           </ul>
-          <div class="hamburguerMenu" id="hamburguerMenu">
+          <div class="menuHamburguerElemento" id="menuHamburguerElemento">
             <i class="fas fa-bars"></i>
           </div>
       </div>
@@ -53,18 +53,18 @@
 
         <br>
         
-        <div class="barraDePesquisaOpcoes"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES -->
-          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaLimparTexto"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, LIMPAR TEXTO -->
+        <div class="searchOpcoes"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES -->
+          <button class="searchOpcoesButtons" id="limparTexto"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, LIMPAR TEXTO -->
             <i class="fas fa-eraser"></i> Limpar
           </button>
-          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaHistorico"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, HISTÓRICO -->
+          <button class="searchOpcoesButtons" id="acessarHistorico"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, HISTÓRICO -->
             <i class="fas fa-history"></i> Histórico
           </button>
         </div>
     </div>
     
     <!-- SEÇÃO DE FILTROS - ADICIONADA APÓS A BARRA DE PESQUISA -->
-    <div class="filtros-container" id="filtrosContainerID">
+    <div class="filtrosContainer" id="filtrosContainerID">
       <div class="filtro-grupo">
       <h3>Filtros</h3>
       
@@ -114,7 +114,7 @@
                 <h1 class="liProdutosTitulos" id="genericoH1" style="display: none;"></h1> <!-- RESULTADOS PRODUTOS: PRODUTOS, TÍTULOS -->
                 <h2 class="liProdutosPrecos" id="genericoH2" style="display: none;"></h2> <!-- RESULTADOS PRODUTOS: PRODUTOS, PREÇOS -->
                 <img class="liProdutosIconesImagens" id="genericoIconeImagem" style="display: none;"></img> <!-- RESULTADOS PRODUTOS: PRODUTOS, ÍCONES -->
-                <p class="liProdutosLojasNomes" id="genericoP"></p> <!-- RESULTADOS PRODUTOS: PRODUTOS, NOME DAS LOJAS -->
+                <p class="liProdutosLojasNomes" id="liProdutosLojasNomesP"></p> <!-- RESULTADOS PRODUTOS: PRODUTOS, NOME DAS LOJAS -->
             </li>
         </a>
         <ul class="resultadosProdutosUl" id="resultadosProdutosUlID"> <!-- RESULTADOS PRODUTOS: BARRA DE LOJAS, LISTA DE PRODUTOS -->

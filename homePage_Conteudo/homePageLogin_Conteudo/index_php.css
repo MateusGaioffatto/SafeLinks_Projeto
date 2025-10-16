@@ -114,7 +114,7 @@
     }
 
     /* Estilo para o menu de usuário na navbar */
-    .navbar-links .user-menu .user-menu-button {
+    .navBarLinks .user-menu .user-menu-button {
       color: var(--dark);
       background: none;
       border: none;
@@ -126,15 +126,15 @@
       transition: var(--transition);
     }
     
-    body.dark-mode .navbar-links .user-menu .user-menu-button {
+    body.dark-mode .navBarLinks .user-menu .user-menu-button {
       color: var(--light);
     }
     
-    .navbar-links .user-menu .user-menu-button:hover {
+    .navBarLinks .user-menu .user-menu-button:hover {
       color: var(--primary);
       transform: translateY(-2px);
     }
     
-    body.dark-mode .navbar-links .user-menu .user-menu-button:hover {
+    body.dark-mode .navBarLinks .user-menu .user-menu-button:hover {
       color: #6c8eff;
     }

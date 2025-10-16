@@ -1,0 +1,190 @@
+/* 
+<nav class="navBarElemento" id="navBarElementoId"> <!-- HOMEPAGE: NAVBAR -->
+  <div class="navBarContainer"> 
+  <div class="navBarLogo" id="navBarLogoId"><a href="#"> SafeLinks </a></div> <!-- HOMEPAGE: NAVBAR, LOGO -->
+      <ul class="navBarLinks" id="navBarLinksId"> <!-- HOMEPAGE: NAVBAR, ÍCONES COM LINKS -->
+        <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> <!-- HOMEPAGE: NAVBAR, LINK => USUÁRIO/LOGIN -->
+        <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> <!-- HOMEPAGE: NAVBAR, LINK => NOTIFICAÇÕES -->
+        <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> <!-- HOMEPAGE: NAVBAR, LINK => SOBRE -->
+        <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
+        <li class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId"><i class="fas fa-moon"></i></li> <!-- <= CONCERTO NESCESSÁRIO! -->
+      </ul>
+      <div class="menuHamburguerElemento" id="menuHamburguerElementoId"> <!-- HOMEPAGE: NAVBAR, MENU HAMBURGUER -->
+        <i class="fas fa-bars"></i> <!-- ÍCONE, MENU HAMBURGUER -->
+      </div>
+  </div>
+</nav> 
+*/
+
+
+
+
+
+.navBarElemento {
+  position: fixed;
+  top: -70px; /* hidden by default */
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+  animation: navBarElementoShow 1s forwards;
+  z-index: 1;
+}
+  body.dark-mode .navBarElemento {
+    background: rgba(45, 55, 72, 0.95);
+  }
+  @keyframes navBarElementoShow {
+    to {
+      top: 0px;
+    }
+  }
+
+
+
+
+
+.navBarContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navBarLogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+  .navBarLogo a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  body.dark-mode .navBarLogo {
+    color: #6c8eff;
+  }
+
+.navBarLinks {
+  list-style: none;
+  display: inline-flex;
+  gap: 20px;
+}
+  #usuarioLoginLi {
+      display: inline-flex;
+  }
+
+.navBarLinks li a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+  body.dark-mode .navBarLinks li a {
+    color: var(--light);
+  }
+  .navBarLinks li a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+    body.dark-mode .navBarLinks li a:hover {
+      color: #6c8eff;
+    }
+
+
+    
+
+
+  /* .navBarUsuarioOpcoesDiv {
+    display: none;
+
+    position: absolute;
+    left: 370px;
+    bottom: 401px;
+    
+    width: fit-content;
+
+    background-color: #fdffff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    border-radius: 0 0 5px 5px;
+
+    overflow: hidden;
+  }
+  
+    .navBarUsuarioOpcoesDiv a {
+      color: black;
+      padding: 12px 15px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s;
+    }
+        .navBarUsuarioOpcoesDiv a:hover {
+        background-color: #f1f1f1;
+        }
+    
+    #usuarioLoginLi:hover .navBarUsuarioOpcoesDiv {
+      display: block;
+    } */
+
+
+
+
+
+.menuHamburguerElemento {
+  display: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--dark);
+}
+  body.dark-mode .menuHamburguerElemento {
+    color: var(--light);
+  }
+
+
+
+
+
+#modoEscuroClaroElementoTexto {
+  cursor: pointer;
+  position: relative;
+  left: 22px;
+  display: inline;
+}
+
+
+
+
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .navBarLinks {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: visible;
+    transition: var(--transition);
+  }
+  #modoEscuroClaroElementoId {
+    position: relative;
+    left: 0px;
+  }
+    body.dark-mode .navBarLinks {
+      background: rgba(45, 55, 72, 0.95);
+    }
+    .menuHamburguerElemento {
+      display: block;
+    }
+}

@@ -1,0 +1,242 @@
+/* DIV => BARRA DE PESQUISA: ESTILOS */
+.searchInput_searchButtonsDiv {
+  width: 100%;
+  display: inline;
+  text-align: center;
+}
+.searchInputDiv {
+  background: white;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 12px 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  position: relative;
+  transition: var(--transition);
+  transform: translateY(-200px);
+  opacity: 0;
+  animation: searchDivTranslateY 1.5s ease forwards;
+}
+  @keyframes searchDivTranslateY {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  body.dark-mode .searchInputDiv {
+    background: #2d3748;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+
+
+
+
+
+/* INPUT => CAMPO DE PESQUISA: ESTILOS */
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--dark);
+  width: 300px;
+  transition: var(--transition);
+}
+  body.dark-mode .searchInput {
+    color: var(--light);
+  }
+  .searchInput::placeholder {
+    color: var(--gray);
+  }
+  body.dark-mode .searchInput::placeholder {
+    color: #a0aec0;
+  }
+
+
+
+
+/* BUTTON => BOTÃO DE PESQUISA: ESTILOS */
+.searchButton {
+  background: none;
+  border: none;
+  padding-left: 15px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  transition: var(--transition);
+}
+  #searchButtonIcon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+    transition: var(--transition);
+  }
+    body.dark-mode #searchButtonIcon {
+      color: #6c8eff;
+    }
+    .searchButton:hover #searchButtonIcon {
+      color: black;
+      transform: scale(1.1);
+    }
+    body.dark-mode .searchButton:hover #searchButtonIcon {
+      color: white;
+    }
+
+/* BUTTON => BOTÃO DE PESQUISA POR VOZ: ESTILOS */
+  .voiceSearch {
+    background: none;
+    border: none;
+    padding-left: 15px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    transition: var(--transition);
+  }
+    #voiceSearchIcon {
+      width: 24px;
+      height: 24px;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+      body.dark-mode #voiceSearchIcon {
+        color: #6c8eff;
+      }
+      .voiceSearch:hover #voiceSearchIcon {
+        color: black;
+        transform: scale(1.1);
+      }
+      body.dark-mode .voiceSearch:hover #voiceSearchIcon {
+        color: white;
+      }
+
+
+
+
+/* BUTTONS => OPÇÕES DE PESQUISA: ESTILOS */
+.searchOpcoes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+  .searchOpcoesButtons {
+    background: white;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    opacity: 0;
+    animation: homePage_Titulo_Pesquisa_OpcoesOpacity 2s ease forwards;
+  }
+    @keyframes homePage_Titulo_Pesquisa_OpcoesOpacity {
+      to {
+        opacity: 1;
+      }
+    }
+    body.dark-mode .searchOpcoesButtons {
+      background: #2d3748;
+      color: var(--light);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    .searchOpcoesButtons:hover {
+      background: var(--primary);
+      color: white;
+    }
+    body.dark-mode .option-btn:hover {
+      background: #4c6fff;
+    }
+
+
+
+
+
+
+
+
+
+/* BUTTON => BOTÃO FAVORITO: ESTILOS */
+.favorite-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+  .favorite-btn.active {
+    color: var(--accent);
+  }
+  body.dark-mode .favorite-btn.active {
+    color: #ff79a9;
+  }
+
+
+
+
+
+
+
+
+
+/* BUTTON => PESQUISAS RECENTES: ESTILOS */
+.pesquisasRecentes {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  display: none;
+}
+  body.dark-mode .pesquisasRecentes {
+    background: #2d3748;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+
+  .pesquisasRecentesTitulo {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+  }
+    body.dark-mode .pesquisasRecentesTitulo {
+      color: var(--light);
+    }
+
+
+  .pesquisasRecentesItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+    .recent-item {
+      background: #f0f0f0;
+      border-radius: 50px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+      body.dark-mode .recent-item {
+        background: #4a5568;
+        color: var(--light);
+      }
+      .recent-item:hover {
+        background: var(--primary);
+        color: white;
+      }
+      body.dark-mode .recent-item:hover {
+        background: #4c6fff;
+      }

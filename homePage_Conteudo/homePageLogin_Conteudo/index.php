@@ -20,8 +20,8 @@ require_once 'config.php';
   <title> SafeLinks - Pesquisa Segura de Produtos </title>
 
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../homePageNavBarStyle.css">
-  <link rel="stylesheet" href="../homePageSearchBarStyle.css">
+  <link rel="stylesheet" href="../navBarStyle.css">
+  <link rel="stylesheet" href="../searchInput_searchButtonsStyle.css">
   <link rel="stylesheet" href="index_php.css">
 
   <link rel="icon" href="../SafeLinks_Favicon_Logo.png" type="image/png">
@@ -33,10 +33,10 @@ require_once 'config.php';
   
 <body>
   <!-- NAVBAR -->
-  <nav class="homePageNavbar" id="homePageNavbarID">
-    <div class="navbar-container">
-      <div class="navbar-logo" id="homePageNavBarLogo"><a href="#"> SafeLinks </a></div>
-      <ul class="navbar-links" id="homePageNavBarLinksID">
+  <nav class="navBarElemento" id="navBarElementoId">
+    <div class="navBarContainer">
+      <div class="navBarLogo" id="navBarLogoId"><a href="#"> SafeLinks </a></div>
+      <ul class="navBarLinks" id="navBarLinksId">
         <li><a href="#"><i class="fas fa-home"></i> Início </a></li>
         <li><a href="../dicas.html"><i class="fas fa-lightbulb"></i> Dicas </a></li> <!-- NOVO BOTÃO DICAS -->
         <li class="user-menu">
@@ -53,13 +53,13 @@ require_once 'config.php';
         <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
         <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
         <li id="modoEscuroClaroLi">
-          <button class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID">
+          <button class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId">
             <i class="fas fa-moon"></i>
           </button>
-          <p id="homePageModoEscuroClaroTexto"> Modo </p>
+          <p id="modoEscuroClaroElementoTexto"> Modo </p>
         </li>
       </ul>
-      <div class="hamburguerMenu" id="hamburguerMenuID">
+      <div class="menuHamburguerElemento" id="menuHamburguerElementoId">
         <i class="fas fa-bars"></i>
       </div>
     </div>
@@ -67,47 +67,47 @@ require_once 'config.php';
 
   <!-- ... resto do conteúdo permanece igual ... -->
 
-  <div class="homePageConteudoCentral">
+  <div class="homePage_Titulo_Pesquisa_Opcoes">
     <header>
       <div class="homePageTitulo">SafeLinks</div>
       <div class="homePageSubTitulo">Pesquisa segura em lojas confiáveis</div>
     </header>
 
-    <div class="homePageSearchDiv" id="homePageSearchDivID">
-      <div class="homePageBarraDePesquisa" id="homePageBarraDePesquisaID">
-        <input type="text" class="homePageSearchInput" id="homePageSearchInputID" autocomplete="off" placeholder="Entre com a URL de um site">
-        <button class="homePageSearchButton" id="homePageSearchButtonID" aria-label="Search">
-          <i class="material-icons" id="homePageSearchIconID">search</i>
+    <div class="searchInput_searchButtonsDiv" id="searchInput_searchButtonsDivId">
+      <div class="searchInputDiv" id="searchInputDivId">
+        <input type="text" class="searchInput" id="searchInputId" autocomplete="off" placeholder="Entre com a URL de um site">
+        <button class="searchButton" id="searchButtonId" aria-label="Search">
+          <i class="material-icons" id="searchButtonIcon">search</i>
         </button>
       </div>
 
       <br>
 
-      <div class="barraDePesquisaOpcoes">
-        <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaLimparTexto">
+      <div class="searchOpcoes">
+        <button class="searchOpcoesButtons" id="limparTexto">
           <i class="fas fa-eraser"></i> Limpar
         </button>
-        <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaHistorico">
+        <button class="searchOpcoesButtons" id="acessarHistorico">
           <i class="fas fa-history"></i> Histórico
         </button>
       </div>
     </div>
     
     <!-- Área para mostrar resultados da verificação de segurança -->
-    <div id="resultadoVerificacao" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px;"></div>
+    <div id="resultadoVerificacaoURL" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px;"></div>
     
     <div class="homePageProdutosDiv" id="homePageProdutosDivID">
       <li class="homePageProdutosLi" id="genericoLi" style="display: none;">
         <button class="favorite-btn" data-store="" id="genericoHeartIconButton"><i class="far fa-heart"></i></button>            
-        <p class="liProdutosTitulos" id="genericoP" style="display: none;"></p>
+        <p class="liProdutosTitulos" id="liProdutosLojasNomesP" style="display: none;"></p>
       </li>
       <ul class="homePageProdutosUl" id="homePageProdutosUlID">
       </ul>
     </div>
 
-    <div class="homePagePesquisasRecentes" id="homePagePesquisasRecentesID">
+    <div class="pesquisasRecentes" id="pesquisasRecentesId">
       <div class="pesquisasRecentesTitulo">Pesquisas recentes</div>
-      <div class="pesquisasRecentesItems" id="pesquisasRecentesItemsID"></div>
+      <div class="pesquisasRecentesItems" id="pesquisasRecentesItemsId"></div>
     </div>
   </div>
 

@@ -29,19 +29,19 @@ body {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow);
-    animation: homePageNavBarShow 1s forwards;
+    animation: navBarElementoShow 1s forwards;
     z-index: 99;
 }
     body.dark-mode .loginNavbar {
         background: rgba(45, 55, 72, 0.95);
     }
-    @keyframes homePageNavBarShow {
+    @keyframes navBarElementoShow {
         to {
             top: 0px;
         }
     }
 
-.navbar-container {
+.navBarContainer {
     max-width: 1100px;
     margin: 0 auto;
     padding: 12px 20px;
@@ -49,24 +49,24 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-    .navbar-logo {
+    .navBarLogo {
         font-size: 1.5rem;
         font-weight: bold;
     }
-        .navbar-logo a {
+        .navBarLogo a {
             color: #4361ee;
             text-decoration: none;
         }
-        body.dark-mode .navbar-logo {
+        body.dark-mode .navBarLogo {
             color: #6c8eff;
         }
 
-    .navbar-links {
+    .navBarLinks {
         list-style: none;
         display: flex;
         gap: 25px;
     }
-        .navbar-links li a {
+        .navBarLinks li a {
             text-decoration: none;
             color: var(--dark);
             font-size: 0.95rem;
@@ -75,14 +75,14 @@ body {
             gap: 6px;
             transition: all 0.3s ease;
         }
-        body.dark-mode .navbar-links li a {
+        body.dark-mode .navBarLinks li a {
             color: white;
         }
-        .navbar-links li a:hover {
+        .navBarLinks li a:hover {
             color: #4361ee;
             transform: translateY(-2px);
         }
-            body.dark-mode .navbar-links li a:hover {
+            body.dark-mode .navBarLinks li a:hover {
                 color: #6c8eff;
             }
         
@@ -224,7 +224,7 @@ body {
         .form-container button:hover {
             opacity: 0.9;
         }
-    .hamburguerMenu {
+    .menuHamburguerElemento {
         display: none;
         font-size: 1.4rem;
         cursor: pointer;
@@ -232,13 +232,13 @@ body {
         background: none;
         color: var(--dark);
     }
-        body.dark-mode .hamburguerMenu {
+        body.dark-mode .menuHamburguerElemento {
             color: var(--light);
         }
 
         /* Responsive navbar */
         @media (max-width: 768px) {
-        .navbar-links {
+        .navBarLinks {
             position: absolute;
             top: 70px;
             right: 0;
@@ -254,14 +254,14 @@ body {
             pointer-events: visible;
             transition: var(--transition);
         }
-        #homePageModoEscuroClaroID {
+        #modoEscuroClaroElementoId {
             position: relative;
             left: 0px;
         }
-            body.dark-mode .navbar-links {
+            body.dark-mode .navBarLinks {
             background: rgba(45, 55, 72, 0.95);
             }
-            .hamburguerMenu {
+            .menuHamburguerElemento {
             display: block;
             }
         }   
@@ -283,7 +283,8 @@ body {
     transition: opacity 0.3s ease;
 }
 
-#loginShowPasswordIcone {
+#mostrarSenhaIcone, #mostrarSenhaRegistroIcone {
+    position: absolute;
     color: #b9b9b9;
 
     visibility: visible;
@@ -295,17 +296,17 @@ body {
 
     cursor: pointer;
 
-    transition: all 0.3s ease;;
+    transition: var(--transition);
 }
-    #loginShowPasswordIcone u {
+    #mostrarSenhaIcone u, #mostrarSenhaRegistroIcone u {
         font-size: small;
         font-family: Arial, Helvetica, sans-serif;
     }   
-    #loginShowPasswordIcone:hover {
-        color: black;
+    #mostrarSenhaIcone:hover, #mostrarSenhaRegistroIcone:hover {
+        color: var(--primary);
+        transform: translateY(-2px);
     }
-    body.dark-mode #loginShowPasswordIcone:hover {
-        transform: scale(1.1);
+    body.dark-mode #mostrarSenhaIcone, #mostrarSenhaRegistroIcone:hover {
         color: #6c8eff;
     }
 
@@ -324,45 +325,27 @@ body {
 
         cursor: pointer;
     }
+        
+
+        
 
 
-        .link {
-            text-align: center;
-            margin-top: 20px;
-        }
-            body.dark-mode .link  {
-                color: white;
-            }
-        
-        .link a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        
-        .link a:hover {
-            color: #8e44ad;
-            text-decoration: underline;
-        }
-        
-        .forgot-password {
-            text-align: right;
-            margin-top: -10px;
-            margin-bottom: 15px;
+        .forgot-password_mostrarSenhaIcone {
+            display: inline;
+            font-size: medium;
+            width: 100%;
         }
         
         .forgot-password a {
-            color: #3498db;
+            position: absolute;
+            color: #b9b9b9;
             text-decoration: none;
-            font-size: 13px;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
         
         .forgot-password a:hover {
-            color: #8e44ad;
-            text-decoration: underline;
+            color: var(--primary);
+            transform: translateY(-2px);
         }
         
         #login-form, #register-form, #recover-form {
@@ -394,4 +377,48 @@ body {
                 padding: 15px 20px;
             }
         }
-   
+
+        
+
+.registrarUsuarioLinkDiv {
+    text-align: center;
+    padding: 15px;
+}
+    .registrarUsuarioLink {
+        color: #b9b9b9;
+        text-decoration: none;
+
+        cursor: pointer;
+
+        transition: var(--transition);
+    }
+        .registrarUsuarioLink:hover {
+            color: var(--primary);
+        }
+
+
+
+
+
+.recuperarSenha {
+    background: none;
+
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #f0f0f0;
+
+    color: #4361ee;
+
+    font-weight: 600;
+    font-size: 17px;
+
+    display: block;
+
+    padding: 12px;
+    margin: 20px 0;
+    width: 100%;
+
+    cursor: pointer;
+    
+    transition: opacity 0.3s ease;
+}

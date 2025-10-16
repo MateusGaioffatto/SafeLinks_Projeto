@@ -7,73 +7,115 @@
     <link rel="icon" href="SafeLinks_Favicon_Logo.png" type="image/png">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navBarStyle.css">
+    <link rel="stylesheet" href="tutorial.css">
+    <link rel="stylesheet" href="searchInput_searchButtonsStyle.css">
     <link rel="stylesheet" href="resultadosProdutos.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- HOMEPAGE ICONES: GOOGLE FONTS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- HOMEPAGE ICONES: FONT AWESOME -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 
 </head>
 <body>
 
-  <!-- RESULTADOS PRODUTOS: HOMEPAGE -->
-    <nav class="resultadosProdutosNavbar" id="resutadosProdutosNavbarID">
-      <div class="navbar-container">
-        <div class="navbar-logo" id="resutadosProdutosNavBarLogo"><a href="index.html"> SafeLinks </a></div>
-          <ul class="navbar-links" id="resutadosProdutosLinksID">
-            <li><a href="index.html"><i class="fas fa-home"></i> Início </a></li>
-            <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li>
-            <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
-            <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
-            <li class="homePageModoEscuroClaro" id="homePageModoEscuroClaroID"><i class="fas fa-moon"></i></li>
-          </ul> 
-          <div class="hamburguerMenu" id="hamburguerMenu"><i class="fas fa-bars"></i></div>
-      </div>
-    </nav>
-
-    <div class="resultadosProdutosSearchDiv" id="resultadosProdutosSearchDivID"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA E BOTÕES-->
-        <div class="resultadosProdutosBarraDePesquisa" id="resultadosProdutosBarraDePesquisaID"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA CONTEÚDOS -->
-          <input type="text" class="resultadosProdutosSearchInput" id="resultadosProdutosSearchInputID" autocomplete="off"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA -->
-            <button class="resultadosProdutosSearchButton" id="resultadosProdutosSearchButtonID" aria-label="Search"> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA, BOTÃO -->
-              <i class="material-icons" id="resultadosProdutosSearchIconID">search</i> <!-- RESULTADOS PRODUTOS: BARRA DE PESQUISA, BOTÃO, ÍCONE -->
-            </button>
-            <button class="resultadosProdutosVoiceSearchButton" id="resultadosProdutosVoiceSearchButtonID" aria-label="VoiceSearch"> <!-- HOMEPAGE: BARRA DE PESQUISA, BOTÃO, PESQUISE POR VOZ -->
-              <i class="material-icons" id="resultadosProdutosVoiceIconID">mic</i>
-            </button>
-        </div>
-
-        <br>
-        
-        <div class="barraDePesquisaOpcoes"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES -->
-          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaLimparTexto"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, LIMPAR TEXTO -->
-            <i class="fas fa-eraser"></i> Limpar
-          </button>
-          <button class="barraDePesquisaOpcoesButtons" id="barraDePesquisaHistorico"> <!-- HOMEPAGE: BARRA DE PESQUISA, OPÇÕES, HISTÓRICO -->
-            <i class="fas fa-history"></i> Histórico
-          </button>
-        </div>
-    </div>
-    
-    <!-- SEÇÃO DE FILTROS - ADICIONADA APÓS A BARRA DE PESQUISA -->
-    <div class="filtros-container" id="filtrosContainerID">
-      
-    </div>
-    
-    <div class="resultadosProdutosDiv" id="resultadosProdutosDivID"> <!-- RESULTADOS PRODUTOS: CATÁLOGO DE PRODUTOS -->
-        <a href="" class="resultadosProdutosA" id="resultadosProdutosAID"> <!-- RESULTADOS PRODUTOS: PRODUTOS, LINKS -->
-            <li class="resultadosProdutosLi" id="genericoLi" style="display: none;"> <!-- RESULTADOS PRODUTOS: PRODUTOS -->
-                <img src="" alt="" class="resultadosProdutosLiImg" id="resultadosProdutosLiImgID"> <!-- RESULTADOS PRODUTOS: PRODUTOS, THUMBNAILS -->
-                <h1 class="liProdutosTitulos" id="genericoH1" style="display: none;"></h1> <!-- RESULTADOS PRODUTOS: PRODUTOS, TÍTULOS -->
-                <h2 class="liProdutosPrecos" id="genericoH2" style="display: none;"></h2> <!-- RESULTADOS PRODUTOS: PRODUTOS, PREÇOS -->
-                <img class="liProdutosIconesImagens" id="genericoIconeImagem" style="display: none;"></img> <!-- RESULTADOS PRODUTOS: PRODUTOS, ÍCONES -->
-                <p class="liProdutosLojasNomes" id="genericoP"></p> <!-- RESULTADOS PRODUTOS: PRODUTOS, NOME DAS LOJAS -->
-            </li>
-        </a>
-        <ul class="resultadosProdutosUl" id="resultadosProdutosUlID"> <!-- RESULTADOS PRODUTOS: BARRA DE LOJAS, LISTA DE PRODUTOS -->
+  <nav class="navBarElemento" id="navBarElementoId"> 
+    <div class="navBarContainer"> 
+    <div class="navBarLogo" id="navBarLogoId"><a href="index.html"> SafeLinks </a></div> 
+        <ul class="navBarLinks" id="navBarLinksId"> 
+          <li id="usuarioLoginLi"><a href="homePageLogin_Conteudo/login.html"><i class="fas fa-user"></i> Usuário </a></li> 
+          <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> 
+          <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> 
+          <li><a href="dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
+          <li class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId"><i class="fas fa-moon"></i></li> 
         </ul>
+        <div class="menuHamburguerElemento" id="menuHamburguerElementoId"> 
+          <i class="fas fa-bars"></i> 
+        </div>
     </div>
+  </nav> 
+
+
+
+
+    <div class="homePageBlurEffect" id="homePageBlurEffectID"></div>
+    <div class="tutorialBoxes" id="tutorialBoxesID" >
+        <div class="tutorialBoxesCloseIcone">
+        <h5> 1/4 </h5>
+        <i class="fa light fa-xmark"></i>
+        </div>
+        <div class="tutorialBoxesImagensStyles">
+        <img src="homePageTutoriais_GIFs\Tutorial01.gif">
+        </div>
+        <p> Caixas de tutorial vão seguir esse padrão! </p>
+        <div class="tutorialBoxesButtonDiv">
+        <button class="tutorialBoxesButtonStyles"> Mais Tarde </button>
+        <button class="tutorialBoxesButtonStyles"> Próximo </button>
+        </div>
+    </div>
+
+    
+
+
+
+  <div class="searchInput_searchButtonsDiv" id="searchInput_searchButtonsDivId">
+    <div class="searchInputDiv" id="searchInputDivId">
+      <input type="text" class="searchInput" id="searchInputId" autocomplete="off" placeholder="Entre com a URL de um site">
+        <button class="searchButton" id="searchButtonId" aria-label="Search">
+          <i class="material-icons" id="searchButtonIcon">search</i>
+        </button>
+        <button class="voiceSearch" id="voiceSearchId" aria-label="VoiceSearch">
+          <i class="material-icons" id="voiceSearchIcon">mic</i>
+        </button>
+    </div>
+
+    <br>
+    
+    <div class="searchOpcoes">
+      <button class="searchOpcoesButtons" id="limparTexto">
+        <i class="fas fa-eraser"></i> Limpar
+      </button>
+      <button class="searchOpcoesButtons" id="acessarHistorico">
+        <i class="fas fa-history"></i> Histórico
+      </button>
+    </div>
+  </div>
+    
+
+
+
+
+    
+    <div class="filtrosContainer" id="filtrosContainerID"></div>
+    
+
+
+
+
+    <div class="resultadosProdutosDiv" id="resultadosProdutosDivID">
+          <li class="resultadosProdutosLi" id="genericoLi" style="display: none;">
+              <img src="" alt="" class="resultadosProdutosLiImg" id="resultadosProdutosLiImgID">
+              <h1 class="liProdutosTitulos" id="genericoH1" style="display: none;"></h1>
+              <h2 class="liProdutosPrecos" id="genericoH2" style="display: none;"></h2>
+              <img class="liProdutosIconesImagens" id="genericoIconeImagem" style="display: none;"></img>
+              <p class="liProdutosLojasNomes" id="liProdutosLojasNomesP"></p>
+          </li>
+      </a>
+      <ul class="resultadosProdutosUl" id="resultadosProdutosUlID"></ul>
+    </div>
+
+
+
+
+
+    <script src="script.js"></script>
+    <script src="resultadosProdutos.js" type="module"></script>
 
     <script src="theme.js"></script>
-    <script src="resultadosProdutosPesquisaFavoritosHistorico.js"></script>
-    <script src="resultadosProdutos.js" type="module"></script>
-</body>
+
+    <script src="tutorial_resultadosProdutos.js"></script>
+    <script src="tutorial.js"></script>
+
+    <script src="campoDePesquisa_URL_Produtos.js"></script>
+
+  </body>
 </html>

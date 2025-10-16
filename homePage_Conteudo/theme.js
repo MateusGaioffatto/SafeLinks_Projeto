@@ -1,6 +1,6 @@
 // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
-const modoEscuroClaroButton = document.getElementById("homePageModoEscuroClaroID"); // VARIÁVEL CONSTANTE, BUTTON
-const modoEscuroClaroIcone = document.querySelector("#homePageModoEscuroClaroID i"); // VARIÁVEL CONSTANTE, ÍCONE
+const modoEscuroClaroButton = document.getElementById("modoEscuroClaroElementoId"); // VARIÁVEL CONSTANTE, BUTTON
+const modoEscuroClaroIcone = document.querySelector("#modoEscuroClaroElementoId i"); // VARIÁVEL CONSTANTE, ÍCONE
 
 // DADOS SALVOS LOCALMENTE AO CARREGAR A PÁGINA: FUNCTION
 document.addEventListener('DOMContentLoaded', function() {
@@ -49,7 +49,7 @@ function enableDarkMode() {
 // // theme.js
 // document.addEventListener('DOMContentLoaded', () => {
 //   const body = document.body;
-//   const toggleButton = document.getElementById('homePageModoEscuroClaroID');
+//   const toggleButton = document.getElementById('modoEscuroClaroElementoId');
 
 //   // Aplica preferência salva
 //   if (localStorage.getItem('darkMode') === 'enabled') {
