@@ -38,6 +38,11 @@
       top: 0px;
     }
   }
+    @media (max-width: 768px) {
+      .navBarElemento {
+          max-width: 47.25vh;
+      }
+    }
 
 
 

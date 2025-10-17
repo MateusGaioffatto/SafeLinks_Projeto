@@ -28,3 +28,39 @@ tutorialBoxes.addEventListener("mousedown", (e) => {
   document.addEventListener("mouseup", () => {
     tutorialBoxMovendo = false;
   });
+
+
+
+
+
+let initial_X, initial_Y, eixoMobile_X = 0, eixoMobile_Y = 0;
+
+tutorialBoxes.addEventListener('touchstart', tutorialBoxMovendo_InicioMovimento);
+tutorialBoxes.addEventListener('touchend', tutorialBoxMovendo_FimMovimento);
+tutorialBoxes.addEventListener('touchmove', tutorialBoxMovendo_Movimentando);
+
+function tutorialBoxMovendo_InicioMovimento(e) {
+    initial_X = e.touches[0].clientX - eixoMobile_X;
+    initial_Y = e.touches[0].clientY - eixoMobile_Y;
+    tutorialBoxMovendo = true;
+}
+
+function tutorialBoxMovendo_FimMovimento(e) {
+    initial_X = eixoMobile_X;
+    initial_Y = eixoMobile_Y;
+    tutorialBoxMovendo = false;
+}
+
+function tutorialBoxMovendo_Movimentando(e) {
+    if (tutorialBoxMovendo) {
+        e.preventDefault(); // Prevent scrolling while dragging
+        eixoMobile_X = e.touches[0].clientX - initial_X;
+        eixoMobile_Y = e.touches[0].clientY - initial_Y;
+
+        setTranslate(eixoMobile_X, eixoMobile_Y, tutorialBoxes);
+    }
+}
+
+function setTranslate(xPos, yPos, el) {
+    el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+}

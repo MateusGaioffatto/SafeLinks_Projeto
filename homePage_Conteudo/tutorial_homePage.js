@@ -8,6 +8,7 @@ let tutorialGifCount = 1;
 tutorialBoxesButtonsDiv[0].addEventListener('click', function() {
   tutorialGifCount--;
   if (tutorialGifCount === 0) {
+    searchInput.style.pointerEvents = 'initial';
     tutorialBoxes.style.display = 'none';
     document.body.removeChild(homePageBlurEffect);
     tutorialGifCount = 1;
