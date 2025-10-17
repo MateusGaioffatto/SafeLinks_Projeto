@@ -10,9 +10,9 @@
         <img src="homePageTutoriais_GIFs\Tutorial01.gif">
         </div>
         <p> Caixas de tutorial vão seguir esse padrão! </p>
-        <div class="tutorialBoxesButtonDiv">
-        <button class="tutorialBoxesButtonStyles"> Mais Tarde </button>
-        <button class="tutorialBoxesButtonStyles"> Próximo </button>
+        <div class="tutorialBoxesButtonsDiv">
+        <button class="tutorialBoxesButtons"> Mais Tarde </button>
+        <button class="tutorialBoxesButtons"> Próximo </button>
         </div>
     </div>
 */
@@ -100,17 +100,18 @@
 
     .tutorialBoxes p {
         position: relative;
-        top: 10%;
+        top: 5%;
+        font-size: medium;
     }
 
-    .tutorialBoxesButtonDiv {
+    .tutorialBoxesButtonsDiv {
         position: absolute;
 
         bottom: 20px;
 
         width: 100%;
     }
-        .tutorialBoxesButtonStyles {
+        .tutorialBoxesButtons {
             margin: 0 7px;  
             padding: 7px;
 

@@ -50,7 +50,7 @@ require_once 'config.php';
             <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
           </div>
         </li>
-        <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>
+        <!-- <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> -->
         <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
         <li id="modoEscuroClaroLi">
           <button class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId">

@@ -12,7 +12,7 @@ const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles im
 
 let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
 
-const tutorialBoxesButtonDiv = document.querySelectorAll(".tutorialBoxesButtonDiv button");
+const tutorialBoxesButtonsDiv = document.querySelectorAll(".tutorialBoxesButtonsDiv button");
 
 
 

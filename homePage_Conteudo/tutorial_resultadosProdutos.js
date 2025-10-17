@@ -3,12 +3,12 @@ const { version } = require("react");
 let tutorialGifCount = 1;
 if (tutorialGifCount === 1) {tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);}
 
-tutorialBoxesButtonDiv[0].addEventListener('click', function() {
+tutorialBoxesButtonsDiv[0].addEventListener('click', function() {
   if (tutorialGifCount === 1) {
     tutorialBoxes.style.display = 'none';
   }
 })
-tutorialBoxesButtonDiv[0].addEventListener('click', function() {
+tutorialBoxesButtonsDiv[0].addEventListener('click', function() {
   tutorialGifCount--;
   if (tutorialGifCount === 0) {document.body.removeChild(homePageBlurEffect);}
 
@@ -18,7 +18,7 @@ tutorialBoxesButtonDiv[0].addEventListener('click', function() {
   tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);
 })
 
-tutorialBoxesButtonDiv[1].addEventListener('click', function() {
+tutorialBoxesButtonsDiv[1].addEventListener('click', function() {
     tutorialGifCount++;
     if (tutorialGifCount > 4) {tutorialGifCount = 1;}
 
@@ -40,8 +40,8 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
   else {
       switch (tutorialGifCount) {
       case 1:
-        tutorialBoxesButtonDiv[0].textContent = "Mais Tarde";
-        tutorialBoxesButtonDiv[1].textContent = "Próximo";
+        tutorialBoxesButtonsDiv[0].textContent = "Mais Tarde";
+        tutorialBoxesButtonsDiv[1].textContent = "Próximo";
 
         tutorialBoxesTexto.textContent = "RESULTADOS PRODUTOS: CAMPO DE PESQUISA";
 
@@ -52,7 +52,7 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxes.style.top = `42.667px`;
       break;
       case 2:
-        tutorialBoxesButtonDiv[0].textContent = "Anterior"; 
+        tutorialBoxesButtonsDiv[0].textContent = "Anterior"; 
         limparInputValue_ResultadoVerificacaoURLDiv();
 
         tutorialBoxesTexto.textContent = "VITRINE DE PRODUTOS: EXPLICAR TODOS OS DADOS PRESENTE";
@@ -64,7 +64,7 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
         tutorialBoxes.style.top = '471.667px';
       break;
       case 3:
-        tutorialBoxesButtonDiv[1].textContent = "Próximo";
+        tutorialBoxesButtonsDiv[1].textContent = "Próximo";
 
         tutorialBoxesTexto.textContent = "FAVORITOS: EXPLICAÇÃO COMO FUNCIONA E COMO FICAM SALVOS NO PERFIL";
         tutorialBoxes.style.animation = 'tutorialBoxesOpacity 1s ease forwards';
@@ -78,7 +78,7 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
       case 4:
         limparInputValue_ResultadoVerificacaoURLDiv();
 
-        tutorialBoxesButtonDiv[1].textContent = "Repetir";
+        tutorialBoxesButtonsDiv[1].textContent = "Repetir";
 
         tutorialBoxesTexto.textContent = "HISTÓRICO: EXPLICAÇÃO COMO FUNCIONA E COMO FICA SALVO NO PERFIL";
 
