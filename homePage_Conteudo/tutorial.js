@@ -24,19 +24,19 @@ tutorialBoxes.addEventListener("mousedown", (e) => {
     // Calculate the offset from the mouse position to the box's top-left corner
     eixo_X = e.clientX - tutorialBoxes.getBoundingClientRect().left;
     eixo_Y = e.clientY - tutorialBoxes.getBoundingClientRect().top;
-  });
+});
 
-  document.addEventListener("mousemove", (e) => {
-    if (!tutorialBoxMovendo) return;
+document.addEventListener("mousemove", (e) => {
+  if (!tutorialBoxMovendo) return;
 
-    // Update the box's position based on the mouse coordinates and initial offset
-    tutorialBoxes.style.left = `${e.clientX - eixo_X}px`;
-    tutorialBoxes.style.top = `${e.clientY - eixo_Y}px`;
-  });
+  // Update the box's position based on the mouse coordinates and initial offset
+  tutorialBoxes.style.left = `${e.clientX - eixo_X}px`;
+  tutorialBoxes.style.top = `${e.clientY - eixo_Y}px`;
+});
 
-  document.addEventListener("mouseup", () => {
-    tutorialBoxMovendo = false;
-  });
+document.addEventListener("mouseup", () => {
+  tutorialBoxMovendo = false;
+});
 
 
 
