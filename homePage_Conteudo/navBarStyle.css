@@ -38,11 +38,6 @@
       top: 0px;
     }
   }
-    @media (max-width: 768px) {
-      .navBarElemento {
-          max-width: 47.25vh;
-      }
-    }
 
 
 
@@ -164,7 +159,6 @@
 
 
 
-/* Responsive navbar */
 @media (max-width: 768px) {
   .navBarLinks {
     position: absolute;
@@ -182,7 +176,7 @@
     pointer-events: visible;
     transition: var(--transition);
   }
-  #modoEscuroClaroElementoId {
+  .modoEscuroClaroElementoId {
     position: relative;
     left: 0px;
   }

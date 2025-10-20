@@ -1,5 +1,3 @@
-const { version } = require("react");
-
 let tutorialGifCount = 1;
 if (tutorialGifCount === 1) {tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount);}
 

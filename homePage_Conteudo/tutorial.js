@@ -15,19 +15,19 @@ tutorialBoxes.addEventListener("mousedown", (e) => {
     // Calculate the offset from the mouse position to the box's top-left corner
     eixo_X = e.clientX - tutorialBoxes.getBoundingClientRect().left;
     eixo_Y = e.clientY - tutorialBoxes.getBoundingClientRect().top;
-  });
+});
 
-  document.addEventListener("mousemove", (e) => {
-    if (!tutorialBoxMovendo) return;
+document.addEventListener("mousemove", (e) => {
+  if (!tutorialBoxMovendo) return;
 
-    // Update the box's position based on the mouse coordinates and initial offset
-    tutorialBoxes.style.left = `${e.clientX - eixo_X}px`;
-    tutorialBoxes.style.top = `${e.clientY - eixo_Y}px`;
-  });
+  // Update the box's position based on the mouse coordinates and initial offset
+  tutorialBoxes.style.left = `${e.clientX - eixo_X}px`;
+  tutorialBoxes.style.top = `${e.clientY - eixo_Y}px`;
+});
 
-  document.addEventListener("mouseup", () => {
-    tutorialBoxMovendo = false;
-  });
+document.addEventListener("mouseup", () => {
+  tutorialBoxMovendo = false;
+});
 
 
 
@@ -52,15 +52,15 @@ function tutorialBoxMovendo_FimMovimento(e) {
 }
 
 function tutorialBoxMovendo_Movimentando(e) {
-    if (tutorialBoxMovendo) {
-        e.preventDefault(); // Prevent scrolling while dragging
-        eixoMobile_X = e.touches[0].clientX - initial_X;
-        eixoMobile_Y = e.touches[0].clientY - initial_Y;
+  if (tutorialBoxMovendo) {
+      e.preventDefault(); // Prevent scrolling while dragging
+      eixoMobile_X = e.touches[0].clientX - initial_X;
+      eixoMobile_Y = e.touches[0].clientY - initial_Y;
 
-        setTranslate(eixoMobile_X, eixoMobile_Y, tutorialBoxes);
-    }
+      setTranslate(eixoMobile_X, eixoMobile_Y, tutorialBoxes);
+  }
 }
 
 function setTranslate(xPos, yPos, el) {
-    el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }

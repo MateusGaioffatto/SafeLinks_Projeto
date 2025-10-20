@@ -1,9 +1,11 @@
 const navBarElemento = document.getElementById("navBarElementoId");
 
 
-
-const tutorialBoxes = document.getElementById("tutorialBoxesID");
+const tutorialBoxes_OverflowControle = document.getElementById('tutorialBoxes_OverflowControleId');
 const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
+const tutorialBoxes = document.getElementById("tutorialBoxesID");
+
+const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
 
 const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
 const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
@@ -27,7 +29,8 @@ const searchInputDiv = document.getElementById("searchInputDivId");
 const searchInput = document.getElementById("searchInputId");
 const searchButton = document.getElementById("searchButtonId");
 const homePageSearchIcon = document.getElementById("searchButtonIcon");
-  const searchInput_posicionamento = searchInput.getBoundingClientRect();
+
+const searchInput_posicionamento = searchInput.getBoundingClientRect();
 
 
 
@@ -92,3 +95,6 @@ homePageWindowLargura.addEventListener("change", () => {
   }
   else {navBarLinks.style.opacity = 0;}
 })
+  if (window.innerWidth <= 810 || window.innerHeight <= 1080) {
+    navBarElemento.style.left = '0px';  
+  }
