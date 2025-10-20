@@ -84,7 +84,18 @@ body.dark-mode .resultadosProdutosDiv {
     text-align: center;
 
     transition: var(--transition);
-  }
+  } 
+    @media screen and (max-device-width: 619px) {
+      .resultadosProdutosLi {
+        width: 35rem;
+        height: 18rem;
+      }
+    }
+    @media screen and (max-device-width: 540px){
+      .resultadosProdutosLi {width: 25rem;}
+      .searchInputDiv {padding: 15px;}
+      .navBarContainer {display: flex;}
+    }
     .resultadosProdutosLi:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 25px rgba(0,0,0,0.15);

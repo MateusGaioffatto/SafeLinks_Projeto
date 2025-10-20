@@ -1,4 +1,5 @@
 let tutorialGifCount = 1;
+
 // const tutorialBoxes_HomePagePosicionamentos = [
 //   tutorialBox01_Posicionamento,
 //   tutorialBox02_Posicionamento,
@@ -10,7 +11,7 @@ tutorialBoxesButtonsDiv[0].addEventListener('click', function() {
   if (tutorialGifCount === 0) {
     searchInput.style.pointerEvents = 'initial';
     tutorialBoxes.style.display = 'none';
-    document.body.removeChild(homePageBlurEffect);
+    document.body.removeChild(tutorialBoxes_OverflowControle);
     tutorialGifCount = 1;
   }
 })
@@ -72,9 +73,9 @@ if (tutorialGifCount === 1) {tutorial_homePageBoxesPosicionamento(tutorialGifCou
 //   }
 // }
 tutorialBoxesButtonsDiv[0].addEventListener('click', function() {
-  if (tutorialGifCount === 0) {document.body.removeChild(homePageBlurEffect);}
+  if (tutorialGifCount === 0) {document.body.removeChild(tutorialBoxes_OverflowControle);}
 
-  tutorialBoxesGifs.src = `homePageTutoriais_GIFs/homePage_GIFs/Tutorial0${tutorialGifCount}.gif`
+  tutorialBoxesGifs.src = `homePageTutoriais_GIFs/homePage_GIFs/Tutorial0${tutorialGifCount}.gif`;
   tutorialBoxesH5.textContent = `${tutorialGifCount}/3`
 
   tutorial_homePageBoxesPosicionamento(tutorialGifCount);
@@ -84,7 +85,7 @@ tutorialBoxesButtonsDiv[1].addEventListener('click', function() {
     tutorialGifCount++;
     if (tutorialGifCount > 3) {tutorialGifCount = 1;}
 
-    tutorialBoxesGifs.src = `homePageTutoriais_GIFs/homePage_GIFs/Tutorial0${tutorialGifCount}.gif`
+    tutorialBoxesGifs.src = `tutorial_GIFs/homePage_GIFs/Tutorial0${tutorialGifCount}.gif`;
     tutorialBoxesH5.textContent = `${tutorialGifCount}/3`
 
     tutorial_homePageBoxesPosicionamento(tutorialGifCount);
@@ -93,16 +94,17 @@ tutorialBoxesButtonsDiv[1].addEventListener('click', function() {
 
 
 
-
 function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
-  if (menuHamburguerElemento && getComputedStyle(menuHamburguerElemento).display === "block") {
-    tutorialBoxes.style.left = `55px`;
+  if (window.innerWidth <= 810 || window.innerHeight <= 1080) {
+    tutorialBoxes.style.left = '50%';
+    tutorialBoxes.style.transform = 'translateX(-50%)';
+
     switch (tutorialGifCount) {
       case 1:
-                limparInputValue_ResultadoVerificacaoURLDiv();
+        limparInputValue_ResultadoVerificacaoURLDiv();
         tutorialBoxes.style.top = 'initial';
         homePageElementos_zIndexStyle(tutorialGifCount); 
-                        tutorialBoxesButtonsDiv[0].textContent = "Mais tarde";
+        tutorialBoxesButtonsDiv[0].textContent = "Mais tarde";
         tutorialBoxesButtonsDiv[1].textContent = "Próximo";
       break;
       case 2:

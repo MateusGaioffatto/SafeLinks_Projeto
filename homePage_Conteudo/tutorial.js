@@ -1,8 +1,17 @@
 tutorialBoxesCloseIcone.addEventListener('click', function() {
   searchInputDiv.style.pointerEvents = 'initial';
   tutorialBoxes.style.display = 'none'; 
-  document.body.removeChild(homePageBlurEffect);
+  document.body.removeChild(tutorialBoxes_OverflowControle);
 })
+
+
+
+
+
+if (window.innerWidth <= 810 || window.innerHeight > 650) {
+  tutorialBoxes.style.left = '50%';
+  tutorialBoxes.style.transform = 'translateX(-50%)';
+}
 
 
 
@@ -52,15 +61,15 @@ function tutorialBoxMovendo_FimMovimento(e) {
 }
 
 function tutorialBoxMovendo_Movimentando(e) {
-    if (tutorialBoxMovendo) {
-        e.preventDefault(); // Prevent scrolling while dragging
-        eixoMobile_X = e.touches[0].clientX - initial_X;
-        eixoMobile_Y = e.touches[0].clientY - initial_Y;
+  if (tutorialBoxMovendo) {
+      e.preventDefault(); // Prevent scrolling while dragging
+      eixoMobile_X = e.touches[0].clientX - initial_X;
+      eixoMobile_Y = e.touches[0].clientY - initial_Y;
 
-        setTranslate(eixoMobile_X, eixoMobile_Y, tutorialBoxes);
-    }
+      setTranslate(eixoMobile_X, eixoMobile_Y, tutorialBoxes);
+  }
 }
 
 function setTranslate(xPos, yPos, el) {
-    el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
