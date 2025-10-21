@@ -1,22 +1,10 @@
 const navBarElemento = document.getElementById("navBarElementoId");
+const navBarLinks = document.getElementById("navBarLinksId");
+let navBarClickContagem = 0;
 
 
-const tutorialBoxes_OverflowControle = document.getElementById('tutorialBoxes_OverflowControleId');
-const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
-const tutorialBoxes = document.getElementById("tutorialBoxesID");
 
-const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
-
-const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
-const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
-
-const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
-
-let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
-
-const tutorialBoxesButtonsDiv = document.querySelectorAll(".tutorialBoxesButtonsDiv button");
-
-
+const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId");
 
 
 
@@ -30,7 +18,7 @@ const searchInput = document.getElementById("searchInputId");
 const searchButton = document.getElementById("searchButtonId");
 const homePageSearchIcon = document.getElementById("searchButtonIcon");
 
-const searchInput_posicionamento = searchInput.getBoundingClientRect();
+// const searchInput_posicionamento = searchInput.getBoundingClientRect();
 
 
 
@@ -55,22 +43,6 @@ const resultadoVerificacaoURLDiv = document.querySelector('.resultadoVerificacao
 
 let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; 
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; 
-
-
-
-const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId");
-
-
-
-const navBarLinks = document.getElementById("navBarLinksId");
-let navBarClickContagem = 0;
-
-
-
-const filtrosContainer = document.getElementById("filtrosContainerID");
-
-const resultadosProdutosDiv = document.getElementById("resultadosProdutosDivID"); 
-const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID"); 
 
 
 

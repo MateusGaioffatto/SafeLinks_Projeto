@@ -176,7 +176,7 @@
     pointer-events: visible;
     transition: var(--transition);
   }
-  .modoEscuroClaroElementoId {
+  .modoEscuroClaroElemento {
     position: relative;
     left: 0px;
   }

@@ -41,10 +41,10 @@ tutorialBoxesButtonsDiv[1].addEventListener('click', function() {
 
 
 
-console.log(window.innerWidth, window.innerHeight);
+
 
 function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
-  if (window.innerWidth <= 810 || window.innerHeight > 650) {
+  if (window.innerWidth <= 815 || window.innerHeight < 900) {
     tutorialBoxes.style.left = '50%';
     tutorialBoxes.style.transform = 'translateX(-50%)';
     switch (tutorialGifCount) {
@@ -58,6 +58,8 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
       break;
       case 2:
         tutorialBoxesButtonsDiv[0].textContent = "Anterior";
+        tutorialBoxesButtonsDiv[1].textContent = "Próximo";
+
         tutorialBoxes.style.top = '15px';
         const enter = new KeyboardEvent('keydown',{key: 'Enter'});
         searchInput.value = "http://127.0.0.1:5502/homePage_Conteudo/index.html";

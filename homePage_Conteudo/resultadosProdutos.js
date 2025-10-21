@@ -1,14 +1,19 @@
+const filtrosContainer = document.getElementById("filtrosContainerID");
+
+const resultadosProdutosDiv = document.getElementById("resultadosProdutosDivID"); 
+const resultadosProdutosUl = document.getElementById("resultadosProdutosUlID"); 
+
+
+
+
+
 tutorialBoxes_OverflowControle.style.top = '0px';
-
-
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = 'auto';
 });
-
-
 
 
 

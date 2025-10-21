@@ -1,3 +1,22 @@
+const tutorialBoxes_OverflowControle = document.getElementById('tutorialBoxes_OverflowControleId');
+const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
+const tutorialBoxes = document.getElementById("tutorialBoxesID");
+
+const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
+
+const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
+const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
+
+const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
+
+let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
+
+const tutorialBoxesButtonsDiv = document.querySelectorAll(".tutorialBoxesButtonsDiv button");
+
+
+
+
+
 tutorialBoxesCloseIcone.addEventListener('click', function() {
   searchInputDiv.style.pointerEvents = 'initial';
   tutorialBoxes.style.display = 'none'; 
@@ -5,10 +24,10 @@ tutorialBoxesCloseIcone.addEventListener('click', function() {
 })
 
 
+console.log(window.innerWidth, window.innerHeight);
 
 
-
-if (window.innerWidth <= 810 || window.innerHeight > 650) {
+ if (window.innerWidth <= 810 || window.innerHeight < 900) {
   tutorialBoxes.style.left = '50%';
   tutorialBoxes.style.transform = 'translateX(-50%)';
 }

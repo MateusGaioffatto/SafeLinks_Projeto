@@ -176,6 +176,10 @@
       margin-top: 15px;
     }
     
+    .ferramentas ul {
+      list-style: none;
+    }
+    
     .ferramentas li {
       margin-bottom: 10px;
       padding-left: 10px;
@@ -188,7 +192,6 @@
     }
     
     .ferramentas li::before {
-      content: '▸';
       position: absolute;
       left: -15px;
       color: var(--primary-color);
