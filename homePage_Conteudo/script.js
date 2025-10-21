@@ -8,6 +8,23 @@ const menuHamburguerElemento = document.getElementById("menuHamburguerElementoId
 
 
 
+const tutorialBoxes_OverflowControle = document.getElementById('tutorialBoxes_OverflowControleId');
+const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
+const tutorialBoxes = document.getElementById("tutorialBoxesID");
+
+const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
+
+const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
+const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
+
+const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
+
+let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
+
+const tutorialBoxesButtonsDiv = document.querySelectorAll(".tutorialBoxesButtonsDiv button");
+
+
+
 const homePage_Titulo_Pesquisa_Opcoes = document.getElementById("homePage_Titulo_Pesquisa_OpcoesId");
 const searchInput_searchButtonsDiv = document.getElementById("searchInput_searchButtonsDivId");
 

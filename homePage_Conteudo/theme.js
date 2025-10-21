@@ -1,6 +1,7 @@
 // MODO ESCURO E CLÁRO: VARIÁVEIS CONSTANTES
-const modoEscuroClaroButton = document.getElementById("modoEscuroClaroElementoId"); // VARIÁVEL CONSTANTE, BUTTON
+const modoEscuroClaroElemento = document.getElementById("modoEscuroClaroElementoId"); // VARIÁVEL CONSTANTE, BUTTON
 const modoEscuroClaroIcone = document.querySelector("#modoEscuroClaroElementoId i"); // VARIÁVEL CONSTANTE, ÍCONE
+const modoEscuroClaroPseudoAnchor = document.querySelector("#modoEscuroClaroElementoId a"); 
 
 // DADOS SALVOS LOCALMENTE AO CARREGAR A PÁGINA: FUNCTION
 document.addEventListener('DOMContentLoaded', function() {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // MODIFICAR MODO ESCURO OU CLÁRO: BUTTON -> FUNCTION
-modoEscuroClaroButton.addEventListener('click', function() {
+modoEscuroClaroPseudoAnchor.addEventListener('click', function() {
   if (document.body.classList.contains('dark-mode')) {
     disableDarkMode(); // SELECIONAR MODO CLÁRO: FUNCTION
   } else {
@@ -31,15 +32,15 @@ modoEscuroClaroButton.addEventListener('click', function() {
 function disableDarkMode() {
   document.body.classList.remove('dark-mode');
   localStorage.setItem('darkMode', null);
-  modoEscuroClaroButton.innerHTML = '<i class="fas fa-moon"></i>';
-  modoEscuroClaroButton.title = "Modo escuro";
+  modoEscuroClaroIcone.classList.remove("fas-fa-moon");
+  modoEscuroClaroIcone.classList.add("fas-fa-sun");
 }
 
 function enableDarkMode() {
   document.body.classList.add('dark-mode');
   localStorage.setItem('darkMode', 'enabled');
-  modoEscuroClaroButton.innerHTML = '<i class="fas fa-sun"></i>';
-  modoEscuroClaroButton.title = "Modo cláro"
+  modoEscuroClaroIcone.classList.remove("fas-fa-sun");
+  modoEscuroClaroIcone.classList.add("fas-fa-moon");
 }
 
 

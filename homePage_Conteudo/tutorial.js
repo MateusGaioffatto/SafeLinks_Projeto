@@ -1,17 +1,15 @@
-const tutorialBoxes_OverflowControle = document.getElementById('tutorialBoxes_OverflowControleId');
-const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
-const tutorialBoxes = document.getElementById("tutorialBoxesID");
+// const tutorialBoxes_OverflowControle = document.getElementById('tutorialBoxes_OverflowControleId');
+// const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
+// const tutorialBoxes = document.getElementById("tutorialBoxesID");
 
-const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
+// const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
 
-const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
-const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
+// const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
+// const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
 
-const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
+// const tutorialBoxesGifs = document.querySelector(".tutorialBoxesImagensStyles img")
 
-let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
-
-const tutorialBoxesButtonsDiv = document.querySelectorAll(".tutorialBoxesButtonsDiv button");
+// let tutorialBoxesTexto = document.querySelector(".tutorialBoxes p");
 
 
 
