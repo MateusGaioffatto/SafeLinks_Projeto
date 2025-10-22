@@ -32,15 +32,15 @@ modoEscuroClaroPseudoAnchor.addEventListener('click', function() {
 function disableDarkMode() {
   document.body.classList.remove('dark-mode');
   localStorage.setItem('darkMode', null);
-  modoEscuroClaroIcone.classList.remove("fas-fa-moon");
-  modoEscuroClaroIcone.classList.add("fas-fa-sun");
+  modoEscuroClaroIcone.classList.remove("fa-sun");
+  modoEscuroClaroIcone.classList.add("fa-moon");
 }
 
 function enableDarkMode() {
   document.body.classList.add('dark-mode');
   localStorage.setItem('darkMode', 'enabled');
-  modoEscuroClaroIcone.classList.remove("fas-fa-sun");
-  modoEscuroClaroIcone.classList.add("fas-fa-moon");
+  modoEscuroClaroIcone.classList.remove("fa-moon");
+  modoEscuroClaroIcone.classList.add("fa-sun");
 }
 
 

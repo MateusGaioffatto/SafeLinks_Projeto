@@ -1,14 +1,16 @@
 <?php
-session_start();
+  session_start();
 
-// Verificar se o usuário está logado
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    // Se não estiver logado, redirecionar para a página de login
-    header('Location: login.html?message=' . urlencode('Acesso restrito! Faça login.') . '&type=error');
-    exit();
-}
+  // Verificar se o usuário está logado
+  if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+      // Se não estiver logado, redirecionar para a página de login
+      header('Location: login.html?message=' . urlencode('Acesso restrito! Faça login.') . '&type=error');
+      exit();
+  }
 
-require_once 'config.php';
+  
+
+  require_once 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +46,7 @@ require_once 'config.php';
             <i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['usuario_nome']); ?> <i class="fas fa-caret-down"></i>
           </button>
           <div class="user-dropdown">
-            <a href="perfil.html" id="openProfileModal"><i class="fas fa-user-cog"></i> Meu Perfil</a>
+            <a id="openProfileModal"><i class="fas fa-user-cog"></i> Meu Perfil</a>
             <a href="favoritos.php"><i class="fas fa-heart"></i> Favoritos</a>
             <a href="historico.php"><i class="fas fa-history"></i> Histórico</a>
             <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
@@ -52,15 +54,12 @@ require_once 'config.php';
         </li>
         <!-- <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li> -->
         <li><a href="sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li>
-        <li id="modoEscuroClaroLi">
-          <button class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId">
-            <i class="fas fa-moon"></i>
-          </button>
-          <p id="modoEscuroClaroElementoTexto"> Modo </p>
+        <li class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId">
+          <a><i class="fas fa-moon"></i> Modo </a>
         </li>
       </ul>
-      <div class="menuHamburguerElemento" id="menuHamburguerElementoId">
-        <i class="fas fa-bars"></i>
+      <div class="menuHamburguerElemento" id="menuHamburguerElementoId"> 
+        <i class="fas fa-bars"></i> 
       </div>
     </div>
   </nav>
@@ -138,8 +137,8 @@ require_once 'config.php';
       </form>
     </div>
   </div>
- <script src="../theme.js"></script>
-   <script src="../script.js"></script>
+  <script src="../script.js"></script>
+  <script src="../theme.js"></script>
   <script src="../homePagePesquisaFavoritosHistorico.js"></script>
   <script src="homePageProdutos.js" type="module"></script>
   <script src="index_php.js"></script>

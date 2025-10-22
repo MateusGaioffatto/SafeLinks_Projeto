@@ -146,18 +146,18 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
       case 1:
         tutorialBoxesTexto.textContent = 
         "Este é o campo de pesquisa." +
-        "Aqui você pode digitar o endereço (URL) de um site ou o nome de um produto que deseja pesquisar." + 
+        " Aqui você pode digitar o endereço (URL) de um site ou o nome de um produto que deseja pesquisar." + 
         " Basta clicar e começar a digitar. É simples e seguro!";
       break;
       case 2:
         tutorialBoxesTexto.textContent = "URL é o endereço de um site, como www.exemplo.com.br." + 
-        " Verificar links é importante para garantir que você está acessando sites confiáveis " + 
-        "e evitar golpes. Entre ou cole a URL e clique na '🔍︎' para verificar se o site é seguro.";
+        " Verificar links é importante para garantir que você está acessando sites confiáveis" + 
+        " e evitar golpes. Entre ou cole a URL e clique na '🔍︎' para verificar se o site é seguro.";
       break;
       case 3:
-        tutorialBoxesTexto.textContent = "Agora, experimente pesquisar um produto ou site! " + 
-        "Digite o nome do produto ou a URL desejada e clique na '🔍︎'. " + 
-        "Você será redirecionado para os resultados. Assim, você navega com mais segurança e simplicidade!";
+        tutorialBoxesTexto.textContent = "Agora, experimente pesquisar um produto ou site!" + 
+        " Digite o nome do produto ou a URL desejada e clique na '🔍︎'." + 
+        " Você será redirecionado para os resultados. Assim, você navega com mais segurança e simplicidade!";
       break;
       default:
         console.log("🤔");

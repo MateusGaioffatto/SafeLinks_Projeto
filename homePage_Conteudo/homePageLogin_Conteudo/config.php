@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'sistema_login');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', '123456');
 define('RESEND_API_KEY', 're_akejCJV6_A1ygQG8rgiNouXiLuT3DcV97');
 define('RESEND_FROM_EMAIL', 'onboarding@resend.dev');
 define('RESEND_FROM_NAME', 'SafeLinks');
@@ -28,8 +28,8 @@ function createUserTables($conn) {
         nome VARCHAR(100) NOT NULL,
         email VARCHAR(100) NOT NULL UNIQUE,
         senha VARCHAR(255) NOT NULL,
-        -- user_dataNascimento DATE NOT NULL, <= SUGESTÃO: user_dataNascimento = data de nascimento do usuário
-        -- user_idade INT NOT NULL, <= SUGESTÃO: user_idade = idade recente do usuário
+        user_dataNascimento DATE NOT NULL, -- <= SUGESTÃO: user_dataNascimento = data de nascimento do usuário
+        user_idade INT NOT NULL, -- <= SUGESTÃO: user_idade = idade recente do usuário
         data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
     )";
 

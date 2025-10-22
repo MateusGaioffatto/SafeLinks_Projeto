@@ -12,7 +12,7 @@ const tutorialBoxes_OverflowControle = document.getElementById('tutorialBoxes_Ov
 const homePageBlurEffect = document.getElementById("homePageBlurEffectID");
 const tutorialBoxes = document.getElementById("tutorialBoxesID");
 
-const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
+// const tutorialBoxes_posicionamento = tutorialBoxes.getBoundingClientRect();
 
 const tutorialBoxesH5 = document.querySelector(".tutorialBoxesCloseIcone h5");
 const tutorialBoxesCloseIcone = document.querySelector(".tutorialBoxesCloseIcone i");
