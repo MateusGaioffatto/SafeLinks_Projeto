@@ -35,7 +35,6 @@ tutorialBoxesButtonsDiv[1].addEventListener('click', function() {
 
     tutorialBoxesGifs.src = `tutorial_GIFs/homePage_GIFs/Tutorial0${tutorialGifCount}.gif`;
     tutorialBoxesH5.textContent = `${tutorialGifCount}/3`
-
     tutorial_homePageBoxesPosicionamento(tutorialGifCount);
 })
 
@@ -44,7 +43,8 @@ tutorialBoxesButtonsDiv[1].addEventListener('click', function() {
 
 
 function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
-  if (window.innerWidth <= 815 || window.innerHeight < 900) {
+  if (window.innerWidth <= 815 || window.innerHeight < 640 || window.innerHeight === 810) {
+    console.log("📱");
     tutorialBoxes.style.left = '50%';
     tutorialBoxes.style.transform = 'translateX(-50%)';
     switch (tutorialGifCount) {
@@ -78,6 +78,7 @@ function tutorial_homePageBoxesPosicionamento(tutorialGifCount) {
     }
   }
   else {
+    console.log("💻");
       switch (tutorialGifCount) {
       case 1:
         limparInputValue_ResultadoVerificacaoURLDiv();

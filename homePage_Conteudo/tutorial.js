@@ -22,10 +22,10 @@ tutorialBoxesCloseIcone.addEventListener('click', function() {
 })
 
 
-console.log(window.innerWidth, window.innerHeight);
+console.log('Width:' + window.innerWidth, ' Height:' + window.innerHeight);
 
 
- if (window.innerWidth <= 810 || window.innerHeight < 900) {
+ if (window.innerWidth <= 815 || window.innerHeight < 640 || window.innerHeight === 810) {
   tutorialBoxes.style.left = '50%';
   tutorialBoxes.style.transform = 'translateX(-50%)';
 }
