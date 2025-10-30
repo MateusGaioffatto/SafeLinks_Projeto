@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> SafeLinks[2] - Pesquisa Segura de Produtos </title>
+  <title> SafeLinks[3] - Pesquisa Segura de Produtos </title>
 
   <link rel="stylesheet" href="style.css"> 
   <link rel="stylesheet" href="tutorial.css">
@@ -18,7 +18,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 </head>
   <body style="overflow: hidden;">
-    
+
+    <div id="logoBackgroundDiv">
+      <img src="SafeLinks_Background_Logo.png" id="logoBackgroundImage">
+    </div>
+
+
+
     <nav class="navBarElemento" id="navBarElementoId"> 
       <div class="navBarContainer"> 
       <div class="navBarLogo" id="navBarLogoId"><a href="#"> SafeLinks </a></div> 
@@ -91,9 +97,10 @@
         </div>
       </div>
 
+
       
       <div id="resultadoVerificacaoURL" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px; width: 100%; max-width: 600px;"></div>
-
+      <p id="resumo_Gemini"></p>
       <div class="pesquisasRecentes" id="pesquisasRecentesId"> 
         <div class="pesquisasRecentesTitulo">Pesquisas recentes</div> 
         <div class="pesquisasRecentesItems" id="pesquisasRecentesItemsId"></div> 
@@ -113,6 +120,7 @@
 
     <script src="campoDePesquisa_URL_Produtos.js"></script>
     <script src="verificacaoURL.js"></script>
+    <script src="resumo_Gemini.js" type="module"></script>
 
   </body>
 

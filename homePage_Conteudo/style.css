@@ -67,10 +67,23 @@ body {
   body.dark-mode .modoEscuroClaroElemento {
     background: var(--dark);
     color: var(--light);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   }
 
 
+
+
+
+#logoBackgroundDiv {
+  position: fixed;
+  opacity: 0.5;
+  text-align: center;
+}
+  #logoBackgroundImage {
+    width: 150vh;
+  }
+    body.dark-mode #logoBackgroundImage {
+      opacity: 0.25;
+    }
 
 
 
@@ -101,11 +114,11 @@ header {
 }
 
 body.dark-mode .homePageTitulo {
-  color: #6c8eff;
+  color: var(--light);
 }
 
 .homePageSubTitulo {
-  color: var(--gray);
+  color: var(--primary);
   margin-bottom: 20px;
   opacity: 0;
   animation: homePage_Titulo_Pesquisa_OpcoesOpacity 2s ease forwards;
@@ -113,7 +126,7 @@ body.dark-mode .homePageTitulo {
   
 
 body.dark-mode .homePageSubTitulo {
-  color: #b0b0b0;
+  color: var(--light);
 }
 
 

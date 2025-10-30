@@ -2,8 +2,6 @@ let tutorialGifCount = 1;
 
 
 
-
-
 tutorialBoxesButtonsDiv[0].addEventListener('click', function() {
   tutorialGifCount--;
   if (tutorialGifCount === 0) {

@@ -13,6 +13,7 @@
         .then(response => response.json())
         .then(data => {
           if (data.segura) {
+            segurancaStatusURL = 0; // 0 => URL SEGURA!
             resultadoVerificacaoURL.innerHTML = `
               <div style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 8px;">
                 <i class="fas fa-check-circle"></i> <strong>URL Segura</strong><br>
@@ -26,6 +27,7 @@
           } 
           else {
             if (data.erro) {
+              segurancaStatusURL = 1; // 1 => ERRO NA VERIFICAÇÃO DE URL
               resultadoVerificacaoURL.innerHTML = `
                 <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px;">
                   <i class="fas fa-exclamation-triangle"></i> <strong>Erro na Verificação</strong><br>
@@ -34,6 +36,7 @@
               `;
             } 
             else if (data.ameacas) {
+              segurancaStatusURL = 2; // 2 => URL NÃO SEGURA!
               let ameacasHTML = '';
               data.ameacas.forEach(ameaca => {
                 ameacasHTML += `<li><strong>${ameaca.tipo}</strong> em ${ameaca.plataforma}</li>`;

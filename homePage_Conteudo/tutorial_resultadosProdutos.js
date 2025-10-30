@@ -105,12 +105,12 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
 
     switch (tutorialGifCount) {
       case 1:
-        resultadosProdutosDiv.style.zIndex = 0;
+        // resultadosProdutosDiv.style.zIndex = 0;
         searchInput_searchButtonsDiv.style.zIndex = 2;
       break;
       case 2:
         filtrosContainer.style.zIndex = 0;
-        resultadosProdutosDiv.style.zIndex = 2;
+        // resultadosProdutosDiv.style.zIndex = 2;
         searchInput_searchButtonsDiv.style.zIndex = 0;
       break;
       case 3:
@@ -121,7 +121,7 @@ function tutorial_resultadosProdutosBoxesPosicionamento(tutorialGifCount) {
       break;
       case 5:
         filtrosContainer.style.zIndex = 2;
-        resultadosProdutosDiv.style.zIndex = 0;
+        // resultadosProdutosDiv.style.zIndex = 0;
         searchInput_searchButtonsDiv.style.zIndex = 0;
       break;
       default:

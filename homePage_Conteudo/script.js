@@ -56,7 +56,7 @@ let searchInputText = '';
 const resultadoVerificacaoURL = document.getElementById('resultadoVerificacaoURL');
 const resultadoVerificacaoURLDiv = document.querySelector('.resultadoVerificacaoURL div');
 
-
+let segurancaStatusURL;
 
 let favoriteStores = JSON.parse(localStorage.getItem('favoriteStores')) || {}; 
 let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || []; 

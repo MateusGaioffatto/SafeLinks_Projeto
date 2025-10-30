@@ -148,17 +148,6 @@
 
 
 
-#modoEscuroClaroElementoTexto {
-  cursor: pointer;
-  position: relative;
-  left: 22px;
-  display: inline;
-}
-
-
-
-
-
 @media (max-width: 768px) {
   .navBarLinks {
     position: absolute;

@@ -18,6 +18,12 @@
 </head>
 <body>
 
+  <div id="logoBackgroundDiv">
+    <img src="SafeLinks_Background_Logo.png" id="logoBackgroundImage">
+  </div>
+
+
+
   <nav class="navBarElemento" id="navBarElementoId"> 
     <div class="navBarContainer"> 
     <div class="navBarLogo" id="navBarLogoId"><a href="index.html"> SafeLinks </a></div> 
@@ -26,7 +32,9 @@
           <!-- <li><a href="#"><i class="fa fa-bell" id="notificacoesIcone"></i> Notificações </a></li>  -->
           <li><a href="homePageLogin_Conteudo/sobre.html"><i class="fa-solid fa-circle-info"></i> Sobre </a></li> 
           <li><a href="homePageLogin_Conteudo/dicas.html"><i class="fa-solid fa-lightbulb"></i> Dicas </a></li>
-          <li class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId"><i class="fas fa-moon"></i></li> 
+          <li class="modoEscuroClaroElemento" id="modoEscuroClaroElementoId">
+              <a><i class="fas fa-moon"></i> Modo </a>
+          </li>        
         </ul>
         <div class="menuHamburguerElemento" id="menuHamburguerElementoId"> 
           <i class="fas fa-bars"></i> 
@@ -87,9 +95,51 @@
 
 
 
-
     
-    <div class="filtrosContainer" id="filtrosContainerID"></div>
+  <!-- SEÇÃO DE FILTROS - ADICIONADA APÓS A BARRA DE PESQUISA -->
+    <div class="filtrosContainer" id="filtrosContainerID">
+      <div class="filtro-grupo">
+      <h3>Filtros</h3>
+      
+      <!-- Filtro de Lojas -->
+      <div class="filtro-item">
+        <label for="filtroLojas">Lojas:</label>
+        <div class="filtro-lojas-input-container">
+          <input type="text" id="filtroLojas" placeholder="Digite o nome da loja" class="filtro-input">
+          <div class="lojas-sugestoes" id="lojasSugestoesID"></div>
+        </div>
+        <div class="lojas-checkboxes" id="lojasCheckboxesID"></div>
+      </div>
+      
+      <!-- Filtro de Categorias -->
+      <div class="filtro-item">
+        <label for="filtroCategorias">Categorias:</label>
+        <select id="filtroCategorias" class="filtro-select">
+          <option value="todos">Todos os produtos</option>
+          <option value="eletronicos">Eletrônicos</option>
+          <option value="eletrodomesticos">Eletrodomésticos</option>
+          <option value="informatica">Informática</option>
+          <option value="celulares">Celulares e Tablets</option>
+          <option value="games">Games</option>
+          <option value="livros">Livros</option>
+          <option value="moda">Moda</option>
+          <option value="casa">Casa e Decoração</option>
+          <option value="beleza">Beleza e Saúde</option>
+          <option value="esporte">Esporte e Lazer</option>
+        </select>
+      </div>
+      
+  
+      
+      <!-- Botões de ação -->
+      <div class="filtro-botoes">
+        <button id="aplicarFiltros" class="filtro-btn aplicar">Aplicar Filtros</button>
+        <button id="limparFiltros" class="filtro-btn limpar">Limpar Filtros</button>
+      </div>
+
+      </div>
+      
+    </div>
     
 
 

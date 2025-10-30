@@ -1,0 +1,155 @@
+/* 
+    <div class="homePageBlurEffect" id="homePageBlurEffectID"></div>
+    <div class="tutorialBoxes" id="tutorialBoxesID" >
+        <div class="tutorialBoxesCloseIcone">
+        <h5> 1/5 </h5>
+        <i class="fa light fa-minus"></i>
+        <i class="fa light fa-xmark"></i>
+        </div>
+        <div class="tutorialBoxesImagensStyles">
+        <img src="homePageTutoriais_GIFs\Tutorial01.gif">
+        </div>
+        <p> Caixas de tutorial vão seguir esse padrão! </p>
+        <div class="tutorialBoxesButtonsDiv">
+        <button class="tutorialBoxesButtons"> Mais Tarde </button>
+        <button class="tutorialBoxesButtons"> Próximo </button>
+        </div>
+    </div>
+*/
+
+
+
+
+
+.tutorialBoxes_OverflowControle {
+    position: absolute;
+    display: flex;
+
+    width: 100%; 
+    height: 100%; 
+
+    overflow: hidden;
+}
+
+
+
+
+
+.homePageBlurEffect {
+    position: absolute;
+    display: flex;
+
+    width: 100%; 
+    height: 100vh; 
+
+    overflow: hidden;
+}
+
+
+
+
+
+.homePageBlurEffect {
+    position: fixed;
+    z-index: 1;
+
+    background: linear-gradient(135deg, #fdffff, #e6f4ff);
+    opacity: 70%;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+.tutorialBoxes {
+    position: absolute;
+    
+    z-index: 5;
+
+    display: block;
+    
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+    
+    height: 25rem;
+    width: 20rem;
+    
+    background-color: #f8f9fa;  
+
+
+    opacity: 0;
+    animation: tutorialBoxesOpacity 2s ease forwards;
+}
+    body.dark-mode .tutorialBoxes {
+        background: #353e4f;
+    }
+
+    @keyframes tutorialBoxesOpacity {
+        to {
+            opacity: 1;
+        }
+    }
+
+    .tutorialBoxesCloseIcone {
+        display: flex;
+        padding: 5px 15px 5px 0;
+    }
+
+        .tutorialBoxesCloseIcone h5 {
+            display: flex;
+            position: relative;
+            left: 30px;
+            margin: 0;
+        }
+        .tutorialBoxesCloseIcone i {   
+            position: relative;
+            left: 235px;
+            
+            padding: 0 5px;
+            cursor: pointer;
+        }
+
+    .tutorialBoxesImagensStyles {            
+        position: relative;
+        
+        height: 40%;
+    }
+        .tutorialBoxesImagensStyles img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+    .tutorialBoxes p {
+        position: relative;
+        top: 5%;
+        font-size: medium;
+    }
+
+    .tutorialBoxesButtonsDiv {
+        position: absolute;
+
+        bottom: 20px;
+
+        width: 100%;
+    }
+        .tutorialBoxesButtons {
+            margin: 0 7px;  
+            padding: 7px;
+
+            color: #f8f9fa;
+            background-color: #4361ee;
+
+            border: none;
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 100%;
+        }
